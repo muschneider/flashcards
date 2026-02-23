@@ -41,6 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # AI agent files
+mise.toml
 AGENTS.md
 AGENTS.mdc
 prompts.txt
