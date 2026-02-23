@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import {
   BookOpen,
+  MessageSquare,
   Settings,
   RotateCcw,
   Trophy,
@@ -82,15 +83,38 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Navigation cards */}
-      <div className="grid gap-4 sm:grid-cols-3">
-        <ActionCard
-          href="/study"
-          icon={<BookOpen className="h-8 w-8" />}
-          title="Study Mode"
-          description="Practice your flashcards with spaced repetition"
-          color="indigo"
-        />
+      {/* Study modes */}
+      <div>
+        <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
+          Study
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <ActionCard
+            href="/study/words"
+            icon={<BookOpen className="h-8 w-8" />}
+            title="Study Words"
+            description="Practice vocabulary with multiple choice"
+            color="indigo"
+          />
+          <ActionCard
+            href="/study/sentences"
+            icon={<MessageSquare className="h-8 w-8" />}
+            title="Study Sentences"
+            description="Arrange words to form correct sentences"
+            color="emerald"
+          />
+          <ActionCard
+            href="/study"
+            icon={<Layers className="h-8 w-8" />}
+            title="All Modes"
+            description="Choose your study mode or mix everything"
+            color="purple"
+          />
+        </div>
+      </div>
+
+      {/* Management */}
+      <div className="grid gap-4 sm:grid-cols-2">
         <ActionCard
           href="/manage"
           icon={<Settings className="h-8 w-8" />}
@@ -157,6 +181,8 @@ function ActionCard({
       'text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/30',
     emerald:
       'text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/30',
+    purple:
+      'text-purple-600 dark:text-purple-400 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30',
     red: 'text-red-600 dark:text-red-400 group-hover:bg-red-100 dark:group-hover:bg-red-900/30',
   };
 
