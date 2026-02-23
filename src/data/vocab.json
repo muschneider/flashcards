@@ -1,0 +1,46 @@
+{
+  "words": [
+    { "english": "house", "portuguese": "casa" },
+    { "english": "dog", "portuguese": "cachorro" },
+    { "english": "cat", "portuguese": "gato" },
+    { "english": "water", "portuguese": "água" },
+    { "english": "book", "portuguese": "livro" },
+    { "english": "friend", "portuguese": "amigo" },
+    { "english": "food", "portuguese": "comida" },
+    { "english": "school", "portuguese": "escola" },
+    { "english": "time", "portuguese": "tempo" },
+    { "english": "love", "portuguese": "amor" },
+    { "english": "sun", "portuguese": "sol" },
+    { "english": "moon", "portuguese": "lua" }
+  ],
+  "sentences": [
+    {
+      "english": "I am learning English right now",
+      "portuguese": "Eu estou aprendendo inglês neste momento"
+    },
+    {
+      "english": "The dog is very happy",
+      "portuguese": "O cachorro está muito feliz"
+    },
+    {
+      "english": "She reads a book every day",
+      "portuguese": "Ela lê um livro todos os dias"
+    },
+    {
+      "english": "We love to eat food",
+      "portuguese": "Nós amamos comer comida"
+    },
+    {
+      "english": "The sun is bright today",
+      "portuguese": "O sol está brilhante hoje"
+    },
+    {
+      "english": "My friend goes to school",
+      "portuguese": "Meu amigo vai para a escola"
+    },
+    {
+      "english": "Time flies very fast",
+      "portuguese": "O tempo voa muito rápido"
+    }
+  ]
+}
