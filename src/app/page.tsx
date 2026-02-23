@@ -10,6 +10,7 @@ import {
   Clock,
   Layers,
   AlertCircle,
+  Info,
 } from 'lucide-react';
 import { useCards } from '@/context/CardContext';
 
@@ -129,6 +130,15 @@ export default function Dashboard() {
           description="Clear all progress and start fresh"
           color="red"
         />
+      </div>
+
+      {/* Storage info note */}
+      <div className="flex items-start gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/50">
+        <Info className="mt-0.5 h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          Your progress is saved on this device only.
+          Use a different browser or device to start fresh.
+        </p>
       </div>
     </div>
   );

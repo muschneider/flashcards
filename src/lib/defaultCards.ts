@@ -6,6 +6,7 @@ const defaultStatus: CardStatus = {
   reviewAfter: null,
   attempts: 0,
   correctCount: 0,
+  lastSeenAt: null,
 };
 
 export const defaultWordCards: WordCard[] = vocab.words.map((item, index) => ({

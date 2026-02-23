@@ -1,9 +1,10 @@
 'use client';
 
-import React, { createContext, useContext, useReducer, useCallback } from 'react';
-import { FlashCard, WordCard, SentenceCard, CardStatus } from '@/lib/types';
+import React, { createContext, useContext, useReducer, useCallback, useState, useEffect } from 'react';
+import { FlashCard, WordCard, SentenceCard, CardStatus, PersistedState } from '@/lib/types';
 import { defaultWordCards, defaultSentenceCards } from '@/lib/defaultCards';
 import { getNextReviewTime } from '@/lib/studyUtils';
+import { loadState } from '@/lib/storage';
 
 // ─── State ──────────────────────────────────────────────
 type CardState = {
@@ -18,13 +19,15 @@ type CardAction =
   | { type: 'DELETE_CARD'; id: string }
   | { type: 'MARK_CORRECT'; id: string }
   | { type: 'MARK_WRONG'; id: string }
-  | { type: 'RESET_ALL' };
+  | { type: 'RESET_ALL' }
+  | { type: 'HYDRATE'; payload: PersistedState };
 
 const defaultStatus: CardStatus = {
   mastered: false,
   reviewAfter: null,
   attempts: 0,
   correctCount: 0,
+  lastSeenAt: null,
 };
 
 const initialState: CardState = {
@@ -84,6 +87,7 @@ function cardReducer(state: CardState, action: CardAction): CardState {
               attempts: c.status.attempts + 1,
               correctCount: newCorrectCount,
               reviewAfter: getNextReviewTime(newCorrectCount),
+              lastSeenAt: Date.now(),
             },
           };
         }),
@@ -101,6 +105,7 @@ function cardReducer(state: CardState, action: CardAction): CardState {
               mastered: false,
               attempts: c.status.attempts + 1,
               reviewAfter: null,
+              lastSeenAt: Date.now(),
             },
           };
         }),
@@ -115,9 +120,45 @@ function cardReducer(state: CardState, action: CardAction): CardState {
         })),
       };
 
+    case 'HYDRATE': {
+      const { cardProgress } = action.payload;
+      return {
+        ...state,
+        cards: state.cards.map((c) => {
+          const saved = cardProgress[c.id];
+          if (!saved) return c;
+          return {
+            ...c,
+            status: {
+              mastered: saved.mastered,
+              reviewAfter: saved.reviewAfter,
+              attempts: saved.attempts,
+              correctCount: saved.correctCount,
+              lastSeenAt: saved.lastSeenAt,
+            },
+          };
+        }),
+      };
+    }
+
     default:
       return state;
   }
+}
+
+// ─── Helper to extract progress for persistence ─────────
+export function extractProgress(cards: FlashCard[]): PersistedState['cardProgress'] {
+  const progress: PersistedState['cardProgress'] = {};
+  for (const card of cards) {
+    progress[card.id] = {
+      mastered: card.status.mastered,
+      reviewAfter: card.status.reviewAfter,
+      attempts: card.status.attempts,
+      correctCount: card.status.correctCount,
+      lastSeenAt: card.status.lastSeenAt,
+    };
+  }
+  return progress;
 }
 
 // ─── Context ────────────────────────────────────────────
@@ -131,6 +172,7 @@ type CardContextType = {
   markCorrect: (id: string) => void;
   markWrong: (id: string) => void;
   resetAll: () => void;
+  hydrated: boolean;
   stats: {
     total: number;
     mastered: number;
@@ -143,6 +185,15 @@ const CardContext = createContext<CardContextType | undefined>(undefined);
 
 export function CardProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cardReducer, initialState);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    const saved = loadState();
+    if (saved) {
+      dispatch({ type: 'HYDRATE', payload: saved });
+    }
+    setHydrated(true);
+  }, []);
 
   const addWord = useCallback((english: string, portuguese: string) => {
     dispatch({ type: 'ADD_WORD', english, portuguese });
@@ -193,6 +244,7 @@ export function CardProvider({ children }: { children: React.ReactNode }) {
         markCorrect,
         markWrong,
         resetAll,
+        hydrated,
         stats,
       }}
     >

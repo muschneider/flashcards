@@ -3,6 +3,7 @@ export type CardStatus = {
   reviewAfter: number | null; // timestamp in ms, null = not scheduled
   attempts: number;
   correctCount: number;
+  lastSeenAt: number | null; // UTC timestamp in ms
 };
 
 export type WordCard = {
@@ -23,3 +24,19 @@ export type SentenceCard = {
 };
 
 export type FlashCard = WordCard | SentenceCard;
+
+export type PersistedCardProgress = {
+  mastered: boolean;
+  reviewAfter: number | null; // UTC timestamp in ms
+  attempts: number;
+  correctCount: number;
+  lastSeenAt: number | null; // UTC timestamp in ms
+};
+
+export type PersistedState = {
+  version: number; // for future migrations, start at 1
+  theme: 'light' | 'dark';
+  cardProgress: {
+    [cardId: string]: PersistedCardProgress;
+  };
+};
