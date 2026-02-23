@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI agent files
+AGENTS.md
+AGENTS.mdc
+prompts.txt
+prompts.md
+*.prompt
+.ai/
+.claude/
+.cursor/
+.anthropic/
+cursor-prompts/
+ai-prompts/
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
