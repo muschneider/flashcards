@@ -1,18 +1,18 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-2.0-flash';
+const GEMINI_MODEL = "gemini-3-flash-preview";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 type RequestBody = {
-  type: 'word_example' | 'sentence_hint';
+  type: "word_example" | "sentence_hint";
   word?: string;
   sentence?: string;
   portuguese?: string;
 };
 
 function buildPrompt(body: RequestBody): string {
-  if (body.type === 'word_example') {
+  if (body.type === "word_example") {
     return `You are an English language tutor helping a Portuguese speaker learn English.
 
 Give 2 short, simple example sentences using the English word "${body.word}" (which means "${body.portuguese}" in Portuguese).
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
     if (!GEMINI_API_KEY) {
       // Return a helpful fallback when no API key is configured
-      if (body.type === 'word_example') {
+      if (body.type === "word_example") {
         return NextResponse.json({
           result: `Example sentences for "${body.word}":\n1. I like the ${body.word}. - Eu gosto do/da ${body.portuguese}.\n2. The ${body.word} is beautiful. - O/A ${body.portuguese} é bonito/a.\n\n(Set GEMINI_API_KEY for AI-generated examples)`,
         });
@@ -56,8 +56,8 @@ export async function POST(request: NextRequest) {
     const prompt = buildPrompt(body);
 
     const response = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         contents: [
           {
@@ -73,21 +73,21 @@ export async function POST(request: NextRequest) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Gemini API error:', errorText);
+      console.error("Gemini API error:", errorText);
       throw new Error(`Gemini API returned ${response.status}`);
     }
 
     const data = await response.json();
     const text =
       data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      'No response generated.';
+      "No response generated.";
 
     return NextResponse.json({ result: text });
   } catch (error) {
-    console.error('Gemini route error:', error);
+    console.error("Gemini route error:", error);
     return NextResponse.json(
-      { error: 'Failed to get AI response' },
-      { status: 500 }
+      { error: "Failed to get AI response" },
+      { status: 500 },
     );
   }
 }
