@@ -5,17 +5,22 @@ import {
   BookOpen,
   MessageSquare,
   Settings,
-  RotateCcw,
+  SlidersHorizontal,
   Trophy,
   Clock,
   Layers,
   AlertCircle,
   Info,
+  EyeOff,
 } from 'lucide-react';
 import { useCards } from '@/context/CardContext';
+import { getTypeStats } from '@/lib/studyQueue';
 
 export default function Dashboard() {
-  const { stats } = useCards();
+  const { cards, settings, stats } = useCards();
+
+  const wordStats = getTypeStats(cards, 'word');
+  const sentenceStats = getTypeStats(cards, 'sentence');
 
   return (
     <div className="space-y-8">
@@ -84,26 +89,88 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Study modes */}
+      {/* Per-type session cards */}
       <div>
         <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
-          Study
+          Study Sessions
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {/* Words */}
+          <div className="rounded-xl border border-indigo-200 bg-white p-6 dark:border-indigo-800/50 dark:bg-gray-800">
+            <div className="mb-3 flex items-center gap-2">
+              <div className="inline-flex rounded-lg bg-indigo-100 p-1.5 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400">
+                <BookOpen className="h-5 w-5" />
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Words</h3>
+            </div>
+            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              Session size: <span className="font-medium text-gray-700 dark:text-gray-300">{settings.words.cardsPerSession} cards</span>
+            </p>
+            <div className="mb-4 flex gap-4 text-sm">
+              <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                <EyeOff className="h-3.5 w-3.5" />
+                Unseen: <span className="font-medium text-gray-700 dark:text-gray-300">{wordStats.unseen}</span>
+              </span>
+              <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                <Trophy className="h-3.5 w-3.5" />
+                Mastered: <span className="font-medium text-green-600 dark:text-green-400">{wordStats.mastered}</span>
+              </span>
+              <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                <Clock className="h-3.5 w-3.5" />
+                Review: <span className="font-medium text-amber-600 dark:text-amber-400">{wordStats.dueForReview}</span>
+              </span>
+            </div>
+            <Link
+              href="/study/words"
+              className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+            >
+              <BookOpen className="h-4 w-4" />
+              Start Word Session
+            </Link>
+          </div>
+
+          {/* Sentences */}
+          <div className="rounded-xl border border-emerald-200 bg-white p-6 dark:border-emerald-800/50 dark:bg-gray-800">
+            <div className="mb-3 flex items-center gap-2">
+              <div className="inline-flex rounded-lg bg-emerald-100 p-1.5 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
+                <MessageSquare className="h-5 w-5" />
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Sentences</h3>
+            </div>
+            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              Session size: <span className="font-medium text-gray-700 dark:text-gray-300">{settings.sentences.cardsPerSession} cards</span>
+            </p>
+            <div className="mb-4 flex gap-4 text-sm">
+              <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                <EyeOff className="h-3.5 w-3.5" />
+                Unseen: <span className="font-medium text-gray-700 dark:text-gray-300">{sentenceStats.unseen}</span>
+              </span>
+              <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                <Trophy className="h-3.5 w-3.5" />
+                Mastered: <span className="font-medium text-green-600 dark:text-green-400">{sentenceStats.mastered}</span>
+              </span>
+              <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                <Clock className="h-3.5 w-3.5" />
+                Review: <span className="font-medium text-amber-600 dark:text-amber-400">{sentenceStats.dueForReview}</span>
+              </span>
+            </div>
+            <Link
+              href="/study/sentences"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600"
+            >
+              <MessageSquare className="h-4 w-4" />
+              Start Sentence Session
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* More study options */}
+      <div>
+        <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
+          More Options
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
-          <ActionCard
-            href="/study/words"
-            icon={<BookOpen className="h-8 w-8" />}
-            title="Study Words"
-            description="Practice vocabulary with multiple choice"
-            color="indigo"
-          />
-          <ActionCard
-            href="/study/sentences"
-            icon={<MessageSquare className="h-8 w-8" />}
-            title="Study Sentences"
-            description="Arrange words to form correct sentences"
-            color="emerald"
-          />
           <ActionCard
             href="/study"
             icon={<Layers className="h-8 w-8" />}
@@ -111,25 +178,21 @@ export default function Dashboard() {
             description="Choose your study mode or mix everything"
             color="purple"
           />
+          <ActionCard
+            href="/manage"
+            icon={<Settings className="h-8 w-8" />}
+            title="Manage Cards"
+            description="Add, view, or delete word and sentence cards"
+            color="emerald"
+          />
+          <ActionCard
+            href="/settings"
+            icon={<SlidersHorizontal className="h-8 w-8" />}
+            title="Settings"
+            description="Configure session sizes and reset progress"
+            color="indigo"
+          />
         </div>
-      </div>
-
-      {/* Management */}
-      <div className="grid gap-4 sm:grid-cols-2">
-        <ActionCard
-          href="/manage"
-          icon={<Settings className="h-8 w-8" />}
-          title="Manage Cards"
-          description="Add, view, or delete word and sentence cards"
-          color="emerald"
-        />
-        <ActionCard
-          href="/reset"
-          icon={<RotateCcw className="h-8 w-8" />}
-          title="Reset Progress"
-          description="Clear all progress and start fresh"
-          color="red"
-        />
       </div>
 
       {/* Storage info note */}

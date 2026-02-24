@@ -1,101 +1,79 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, PartyPopper } from 'lucide-react';
+import { ArrowLeft, PartyPopper, RotateCcw, Check, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useCards } from '@/context/CardContext';
-import { getDueCards, shuffle, generateWordOptions } from '@/lib/studyUtils';
-import { FlashCard, WordCard as WordCardType } from '@/lib/types';
+import { generateWordOptions } from '@/lib/studyUtils';
+import { WordCard as WordCardType } from '@/lib/types';
+import { useStudySession } from '@/hooks/useStudySession';
 import WordCard from '@/components/WordCard';
 
 export default function StudyWordsPage() {
   const router = useRouter();
-  const { wordCards, markCorrect, markWrong } = useCards();
+  const { cards, wordCards, settings, resetProgress } = useCards();
 
-  const [queue, setQueue] = useState<WordCardType[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [completed, setCompleted] = useState(0);
-  const [sessionTotal, setSessionTotal] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-  const [cardKey, setCardKey] = useState(0);
+  const {
+    currentCard,
+    completed,
+    correctOnFirst,
+    needReview,
+    sessionTotal,
+    isComplete,
+    cardKey,
+    handleCorrect,
+    handleWrong,
+  } = useStudySession({
+    queueOptions: {
+      type: 'word',
+      allCards: cards,
+      cardsPerSession: settings.words.cardsPerSession,
+    },
+  });
 
-  // Initialize study session
-  useEffect(() => {
-    const dueCards = getDueCards(wordCards as FlashCard[])
-      .filter((c): c is WordCardType => c.type === 'word');
-    const shuffled = shuffle(dueCards);
-    setQueue(shuffled);
-    setSessionTotal(shuffled.length);
-    setCurrentIndex(0);
-    setCompleted(0);
-    setIsComplete(shuffled.length === 0);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const currentCard = queue[currentIndex] || null;
+  const typedCard = currentCard?.type === 'word' ? (currentCard as WordCardType) : null;
 
   // Generate options for word cards
   const wordOptions = useMemo(() => {
-    if (!currentCard) return [];
-    return generateWordOptions(currentCard, wordCards);
-  }, [currentCard, wordCards]);
+    if (!typedCard) return [];
+    return generateWordOptions(typedCard, wordCards);
+  }, [typedCard, wordCards]);
 
-  const advanceToNext = useCallback(() => {
-    setCompleted((prev) => prev + 1);
-    setCardKey((prev) => prev + 1);
-
-    if (currentIndex + 1 >= queue.length) {
-      setIsComplete(true);
-    } else {
-      setCurrentIndex((prev) => prev + 1);
-    }
-  }, [currentIndex, queue.length]);
-
-  const handleCorrect = useCallback(() => {
-    if (!currentCard) return;
-    markCorrect(currentCard.id);
-    advanceToNext();
-  }, [currentCard, markCorrect, advanceToNext]);
-
-  const handleWrong = useCallback(() => {
-    if (!currentCard) return;
-    markWrong(currentCard.id);
-
-    // Re-insert the card later in the queue
-    setQueue((prev) => {
-      const newQueue = [...prev];
-      const reinsertAt = Math.min(currentIndex + 4, newQueue.length);
-      newQueue.splice(reinsertAt, 0, currentCard);
-      return newQueue;
-    });
-    setSessionTotal((prev) => prev + 1);
-    setCardKey((prev) => prev + 1);
-    setCurrentIndex((prev) => prev + 1);
-  }, [currentCard, markWrong, currentIndex]);
-
-  // Empty state
+  // Empty state — all cards seen/mastered
   if (isComplete && sessionTotal === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
         <PartyPopper className="mb-4 h-16 w-16 text-green-500" />
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-          No words to study!
+          No cards left for this session!
         </h2>
         <p className="mt-2 text-gray-500 dark:text-gray-400">
-          All word cards are mastered. Check back later for reviews, or add new words.
+          All words have been seen or mastered.
         </p>
-        <Link
-          href="/study"
-          className="mt-6 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Study
-        </Link>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <button
+            onClick={() => {
+              resetProgress('word');
+              router.refresh();
+            }}
+            className="inline-flex items-center gap-2 rounded-xl border-2 border-amber-200 bg-white px-6 py-3 font-semibold text-amber-700 transition-colors hover:bg-amber-50 dark:border-amber-800/50 dark:bg-gray-800 dark:text-amber-400 dark:hover:bg-amber-900/20"
+          >
+            <RotateCcw className="h-4 w-4" />
+            Reset Word Progress
+          </button>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
+          >
+            Go to Dashboard
+          </Link>
+        </div>
       </div>
     );
   }
 
-  // Session complete
+  // Session complete — summary screen
   if (isComplete) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
@@ -103,22 +81,28 @@ export default function StudyWordsPage() {
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
           Session Complete!
         </h2>
-        <p className="mt-2 text-gray-500 dark:text-gray-400">
-          You reviewed {completed} word{completed !== 1 ? 's' : ''} in this session.
-        </p>
+        <div className="mt-4 space-y-2">
+          <p className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-300">
+            Words studied: <span className="font-bold">{completed}</span>
+          </p>
+          <p className="flex items-center justify-center gap-2 text-green-600 dark:text-green-400">
+            <Check className="h-4 w-4" />
+            Correct on first try: <span className="font-bold">{correctOnFirst}</span>
+          </p>
+          {needReview > 0 && (
+            <p className="flex items-center justify-center gap-2 text-amber-600 dark:text-amber-400">
+              <AlertCircle className="h-4 w-4" />
+              Need review: <span className="font-bold">{needReview}</span>
+            </p>
+          )}
+        </div>
         <div className="mt-6 flex gap-3">
-          <button
-            onClick={() => router.refresh()}
-            className="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
-          >
-            Study Again
-          </button>
           <Link
-            href="/study"
-            className="inline-flex items-center gap-2 rounded-xl border-2 border-gray-200 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+            href="/"
+            className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
           >
             <ArrowLeft className="h-4 w-4" />
-            Study Modes
+            Back to Dashboard
           </Link>
         </div>
       </div>
@@ -130,11 +114,11 @@ export default function StudyWordsPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <Link
-          href="/study"
+          href="/"
           className="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
         >
           <ArrowLeft className="h-4 w-4" />
-          Study Modes
+          Dashboard
         </Link>
         <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
           Word {Math.min(completed + 1, sessionTotal)} of {sessionTotal}
@@ -152,10 +136,10 @@ export default function StudyWordsPage() {
       </div>
 
       {/* Current card */}
-      {currentCard && (
+      {typedCard && (
         <WordCard
           key={cardKey}
-          card={currentCard}
+          card={typedCard}
           options={wordOptions}
           onCorrect={handleCorrect}
           onWrong={handleWrong}

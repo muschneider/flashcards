@@ -3,15 +3,15 @@
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, MessageSquare, Shuffle } from 'lucide-react';
 import { useCards } from '@/context/CardContext';
-import { getDueCards } from '@/lib/studyUtils';
-import { FlashCard } from '@/lib/types';
+import { getTypeStats } from '@/lib/studyQueue';
 
 export default function StudyPage() {
   const { cards, wordCards, sentenceCards } = useCards();
 
-  const dueAll = getDueCards(cards);
-  const dueWords = getDueCards(wordCards as FlashCard[]);
-  const dueSentences = getDueCards(sentenceCards as FlashCard[]);
+  const wordStats = getTypeStats(cards, 'word');
+  const sentenceStats = getTypeStats(cards, 'sentence');
+  const allUnseen = wordStats.unseen + sentenceStats.unseen;
+  const allDue = wordStats.dueForReview + sentenceStats.dueForReview;
 
   return (
     <div className="space-y-8">
@@ -43,7 +43,7 @@ export default function StudyPage() {
           title="Words"
           description="Practice vocabulary with multiple choice"
           color="indigo"
-          dueCount={dueWords.length}
+          dueCount={wordStats.unseen + wordStats.dueForReview}
           totalCount={wordCards.length}
         />
         <ModeCard
@@ -52,7 +52,7 @@ export default function StudyPage() {
           title="Sentences"
           description="Arrange words to form correct sentences"
           color="emerald"
-          dueCount={dueSentences.length}
+          dueCount={sentenceStats.unseen + sentenceStats.dueForReview}
           totalCount={sentenceCards.length}
         />
         <ModeCard
@@ -61,7 +61,7 @@ export default function StudyPage() {
           title="All Cards"
           description="Mix words and sentences together"
           color="purple"
-          dueCount={dueAll.length}
+          dueCount={allUnseen + allDue}
           totalCount={cards.length}
         />
       </div>

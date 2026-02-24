@@ -9,17 +9,18 @@ import { saveState } from '@/lib/storage';
 
 // ─── Inner component that persists unified state ────────
 function StatePersister({ children }: { children: React.ReactNode }) {
-  const { cards, hydrated } = useCards();
+  const { cards, settings, hydrated } = useCards();
   const { theme } = useTheme();
 
   useEffect(() => {
     if (!hydrated) return; // don't overwrite with empty state before load
     saveState({
-      version: 1,
+      version: 2,
       theme,
+      settings,
       cardProgress: extractProgress(cards),
     });
-  }, [cards, theme, hydrated]);
+  }, [cards, settings, theme, hydrated]);
 
   // Show loading skeleton while hydrating to avoid flash of wrong state
   if (!hydrated) {

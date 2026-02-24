@@ -3,6 +3,7 @@ import vocab from '@/data/vocab.json';
 
 const defaultStatus: CardStatus = {
   mastered: false,
+  seen: false,
   reviewAfter: null,
   attempts: 0,
   correctCount: 0,

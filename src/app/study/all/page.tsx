@@ -1,77 +1,48 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
-import { ArrowLeft, PartyPopper } from 'lucide-react';
+import { useMemo } from 'react';
+import { ArrowLeft, PartyPopper, Check, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useCards } from '@/context/CardContext';
-import { getDueCards, shuffle, generateWordOptions } from '@/lib/studyUtils';
-import { FlashCard, WordCard as WordCardType } from '@/lib/types';
+import { generateWordOptions } from '@/lib/studyUtils';
+import { WordCard as WordCardType } from '@/lib/types';
+import { useStudySession } from '@/hooks/useStudySession';
 import WordCard from '@/components/WordCard';
 import SentenceCard from '@/components/SentenceCard';
 
 export default function StudyAllPage() {
-  const router = useRouter();
-  const { cards, wordCards, markCorrect, markWrong } = useCards();
+  const { cards, wordCards, settings } = useCards();
 
-  const [queue, setQueue] = useState<FlashCard[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [completed, setCompleted] = useState(0);
-  const [sessionTotal, setSessionTotal] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-  const [cardKey, setCardKey] = useState(0);
-
-  // Initialize study session
-  useEffect(() => {
-    const dueCards = getDueCards(cards);
-    const shuffled = shuffle(dueCards);
-    setQueue(shuffled);
-    setSessionTotal(shuffled.length);
-    setCurrentIndex(0);
-    setCompleted(0);
-    setIsComplete(shuffled.length === 0);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const currentCard = queue[currentIndex] || null;
+  const {
+    currentCard,
+    completed,
+    correctOnFirst,
+    needReview,
+    sessionTotal,
+    isComplete,
+    cardKey,
+    handleCorrect,
+    handleWrong,
+  } = useStudySession({
+    queueOptions: [
+      {
+        type: 'word',
+        allCards: cards,
+        cardsPerSession: settings.words.cardsPerSession,
+      },
+      {
+        type: 'sentence',
+        allCards: cards,
+        cardsPerSession: settings.sentences.cardsPerSession,
+      },
+    ],
+  });
 
   // Generate options for word cards
   const wordOptions = useMemo(() => {
     if (!currentCard || currentCard.type !== 'word') return [];
     return generateWordOptions(currentCard as WordCardType, wordCards);
   }, [currentCard, wordCards]);
-
-  const advanceToNext = useCallback(() => {
-    setCompleted((prev) => prev + 1);
-    setCardKey((prev) => prev + 1);
-
-    if (currentIndex + 1 >= queue.length) {
-      setIsComplete(true);
-    } else {
-      setCurrentIndex((prev) => prev + 1);
-    }
-  }, [currentIndex, queue.length]);
-
-  const handleCorrect = useCallback(() => {
-    if (!currentCard) return;
-    markCorrect(currentCard.id);
-    advanceToNext();
-  }, [currentCard, markCorrect, advanceToNext]);
-
-  const handleWrong = useCallback(() => {
-    if (!currentCard) return;
-    markWrong(currentCard.id);
-
-    // Re-insert the card later in the queue
-    setQueue((prev) => {
-      const newQueue = [...prev];
-      const reinsertAt = Math.min(currentIndex + 4, newQueue.length);
-      newQueue.splice(reinsertAt, 0, currentCard);
-      return newQueue;
-    });
-    setSessionTotal((prev) => prev + 1);
-    setCardKey((prev) => prev + 1);
-    setCurrentIndex((prev) => prev + 1);
-  }, [currentCard, markWrong, currentIndex]);
 
   // Empty state
   if (isComplete && sessionTotal === 0) {
@@ -82,20 +53,20 @@ export default function StudyAllPage() {
           No cards to study!
         </h2>
         <p className="mt-2 text-gray-500 dark:text-gray-400">
-          All cards are mastered. Check back later for reviews, or add new cards.
+          All cards have been seen or mastered. Reset progress in Settings to study again.
         </p>
         <Link
-          href="/study"
+          href="/"
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-purple-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-purple-700"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Study
+          Back to Dashboard
         </Link>
       </div>
     );
   }
 
-  // Session complete
+  // Session complete — summary
   if (isComplete) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
@@ -103,22 +74,28 @@ export default function StudyAllPage() {
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
           Session Complete!
         </h2>
-        <p className="mt-2 text-gray-500 dark:text-gray-400">
-          You reviewed {completed} card{completed !== 1 ? 's' : ''} in this session.
-        </p>
+        <div className="mt-4 space-y-2">
+          <p className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-300">
+            Cards studied: <span className="font-bold">{completed}</span>
+          </p>
+          <p className="flex items-center justify-center gap-2 text-green-600 dark:text-green-400">
+            <Check className="h-4 w-4" />
+            Correct on first try: <span className="font-bold">{correctOnFirst}</span>
+          </p>
+          {needReview > 0 && (
+            <p className="flex items-center justify-center gap-2 text-amber-600 dark:text-amber-400">
+              <AlertCircle className="h-4 w-4" />
+              Need review: <span className="font-bold">{needReview}</span>
+            </p>
+          )}
+        </div>
         <div className="mt-6 flex gap-3">
-          <button
-            onClick={() => router.refresh()}
-            className="rounded-xl bg-purple-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-purple-700"
-          >
-            Study Again
-          </button>
           <Link
-            href="/study"
-            className="inline-flex items-center gap-2 rounded-xl border-2 border-gray-200 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+            href="/"
+            className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-purple-700"
           >
             <ArrowLeft className="h-4 w-4" />
-            Study Modes
+            Back to Dashboard
           </Link>
         </div>
       </div>
@@ -130,11 +107,11 @@ export default function StudyAllPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <Link
-          href="/study"
+          href="/"
           className="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
         >
           <ArrowLeft className="h-4 w-4" />
-          Study Modes
+          Dashboard
         </Link>
         <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
           Card {Math.min(completed + 1, sessionTotal)} of {sessionTotal}

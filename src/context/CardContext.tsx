@@ -1,14 +1,15 @@
 'use client';
 
-import React, { createContext, useContext, useReducer, useCallback, useState, useEffect } from 'react';
-import { FlashCard, WordCard, SentenceCard, CardStatus, PersistedState } from '@/lib/types';
+import React, { createContext, useContext, useReducer, useCallback, useMemo, useSyncExternalStore, useState, useEffect } from 'react';
+import { FlashCard, WordCard, SentenceCard, CardStatus, PersistedState, SessionSettings } from '@/lib/types';
 import { defaultWordCards, defaultSentenceCards } from '@/lib/defaultCards';
 import { getNextReviewTime } from '@/lib/studyUtils';
-import { loadState } from '@/lib/storage';
+import { loadState, DEFAULT_SETTINGS } from '@/lib/storage';
 
 // ─── State ──────────────────────────────────────────────
 type CardState = {
   cards: FlashCard[];
+  settings: SessionSettings;
   nextId: number;
 };
 
@@ -19,11 +20,18 @@ type CardAction =
   | { type: 'DELETE_CARD'; id: string }
   | { type: 'MARK_CORRECT'; id: string }
   | { type: 'MARK_WRONG'; id: string }
+  | { type: 'MARK_SEEN'; payload: { cardId: string } }
   | { type: 'RESET_ALL' }
+  | { type: 'RESET_PROGRESS'; payload: { cardType: 'word' | 'sentence' } }
+  | { type: 'UPDATE_SETTINGS'; payload: Partial<SessionSettings> }
   | { type: 'HYDRATE'; payload: PersistedState };
+
+// Wrong answers become "due for review" after 2 minutes
+const WRONG_REVIEW_DELAY_MS = 2 * 60 * 1000;
 
 const defaultStatus: CardStatus = {
   mastered: false,
+  seen: false,
   reviewAfter: null,
   attempts: 0,
   correctCount: 0,
@@ -32,6 +40,7 @@ const defaultStatus: CardStatus = {
 
 const initialState: CardState = {
   cards: [...defaultWordCards, ...defaultSentenceCards],
+  settings: { ...DEFAULT_SETTINGS },
   nextId: 100,
 };
 
@@ -46,6 +55,7 @@ function cardReducer(state: CardState, action: CardAction): CardState {
         status: { ...defaultStatus },
       };
       return {
+        ...state,
         cards: [...state.cards, newCard],
         nextId: state.nextId + 1,
       };
@@ -62,6 +72,7 @@ function cardReducer(state: CardState, action: CardAction): CardState {
         status: { ...defaultStatus },
       };
       return {
+        ...state,
         cards: [...state.cards, newCard],
         nextId: state.nextId + 1,
       };
@@ -84,6 +95,7 @@ function cardReducer(state: CardState, action: CardAction): CardState {
             status: {
               ...c.status,
               mastered: true,
+              seen: true,
               attempts: c.status.attempts + 1,
               correctCount: newCorrectCount,
               reviewAfter: getNextReviewTime(newCorrectCount),
@@ -103,9 +115,27 @@ function cardReducer(state: CardState, action: CardAction): CardState {
             status: {
               ...c.status,
               mastered: false,
+              seen: true,
               attempts: c.status.attempts + 1,
-              reviewAfter: null,
+              reviewAfter: Date.now() + WRONG_REVIEW_DELAY_MS,
               lastSeenAt: Date.now(),
+            },
+          };
+        }),
+      };
+
+    case 'MARK_SEEN':
+      return {
+        ...state,
+        cards: state.cards.map((c) => {
+          if (c.id !== action.payload.cardId) return c;
+          if (c.status.seen) return c; // already seen, no-op
+          return {
+            ...c,
+            status: {
+              ...c.status,
+              seen: true,
+              lastSeenAt: c.status.lastSeenAt ?? Date.now(),
             },
           };
         }),
@@ -120,10 +150,34 @@ function cardReducer(state: CardState, action: CardAction): CardState {
         })),
       };
 
-    case 'HYDRATE': {
-      const { cardProgress } = action.payload;
+    case 'RESET_PROGRESS': {
+      const { cardType } = action.payload;
       return {
         ...state,
+        cards: state.cards.map((c) => {
+          if (c.type !== cardType) return c;
+          return {
+            ...c,
+            status: { ...defaultStatus },
+          };
+        }),
+      };
+    }
+
+    case 'UPDATE_SETTINGS':
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          ...action.payload,
+        },
+      };
+
+    case 'HYDRATE': {
+      const { cardProgress, settings } = action.payload;
+      return {
+        ...state,
+        settings: settings ?? { ...DEFAULT_SETTINGS },
         cards: state.cards.map((c) => {
           const saved = cardProgress[c.id];
           if (!saved) return c;
@@ -131,6 +185,7 @@ function cardReducer(state: CardState, action: CardAction): CardState {
             ...c,
             status: {
               mastered: saved.mastered,
+              seen: saved.seen ?? false,
               reviewAfter: saved.reviewAfter,
               attempts: saved.attempts,
               correctCount: saved.correctCount,
@@ -151,7 +206,9 @@ export function extractProgress(cards: FlashCard[]): PersistedState['cardProgres
   const progress: PersistedState['cardProgress'] = {};
   for (const card of cards) {
     progress[card.id] = {
+      type: card.type,
       mastered: card.status.mastered,
+      seen: card.status.seen,
       reviewAfter: card.status.reviewAfter,
       attempts: card.status.attempts,
       correctCount: card.status.correctCount,
@@ -166,12 +223,16 @@ type CardContextType = {
   cards: FlashCard[];
   wordCards: WordCard[];
   sentenceCards: SentenceCard[];
+  settings: SessionSettings;
   addWord: (english: string, portuguese: string) => void;
   addSentence: (english: string, portuguese: string) => void;
   deleteCard: (id: string) => void;
   markCorrect: (id: string) => void;
   markWrong: (id: string) => void;
+  markSeen: (cardId: string) => void;
   resetAll: () => void;
+  resetProgress: (cardType: 'word' | 'sentence') => void;
+  updateSettings: (settings: Partial<SessionSettings>) => void;
   hydrated: boolean;
   stats: {
     total: number;
@@ -182,6 +243,23 @@ type CardContextType = {
 };
 
 const CardContext = createContext<CardContextType | undefined>(undefined);
+
+// External time store — updates every 30s so dueForReview stays fresh
+// without calling Date.now() during render
+let _now = Date.now();
+const _listeners = new Set<() => void>();
+if (typeof window !== 'undefined') {
+  setInterval(() => {
+    _now = Date.now();
+    _listeners.forEach((l) => l());
+  }, 30_000);
+}
+function subscribeToTime(listener: () => void) {
+  _listeners.add(listener);
+  return () => { _listeners.delete(listener); };
+}
+function getTimeSnapshot() { return _now; }
+function getServerTimeSnapshot() { return 0; }
 
 export function CardProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cardReducer, initialState);
@@ -215,22 +293,34 @@ export function CardProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: 'MARK_WRONG', id });
   }, []);
 
+  const markSeen = useCallback((cardId: string) => {
+    dispatch({ type: 'MARK_SEEN', payload: { cardId } });
+  }, []);
+
   const resetAll = useCallback(() => {
     dispatch({ type: 'RESET_ALL' });
+  }, []);
+
+  const resetProgress = useCallback((cardType: 'word' | 'sentence') => {
+    dispatch({ type: 'RESET_PROGRESS', payload: { cardType } });
+  }, []);
+
+  const updateSettings = useCallback((settings: Partial<SessionSettings>) => {
+    dispatch({ type: 'UPDATE_SETTINGS', payload: settings });
   }, []);
 
   const wordCards = state.cards.filter((c): c is WordCard => c.type === 'word');
   const sentenceCards = state.cards.filter((c): c is SentenceCard => c.type === 'sentence');
 
-  const now = Date.now();
-  const stats = {
+  const now = useSyncExternalStore(subscribeToTime, getTimeSnapshot, getServerTimeSnapshot);
+  const stats = useMemo(() => ({
     total: state.cards.length,
     mastered: state.cards.filter((c) => c.status.mastered).length,
     pending: state.cards.filter((c) => !c.status.mastered).length,
     dueForReview: state.cards.filter(
-      (c) => c.status.mastered && c.status.reviewAfter !== null && c.status.reviewAfter <= now
+      (c) => c.status.mastered && c.status.reviewAfter !== null && c.status.reviewAfter <= now,
     ).length,
-  };
+  }), [state.cards, now]);
 
   return (
     <CardContext.Provider
@@ -238,12 +328,16 @@ export function CardProvider({ children }: { children: React.ReactNode }) {
         cards: state.cards,
         wordCards,
         sentenceCards,
+        settings: state.settings,
         addWord,
         addSentence,
         deleteCard,
         markCorrect,
         markWrong,
+        markSeen,
         resetAll,
+        resetProgress,
+        updateSettings,
         hydrated,
         stats,
       }}
