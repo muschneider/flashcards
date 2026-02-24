@@ -1,6 +1,81 @@
 {
   "words": [
-    { "english": "at least", "portuguese": "Pelo menos" },
+    {
+      "english": "Goofing off",
+      "portuguese": "Desperdiçar tempo, não fazer nada produtivo"
+    },
+    {
+      "english": "plenty of",
+      "portuguese": "Expressão para descrever uma quantidade grande (bastante)"
+    },
+    {
+      "english": "gives up",
+      "portuguese": "desiste"
+    },
+    {
+      "english": "What a Pity",
+      "portuguese": "Que pena"
+    },
+    {
+      "english": "Pretty Soon",
+      "portuguese": "Em breve"
+    },
+    {
+      "english": "You Bet",
+      "portuguese": "Pode apostar"
+    },
+    {
+      "english": "I Got It",
+      "portuguese": "Entendi"
+    },
+    {
+      "english": "As If",
+      "portuguese": "Até parece"
+    },
+    {
+      "english": "Wake Up",
+      "portuguese": "Acorda"
+    },
+    {
+      "english": "How Come",
+      "portuguese": "Como assim"
+    },
+    {
+      "english": "My Bad",
+      "portuguese": "Foi mal"
+    },
+    {
+      "english": "Sort of",
+      "portuguese": "Meio que, uma espécie de"
+    },
+    {
+      "english": "Brush up",
+      "portuguese": "Revisar, melhorar (algo que já se sabe)"
+    },
+    {
+      "english": "In fact",
+      "portuguese": "De fato"
+    },
+    {
+      "english": "Instead of",
+      "portuguese": "Em vez de"
+    },
+    {
+      "english": "Since",
+      "portuguese": "Já que"
+    },
+    {
+      "english": "Due to",
+      "portuguese": "Devido a"
+    },
+    {
+      "english": "Therefore",
+      "portuguese": "Portanto"
+    },
+    {
+      "english": "at least",
+      "portuguese": "Pelo menos"
+    },
     {
       "english": "further",
       "portuguese": "Mais distante, mais adiante ou mais"
@@ -13,36 +88,90 @@
       "english": "Worth",
       "portuguese": "Vale, valor; Valor ou importância de algo ou alguém; Ser digno ou merecedor"
     },
-    { "english": "Weird", "portuguese": "Estranho, esquisito" },
-    { "english": "Quiet", "portuguese": "Silencioso, tranquilo" },
-    { "english": "Quite", "portuguese": "Bastante, muito" },
-    { "english": "Rather", "portuguese": "Preferencialmente, mais, um pouco" },
-    { "english": "Achieve", "portuguese": "Alcançar, atingir" },
-    { "english": "Despite", "portuguese": "Apesar de" },
-    { "english": "Fairly", "portuguese": "Bastante, de maneira justa" },
-    { "english": "Gotchas", "portuguese": "Pegadinhas, truques, surpresas" },
-    { "english": "Another", "portuguese": "Outro, mais um" },
-    { "english": "Aware", "portuguese": "Consciente, ciente" },
+    {
+      "english": "Weird",
+      "portuguese": "Estranho, esquisito"
+    },
+    {
+      "english": "Quiet",
+      "portuguese": "Silencioso, tranquilo"
+    },
+    {
+      "english": "Quite",
+      "portuguese": "Bastante, muito"
+    },
+    {
+      "english": "Rather",
+      "portuguese": "Preferencialmente, mais, um pouco"
+    },
+    {
+      "english": "Achieve",
+      "portuguese": "Alcançar, atingir"
+    },
+    {
+      "english": "Despite",
+      "portuguese": "Apesar de"
+    },
+    {
+      "english": "Fairly",
+      "portuguese": "Bastante, de maneira justa"
+    },
+    {
+      "english": "Gotchas",
+      "portuguese": "Pegadinhas, truques, surpresas"
+    },
+    {
+      "english": "Another",
+      "portuguese": "Outro, mais um"
+    },
+    {
+      "english": "Aware",
+      "portuguese": "Consciente, ciente"
+    },
     {
       "english": "Breakthrough",
       "portuguese": "Avanço, descoberta importante"
     },
-    { "english": "Beach", "portuguese": "praia" },
+    {
+      "english": "Beach",
+      "portuguese": "praia"
+    },
     {
       "english": "Bitch",
       "portuguese": "cadela (literal), usado também como um insulto (gíria)"
     },
-    { "english": "Tough", "portuguese": "difícil, resistente" },
+    {
+      "english": "Tough",
+      "portuguese": "difícil, resistente"
+    },
     {
       "english": "Though",
       "portuguese": "embora, porém (no final da frase, dá ideia de mas)"
     },
-    { "english": "Thought", "portuguese": "pensamento, pensou" },
-    { "english": "Through", "portuguese": "através, por" },
-    { "english": "Thorough", "portuguese": "minucioso, completo" },
-    { "english": "Throughout", "portuguese": "por todo, ao longo de" },
-    { "english": "Brought", "portuguese": "trouxe" },
-    { "english": "Bought", "portuguese": "comprou" },
+    {
+      "english": "Thought",
+      "portuguese": "pensamento, pensou"
+    },
+    {
+      "english": "Through",
+      "portuguese": "através, por"
+    },
+    {
+      "english": "Thorough",
+      "portuguese": "minucioso, completo"
+    },
+    {
+      "english": "Throughout",
+      "portuguese": "por todo, ao longo de"
+    },
+    {
+      "english": "Brought",
+      "portuguese": "trouxe"
+    },
+    {
+      "english": "Bought",
+      "portuguese": "comprou"
+    },
     {
       "english": "Rule",
       "portuguese": "Regra, norma ou princípio; Governar ou controlar algo"
@@ -51,34 +180,24 @@
       "english": "Role",
       "portuguese": "Papel, função ou posição que alguém desempenha"
     },
-    { "english": "unfortunately", "portuguese": "Infelizmente" },
-    { "english": "towel", "portuguese": "Toalha" },
-    { "english": "scattered", "portuguese": "Espalhado; disperso; dispersou" },
-    { "english": "Hopefully", "portuguese": "Tomara" }
+    {
+      "english": "unfortunately",
+      "portuguese": "Infelizmente"
+    },
+    {
+      "english": "towel",
+      "portuguese": "Toalha"
+    },
+    {
+      "english": "scattered",
+      "portuguese": "Espalhado; disperso; dispersou"
+    },
+    {
+      "english": "Hopefully",
+      "portuguese": "Tomara"
+    }
   ],
   "sentences": [
-    {
-      "english": "plenty of",
-      "portuguese": "Expressão para descrever uma quantidade grande (bastante)"
-    },
-    { "english": "gives up", "portuguese": "desiste" },
-    { "english": "What a Pity", "portuguese": "Que pena" },
-    { "english": "Pretty Soon", "portuguese": "Em breve" },
-    { "english": "You Bet", "portuguese": "Pode apostar" },
-    { "english": "I Got It", "portuguese": "Entendi" },
-    { "english": "As If", "portuguese": "Até parece" },
-    { "english": "Wake Up", "portuguese": "Acorda" },
-    { "english": "How Come", "portuguese": "Como assim" },
-    { "english": "My Bad", "portuguese": "Foi mal" },
-    { "english": "Sort of", "portuguese": "Meio que, uma espécie de" },
-    {
-      "english": "Brush up",
-      "portuguese": "Revisar, melhorar (algo que já se sabe)"
-    },
-    {
-      "english": "Goofing off",
-      "portuguese": "Desperdiçar tempo, não fazer nada produtivo"
-    },
     {
       "english": "Have you guys ever gone camping ?",
       "portuguese": "Vocês já foram acampar ?"
@@ -119,7 +238,10 @@
       "english": "Only six weeks' worth of research data",
       "portuguese": "Apenas seis semanas de dados de pesquisa"
     },
-    { "english": "Don't be a jerk", "portuguese": "Não seja um idiota" },
+    {
+      "english": "Don't be a jerk",
+      "portuguese": "Não seja um idiota"
+    },
     {
       "english": "In Ireland, it's nice to bring flowers when you go to someone's house.",
       "portuguese": "Na Irlanda, é simpático levar flores quando você vai a casa de alguém."
@@ -144,7 +266,10 @@
       "english": "This is the tastiest soup that I've ever had!",
       "portuguese": "Esta é a sopa mais saborosa que já comi!"
     },
-    { "english": "What a shame!", "portuguese": "Que pena!" },
+    {
+      "english": "What a shame!",
+      "portuguese": "Que pena!"
+    },
     {
       "english": "The king was kind to everyone, even his lazy horse.",
       "portuguese": "O rei era amável com todos, mesmo com o cavalo preguiçoso dele."
@@ -185,36 +310,78 @@
       "english": "You should try on this green sweater. It's going to look good on you.",
       "portuguese": "Você deveria experimentar esse suéter verde"
     },
-    { "english": "In fact", "portuguese": "De fato" },
-    { "english": "Instead of", "portuguese": "Em vez de" },
-    { "english": "Since", "portuguese": "Já que" },
-    { "english": "Due to", "portuguese": "Devido a" },
-    { "english": "Therefore", "portuguese": "Portanto" },
-    { "english": "In the meantime", "portuguese": "Enquanto isso" },
-    { "english": "As usual", "portuguese": "Como sempre" },
-    { "english": "I mean it", "portuguese": "Estou falando sério" },
-    { "english": "I wish I knew", "portuguese": "Bem que eu queria saber" },
+    {
+      "english": "In the meantime",
+      "portuguese": "Enquanto isso"
+    },
+    {
+      "english": "As usual",
+      "portuguese": "Como sempre"
+    },
+    {
+      "english": "I mean it",
+      "portuguese": "Estou falando sério"
+    },
+    {
+      "english": "I wish I knew",
+      "portuguese": "Bem que eu queria saber"
+    },
     {
       "english": "I'm just browsing",
       "portuguese": "Estou só dando uma olhada"
     },
-    { "english": "Let's split it", "portuguese": "Vamos dividir" },
-    { "english": "Once in a while", "portuguese": "De vez em quando" },
-    { "english": "By the way", "portuguese": "A propósito" },
-    { "english": "Let me think", "portuguese": "Deixa eu pensar" },
-    { "english": "It's up to you", "portuguese": "Você que sabe" },
-    { "english": "I'm on my way", "portuguese": "Tô indo" },
-    { "english": "Sounds good", "portuguese": "Parece bom" },
-    { "english": "Just kidding", "portuguese": "Brincadeira" },
-    { "english": "I can't wait", "portuguese": "Mal posso esperar" },
-    { "english": "What do you mean?", "portuguese": "Como assim?" },
-    { "english": "Don't worry about it", "portuguese": "Deixa pra lá" },
-    { "english": "Take your time", "portuguese": "Sem pressa" },
+    {
+      "english": "Let's split it",
+      "portuguese": "Vamos dividir"
+    },
+    {
+      "english": "Once in a while",
+      "portuguese": "De vez em quando"
+    },
+    {
+      "english": "By the way",
+      "portuguese": "A propósito"
+    },
+    {
+      "english": "Let me think",
+      "portuguese": "Deixa eu pensar"
+    },
+    {
+      "english": "It's up to you",
+      "portuguese": "Você que sabe"
+    },
+    {
+      "english": "I'm on my way",
+      "portuguese": "Tô indo"
+    },
+    {
+      "english": "Sounds good",
+      "portuguese": "Parece bom"
+    },
+    {
+      "english": "Just kidding",
+      "portuguese": "Brincadeira"
+    },
+    {
+      "english": "I can't wait",
+      "portuguese": "Mal posso esperar"
+    },
+    {
+      "english": "What do you mean?",
+      "portuguese": "Como assim?"
+    },
+    {
+      "english": "Don't worry about it",
+      "portuguese": "Deixa pra lá"
+    },
+    {
+      "english": "Take your time",
+      "portuguese": "Sem pressa"
+    },
     {
       "english": "It's been a while since we've talked",
       "portuguese": "Já faz um tempo que não conversamos"
     },
-
     {
       "english": "I am learning English right now",
       "portuguese": "Eu estou aprendendo inglês neste momento"
