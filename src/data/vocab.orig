@@ -1,0 +1,521 @@
+{
+  "words": [
+    {
+      "english": "goofing off",
+      "portuguese": "Desperdiçar tempo, não fazer nada produtivo",
+      "pronuncia": "gufing óf",
+      "tipo": "phrasal verb",
+      "example": "He's goofing off instead of doing his homework.",
+      "random_words": "lazy, boss, work, clock, bored"
+    },
+    {
+      "english": "plenty of",
+      "portuguese": "Expressão para descrever uma quantidade grande (bastante)",
+      "pronuncia": "pléni óv",
+      "example": "There are plenty of reasons to learn English.",
+      "random_words": "basket, full, overflow, count, jar"
+    },
+    {
+      "english": "gives up",
+      "portuguese": "desiste",
+      "random_words": "game, try, fail, flag, stop"
+    },
+    {
+      "english": "What a Pity",
+      "portuguese": "Que pena",
+      "random_words": "sad, crying, bad, news, tragedy"
+    },
+    {
+      "english": "Pretty Soon",
+      "portuguese": "Em breve",
+      "random_words": "watch, calendar, wait, future, hurry"
+    },
+    {
+      "english": "You Bet",
+      "portuguese": "Pode apostar",
+      "random_words": "casino, trust, promise, sure, money"
+    },
+    {
+      "english": "I Got It",
+      "portuguese": "Entendi",
+      "random_words": "brain, idea, lightbulb, smart, click"
+    },
+    {
+      "english": "As If",
+      "portuguese": "Até parece",
+      "random_words": "fake, lie, doubt, eye, sarcasm"
+    },
+    {
+      "english": "Wake Up",
+      "portuguese": "Acorda",
+      "random_words": "bed, alarm, morning, coffee, stretch"
+    },
+    {
+      "english": "How Come",
+      "portuguese": "Como assim",
+      "random_words": "question, reason, mystery, explain, why"
+    },
+    {
+      "english": "My Bad",
+      "portuguese": "Foi mal",
+      "random_words": "accident, spill, sorry, fault, oops"
+    },
+    {
+      "english": "Sort of",
+      "portuguese": "Meio que, uma espécie de",
+      "random_words": "middle, gray, maybe, fuzzy, almost"
+    },
+    {
+      "english": "Brush up",
+      "portuguese": "Revisar, melhorar (algo que já se sabe)",
+      "random_words": "study, rusty, practice, skill, book"
+    },
+    {
+      "english": "In fact",
+      "portuguese": "De fato",
+      "random_words": "truth, real, proof, evidence, logic"
+    },
+    {
+      "english": "Instead of",
+      "portuguese": "Em vez de",
+      "random_words": "choice, swap, option, other, switch"
+    },
+    {
+      "english": "Since",
+      "portuguese": "Já que",
+      "random_words": "time, past, reason, start, because"
+    },
+    {
+      "english": "Due to",
+      "portuguese": "Devido a",
+      "random_words": "cause, effect, blame, reason, happen"
+    },
+    {
+      "english": "Therefore",
+      "portuguese": "Portanto",
+      "random_words": "math, result, logic, end, conclusion"
+    },
+    {
+      "english": "at least",
+      "portuguese": "Pelo menos",
+      "random_words": "minimum, bottom, number, low, count"
+    },
+    {
+      "english": "further",
+      "portuguese": "Mais distante, mais adiante ou mais",
+      "random_words": "road, walk, distance, miles, map"
+    },
+    {
+      "english": "Mam'am",
+      "portuguese": "Forma polida de se dirigir a uma mulher (abreviação de 'madam')",
+      "random_words": "polite, lady, respect, formal, sir"
+    },
+    {
+      "english": "Worth",
+      "portuguese": "Vale, valor; Valor ou importância de algo ou alguém; Ser digno ou merecedor",
+      "random_words": "gold, price, cost, money, jewel"
+    },
+    {
+      "english": "Weird",
+      "portuguese": "Estranho, esquisito",
+      "random_words": "alien, ghost, crazy, normal, dream"
+    },
+    {
+      "english": "Quiet",
+      "portuguese": "Silencioso, tranquilo",
+      "random_words": "library, mouse, shush, sound, sleep"
+    },
+    {
+      "english": "Quite",
+      "portuguese": "Bastante, muito",
+      "random_words": "amount, cup, full, degree, total"
+    },
+    {
+      "english": "Rather",
+      "portuguese": "Preferencialmente, mais, um pouco",
+      "random_words": "tea, coffee, choose, pick, prefer"
+    },
+    {
+      "english": "Achieve",
+      "portuguese": "Alcançar, atingir",
+      "random_words": "trophy, mountain, goal, medal, win"
+    },
+    {
+      "english": "Despite",
+      "portuguese": "Apesar de",
+      "random_words": "wall, block, push, hard, obstacle"
+    },
+    {
+      "english": "Fairly",
+      "portuguese": "Bastante, de maneira justa",
+      "random_words": "judge, court, scale, balance, equal"
+    },
+    {
+      "english": "Gotchas",
+      "portuguese": "Pegadinhas, truques, surpresas",
+      "random_words": "trap, code, bug, joke, hole"
+    },
+    {
+      "english": "Another",
+      "portuguese": "Outro, mais um",
+      "random_words": "second, next, one, extra, plus"
+    },
+    {
+      "english": "Aware",
+      "portuguese": "Consciente, ciente",
+      "random_words": "eyes, brain, notice, alert, mind"
+    },
+    {
+      "english": "Breakthrough",
+      "portuguese": "Avanço, descoberta importante",
+      "random_words": "science, lab, eureka, new, wall"
+    },
+    {
+      "english": "Beach",
+      "portuguese": "praia",
+      "random_words": "sand, ocean, sun, towel, wave"
+    },
+    {
+      "english": "Bitch",
+      "portuguese": "cadela (literal), usado também como um insulto (gíria)",
+      "random_words": "dog, puppy, vet, animal, rude"
+    },
+    {
+      "english": "Tough",
+      "portuguese": "difícil, resistente",
+      "random_words": "rock, muscle, fight, meat, hard"
+    },
+    {
+      "english": "Though",
+      "portuguese": "embora, porém (no final da frase, dá ideia de mas)",
+      "random_words": "but, however, sentence, link, grammar"
+    },
+    {
+      "english": "Thought",
+      "portuguese": "pensamento, pensou",
+      "random_words": "cloud, bubble, brain, idea, dream"
+    },
+    {
+      "english": "Through",
+      "portuguese": "através, por",
+      "random_words": "tunnel, window, glass, door, ghost"
+    },
+    {
+      "english": "Thorough",
+      "portuguese": "minucioso, completo",
+      "random_words": "list, check, clean, audit, detail"
+    },
+    {
+      "english": "Throughout",
+      "portuguese": "por todo, ao longo de",
+      "random_words": "space, time, everywhere, during, all"
+    },
+    {
+      "english": "Brought",
+      "portuguese": "trouxe",
+      "random_words": "carry, bag, hand, gift, party"
+    },
+    {
+      "english": "Bought",
+      "portuguese": "comprou",
+      "random_words": "shop, mall, card, pay, receipt"
+    },
+    {
+      "english": "Rule",
+      "portuguese": "Regra, norma ou princípio; Governar ou controlar algo",
+      "random_words": "king, law, crown, judge, game"
+    },
+    {
+      "english": "Role",
+      "portuguese": "Papel, função ou posição que alguém desempenha",
+      "random_words": "movie, actor, stage, job, play"
+    },
+    {
+      "english": "unfortunately",
+      "portuguese": "Infelizmente",
+      "random_words": "luck, sad, rain, fail, bad"
+    },
+    {
+      "english": "towel",
+      "portuguese": "Toalha",
+      "random_words": "bath, dry, shower, pool, cotton"
+    },
+    {
+      "english": "scattered",
+      "portuguese": "Espalhado; disperso; dispersou",
+      "random_words": "mess, floor, dust, wind, drop"
+    },
+    {
+      "english": "Hopefully",
+      "portuguese": "Tomara",
+      "random_words": "wish, pray, dream, fingers, cross"
+    }
+  ],
+  "sentences": [
+    {
+      "english": "Have you guys ever gone camping ?",
+      "portuguese": "Vocês já foram acampar ?",
+      "random_words": "tent, fire, wood, bear, stars"
+    },
+    {
+      "english": "He gave her a kiss on the cheek",
+      "portuguese": "Ele deu um beijo na bochecha dela",
+      "random_words": "love, romance, face, lips, date"
+    },
+    {
+      "english": "Which bowl would you like your ice cream in ?",
+      "portuguese": "Em qual tigela gostaria do seu sorvete ?",
+      "random_words": "spoon, chocolate, vanilla, cold, dessert"
+    },
+    {
+      "english": "Am I coming through ok ?",
+      "portuguese": "Está me escutando ?",
+      "random_words": "radio, phone, signal, voice, hear"
+    },
+    {
+      "english": "People are making fun of me for hugging my friends. They said it's too much.",
+      "portuguese": "As pessoas estão tirando sarro de mim por abraçar meus amigos. Dizem que é demais.",
+      "random_words": "bully, embrace, arms, sad, school"
+    },
+    {
+      "english": "And do you want to know something even cooler?",
+      "portuguese": "E quer saber algo ainda mais legal ?",
+      "random_words": "ice, surprise, news, fun, secret"
+    },
+    {
+      "english": "Have all the students finished reviewing the lesson yet ?",
+      "portuguese": "Todos os alunos já terminaram de rever a lição?",
+      "random_words": "school, teacher, book, test, pencil"
+    },
+    {
+      "english": "Have the kids fallen asleep yet ?",
+      "portuguese": "As crianças já caíram no sono?",
+      "random_words": "bed, night, dreams, quiet, pillow"
+    },
+    {
+      "english": "Have you ever fallen asleep in class ?",
+      "portuguese": "Você caiu no sono na aula alguma vez?",
+      "random_words": "boring, desk, snore, teacher, tired"
+    },
+    {
+      "english": "Only six weeks' worth of research data",
+      "portuguese": "Apenas seis semanas de dados de pesquisa",
+      "random_words": "science, computer, graph, lab, study"
+    },
+    {
+      "english": "Don't be a jerk",
+      "portuguese": "Não seja um idiota",
+      "random_words": "rude, mean, fight, polite, friend"
+    },
+    {
+      "english": "In Ireland, it's nice to bring flowers when you go to someone's house.",
+      "portuguese": "Na Irlanda, é simpático levar flores quando você vai a casa de alguém.",
+      "random_words": "gift, vase, visit, guest, door"
+    },
+    {
+      "english": "it's nice to meet you",
+      "portuguese": "Prazer em conhecê-lo",
+      "random_words": "handshake, hello, name, polite, intro"
+    },
+    {
+      "english": "Which sauce would you like the pasta with ?",
+      "portuguese": "Você gostaria da massa com qual molho ?",
+      "random_words": "tomato, cheese, fork, plate, dinner"
+    },
+    {
+      "english": "She's been an engineer for seventeen years.",
+      "portuguese": "Ela é engenheira há dezessete anos.",
+      "random_words": "build, bridge, math, job, helmet"
+    },
+    {
+      "english": "That was the worst headache that I've ever had.",
+      "portuguese": "Essa foi a pior dor de cabeça que já tive.",
+      "random_words": "pill, pain, brain, doctor, sick"
+    },
+    {
+      "english": "This is the tastiest soup that I've ever had!",
+      "portuguese": "Esta é a sopa mais saborosa que já comi!",
+      "random_words": "spoon, hot, bowl, chef, salt"
+    },
+    {
+      "english": "What a shame!",
+      "portuguese": "Que pena!",
+      "random_words": "sad, pity, bad, loss, regret"
+    },
+    {
+      "english": "The king was kind to everyone, even his lazy horse.",
+      "portuguese": "O rei era amável com todos, mesmo com o cavalo preguiçoso dele.",
+      "random_words": "crown, castle, animal, ride, stable"
+    },
+    {
+      "english": "The ticket says the bus arrives at nine. But there's a delay...",
+      "portuguese": "O bilhete diz que o ônibus chega às nove. Mas há um atraso...",
+      "random_words": "wait, watch, road, stop, late"
+    },
+    {
+      "english": "It isn't an international flight, so you won't need to show your passport.",
+      "portuguese": "Não é um voo internacional, então você não precisará mostrar seu passaporte.",
+      "random_words": "plane, airport, travel, bag, gate"
+    },
+    {
+      "english": "How long does it take you to get home ?",
+      "portuguese": "Quanto tempo você demora para chegar em casa?",
+      "random_words": "drive, traffic, car, house, door"
+    },
+    {
+      "english": "That's such a shame!",
+      "portuguese": "Isso é uma pena e tanto!",
+      "random_words": "pity, bad, sad, sorry, bummer"
+    },
+    {
+      "english": "People still told stories about dragons, even many years later.",
+      "portuguese": "Pessoas ainda contavam histórias sobre dragões, mesmo muitos anos depois.",
+      "random_words": "fire, fly, myth, book, lizard"
+    },
+    {
+      "english": "What kind of bread would you like the ham on ?",
+      "portuguese": "Em que tipo de pão você gostaria do presunto ?",
+      "random_words": "sandwich, lunch, cheese, eat, bakery"
+    },
+    {
+      "english": "Have you ever tried onion sauce ?",
+      "portuguese": "Você já experimentou molho de cebola ?",
+      "random_words": "cook, kitchen, smell, taste, food"
+    },
+    {
+      "english": "There's a no parking sign.",
+      "portuguese": "Há uma placa de proibido estacionar.",
+      "random_words": "car, street, fine, police, road"
+    },
+    {
+      "english": "You should try on this green sweater. It's going to look good on you.",
+      "portuguese": "Você deveria experimentar esse suéter verde",
+      "random_words": "clothes, store, wool, wear, mirror"
+    },
+    {
+      "english": "In the meantime",
+      "portuguese": "Enquanto isso",
+      "random_words": "wait, pause, clock, hold, during"
+    },
+    {
+      "english": "As usual",
+      "portuguese": "Como sempre",
+      "random_words": "normal, routine, habit, same, daily"
+    },
+    {
+      "english": "I mean it",
+      "portuguese": "Estou falando sério",
+      "random_words": "truth, serious, promise, real, honest"
+    },
+    {
+      "english": "I wish I knew",
+      "portuguese": "Bem que eu queria saber",
+      "random_words": "question, mystery, answer, brain, ask"
+    },
+    {
+      "english": "I'm just browsing",
+      "portuguese": "Estou só dando uma olhada",
+      "random_words": "shop, store, buy, eyes, look"
+    },
+    {
+      "english": "Let's split it",
+      "portuguese": "Vamos dividir",
+      "random_words": "money, bill, check, share, math"
+    },
+    {
+      "english": "Once in a while",
+      "portuguese": "De vez em quando",
+      "random_words": "rare, time, calendar, moon, sometimes"
+    },
+    {
+      "english": "By the way",
+      "portuguese": "A propósito",
+      "random_words": "topic, talk, subject, chat, add"
+    },
+    {
+      "english": "Let me think",
+      "portuguese": "Deixa eu pensar",
+      "random_words": "brain, pause, idea, memory, mind"
+    },
+    {
+      "english": "It's up to you",
+      "portuguese": "Você que sabe",
+      "random_words": "choice, decide, pick, option, boss"
+    },
+    {
+      "english": "I'm on my way",
+      "portuguese": "Tô indo",
+      "random_words": "car, road, travel, arrive, gps"
+    },
+    {
+      "english": "Sounds good",
+      "portuguese": "Parece bom",
+      "random_words": "music, ear, agree, plan, yes"
+    },
+    {
+      "english": "Just kidding",
+      "portuguese": "Brincadeira",
+      "random_words": "joke, laugh, smile, funny, lie"
+    },
+    {
+      "english": "I can't wait",
+      "portuguese": "Mal posso esperar",
+      "random_words": "excited, hurry, fast, time, happy"
+    },
+    {
+      "english": "What do you mean?",
+      "portuguese": "Como assim?",
+      "random_words": "explain, confuse, why, ask, talk"
+    },
+    {
+      "english": "Don't worry about it",
+      "portuguese": "Deixa pra lá",
+      "random_words": "relax, calm, peace, okay, chill"
+    },
+    {
+      "english": "Take your time",
+      "portuguese": "Sem pressa",
+      "random_words": "slow, wait, rush, clock, patient"
+    },
+    {
+      "english": "It's been a while since we've talked",
+      "portuguese": "Já faz um tempo que não conversamos",
+      "random_words": "friend, miss, phone, long, old"
+    },
+    {
+      "english": "I am learning English right now",
+      "portuguese": "Eu estou aprendendo inglês neste momento",
+      "random_words": "study, book, student, class, speak"
+    },
+    {
+      "english": "The dog is very happy",
+      "portuguese": "O cachorro está muito feliz",
+      "random_words": "tail, bone, park, wag, bark"
+    },
+    {
+      "english": "She reads a book every day",
+      "portuguese": "Ela lê um livro todos os dias",
+      "random_words": "page, library, story, quiet, paper"
+    },
+    {
+      "english": "We love to eat food",
+      "portuguese": "Nós amamos comer comida",
+      "random_words": "hungry, restaurant, kitchen, chef, tasty"
+    },
+    {
+      "english": "The sun is bright today",
+      "portuguese": "O sol está brilhante hoje",
+      "random_words": "sky, hot, glasses, light, summer"
+    },
+    {
+      "english": "My friend goes to school",
+      "portuguese": "Meu amigo vai para a escola",
+      "random_words": "bus, backpack, learn, class, play"
+    },
+    {
+      "english": "Time flies very fast",
+      "portuguese": "O tempo voa muito rápido",
+      "random_words": "clock, watch, year, old, speed"
+    }
+  ]
+}

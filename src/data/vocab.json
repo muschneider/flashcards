@@ -1,414 +1,1320 @@
 {
   "words": [
     {
-      "english": "Goofing off",
-      "portuguese": "Desperdiçar tempo, não fazer nada produtivo"
-    },
-    {
-      "english": "plenty of",
-      "portuguese": "Expressão para descrever uma quantidade grande (bastante)"
-    },
-    {
-      "english": "gives up",
-      "portuguese": "desiste"
-    },
-    {
-      "english": "What a Pity",
-      "portuguese": "Que pena"
-    },
-    {
-      "english": "Pretty Soon",
-      "portuguese": "Em breve"
-    },
-    {
-      "english": "You Bet",
-      "portuguese": "Pode apostar"
-    },
-    {
-      "english": "I Got It",
-      "portuguese": "Entendi"
-    },
-    {
-      "english": "As If",
-      "portuguese": "Até parece"
-    },
-    {
-      "english": "Wake Up",
-      "portuguese": "Acorda"
-    },
-    {
-      "english": "How Come",
-      "portuguese": "Como assim"
-    },
-    {
-      "english": "My Bad",
-      "portuguese": "Foi mal"
-    },
-    {
-      "english": "Sort of",
-      "portuguese": "Meio que, uma espécie de"
-    },
-    {
-      "english": "Brush up",
-      "portuguese": "Revisar, melhorar (algo que já se sabe)"
-    },
-    {
-      "english": "In fact",
-      "portuguese": "De fato"
-    },
-    {
-      "english": "Instead of",
-      "portuguese": "Em vez de"
-    },
-    {
-      "english": "Since",
-      "portuguese": "Já que"
-    },
-    {
-      "english": "Due to",
-      "portuguese": "Devido a"
-    },
-    {
-      "english": "Therefore",
-      "portuguese": "Portanto"
+      "english": "whoose",
+      "portuguese": "de quem",
+      "pronuncia": "hus",
+      "tipo": "pronoun",
+      "example": "Whose book is this on the table?",
+      "random_words": "mine, yours, his, hers, theirs"
     },
     {
       "english": "at least",
-      "portuguese": "Pelo menos"
+      "portuguese": "pelo menos",
+      "pronuncia": "át list",
+      "tipo": "expression",
+      "example": "At least you tried your best.",
+      "random_words": "minimum, maximum, mostly, finally, hopefully"
     },
     {
       "english": "further",
-      "portuguese": "Mais distante, mais adiante ou mais"
+      "portuguese": "mais",
+      "pronuncia": "fér-ther",
+      "tipo": "adverb",
+      "example": "We need to discuss this further.",
+      "random_words": "farther, additional, more, extra, beyond"
     },
     {
-      "english": "Mam'am",
-      "portuguese": "Forma polida de se dirigir a uma mulher (abreviação de 'madam')"
+      "english": "mam'am",
+      "portuguese": "Senhora",
+      "pronuncia": "mam-um",
+      "tipo": "expression",
+      "example": "Mam'am, may I help you with your bags?",
+      "random_words": "sir, miss, lady, gentleman, ma'am"
     },
     {
-      "english": "Worth",
-      "portuguese": "Vale, valor; Valor ou importância de algo ou alguém; Ser digno ou merecedor"
+      "english": "worth",
+      "portuguese": "valor, mérito",
+      "pronuncia": "wérth",
+      "tipo": "noun",
+      "example": "This book is worth reading.",
+      "random_words": "value, price, cost, importance, merit"
     },
     {
-      "english": "Weird",
-      "portuguese": "Estranho, esquisito"
+      "english": "weird",
+      "portuguese": "estranho",
+      "pronuncia": "wird",
+      "tipo": "adjective",
+      "example": "That's a weird looking animal.",
+      "random_words": "strange, odd, peculiar, unusual, bizarre"
     },
     {
-      "english": "Quiet",
-      "portuguese": "Silencioso, tranquilo"
+      "english": "quiet",
+      "portuguese": "silencioso",
+      "pronuncia": "kwai-et",
+      "tipo": "adjective",
+      "example": "Please keep quiet in the library.",
+      "random_words": "silent, calm, peaceful, still, hush"
     },
     {
-      "english": "Quite",
-      "portuguese": "Bastante, muito"
+      "english": "quite",
+      "portuguese": "bastante, muito, bem",
+      "pronuncia": "kwait",
+      "tipo": "adverb",
+      "example": "The movie was quite interesting.",
+      "random_words": "very, really, pretty, rather, fairly"
     },
     {
-      "english": "Rather",
-      "portuguese": "Preferencialmente, mais, um pouco"
+      "english": "rather",
+      "portuguese": "em vez de",
+      "pronuncia": "rá-ther",
+      "tipo": "adverb",
+      "example": "I would rather stay home tonight.",
+      "random_words": "preferably, instead, quite, fairly, somewhat"
     },
     {
-      "english": "Achieve",
-      "portuguese": "Alcançar, atingir"
+      "english": "achieve",
+      "portuguese": "alcançar",
+      "pronuncia": "e-chív",
+      "tipo": "verb",
+      "example": "She works hard to achieve her goals.",
+      "random_words": "reach, accomplish, attain, gain, succeed"
     },
     {
-      "english": "Despite",
-      "portuguese": "Apesar de"
+      "english": "despite",
+      "portuguese": "apesar de",
+      "pronuncia": "di-spaits",
+      "tipo": "preposition",
+      "example": "Despite the rain, we went outside.",
+      "random_words": "although, though, even though, nevertheless, however"
     },
     {
-      "english": "Fairly",
-      "portuguese": "Bastante, de maneira justa"
+      "english": "fairly",
+      "portuguese": "justamente, razoavelmente",
+      "pronuncia": "fér-li",
+      "tipo": "adverb",
+      "example": "The test was fairly easy.",
+      "random_words": "quite, rather, somewhat, pretty, moderately"
     },
     {
-      "english": "Gotchas",
-      "portuguese": "Pegadinhas, truques, surpresas"
+      "english": "gotchas",
+      "portuguese": "pegadinhas",
+      "pronuncia": "gó-ches",
+      "tipo": "noun",
+      "example": "Watch out for gotchas in the contract.",
+      "random_words": "tricks, surprises, pitfalls, traps, jokes"
     },
     {
-      "english": "Another",
-      "portuguese": "Outro, mais um"
+      "english": "gotcha",
+      "portuguese": "entendi",
+      "pronuncia": "gó-cha",
+      "tipo": "expression",
+      "example": "Gotcha! I understand what you mean.",
+      "random_words": "understood, noticed, caught, got, seen"
     },
     {
-      "english": "Aware",
-      "portuguese": "Consciente, ciente"
+      "english": "another",
+      "portuguese": "um outro",
+      "pronuncia": "e-ná-ther",
+      "tipo": "pronoun",
+      "example": "Would you like another piece of cake?",
+      "random_words": "other, different, additional, extra, more"
     },
     {
-      "english": "Breakthrough",
-      "portuguese": "Avanço, descoberta importante"
+      "english": "aware",
+      "portuguese": "consciente",
+      "pronuncia": "e-wér",
+      "tipo": "adjective",
+      "example": "I'm aware of the problem.",
+      "random_words": "conscious, familiar, informed, knowing, noticing"
     },
     {
-      "english": "Beach",
-      "portuguese": "praia"
+      "english": "breakthrough",
+      "portuguese": "avanço",
+      "pronuncia": "bréik-thru",
+      "tipo": "noun",
+      "example": "Scientists made a breakthrough in cancer research.",
+      "random_words": "progress, discovery, advance, innovation, success"
     },
     {
-      "english": "Bitch",
-      "portuguese": "cadela (literal), usado também como um insulto (gíria)"
+      "english": "sort of",
+      "portuguese": "meio que / tipo que",
+      "pronuncia": "sort ov",
+      "tipo": "expression",
+      "example": "I'm sort of tired today.",
+      "random_words": "kind of, somewhat, rather, partly, basically"
     },
     {
-      "english": "Tough",
-      "portuguese": "difícil, resistente"
+      "english": "brush up",
+      "portuguese": "rever / melhorar",
+      "pronuncia": "brash ap",
+      "tipo": "phrasal verb",
+      "example": "I need to brush up on my Spanish before the trip.",
+      "random_words": "review, refresh, improve, practice, polish"
     },
     {
-      "english": "Though",
-      "portuguese": "embora, porém (no final da frase, dá ideia de mas)"
+      "english": "goofing off",
+      "portuguese": "Desperdiçar tempo, não fazer nada produtivo",
+      "pronuncia": "gufing óf",
+      "tipo": "phrasal verb",
+      "example": "He's goofing off instead of doing his homework.",
+      "random_words": "lazy, boss, work, clock, bored"
     },
     {
-      "english": "Thought",
-      "portuguese": "pensamento, pensou"
+      "english": "get a glimpse",
+      "portuguese": "dar uma olhada / ter um vislumbre",
+      "pronuncia": "get e glimps",
+      "tipo": "expression",
+      "example": "I got a glimpse of the sunset from my window.",
+      "random_words": "see, glance, peek, look, spot"
     },
     {
-      "english": "Through",
-      "portuguese": "através, por"
+      "english": "so far so good",
+      "portuguese": "Até agora tudo bem",
+      "pronuncia": "so far so gud",
+      "tipo": "expression",
+      "example": "So far so good with my new job.",
+      "random_words": "progress, okay, fine, great, until now"
     },
     {
-      "english": "Thorough",
-      "portuguese": "minucioso, completo"
+      "english": "look out",
+      "portuguese": "Tenha cuidado",
+      "pronuncia": "luk aut",
+      "tipo": "expression",
+      "example": "Look out! There's a car coming!",
+      "random_words": "watch, beware, careful, danger, attention"
     },
     {
-      "english": "Throughout",
-      "portuguese": "por todo, ao longo de"
+      "english": "o'clock",
+      "portuguese": "Usado para indicar as horas",
+      "pronuncia": "e-klók",
+      "tipo": "expression",
+      "example": "The meeting is at three o'clock.",
+      "random_words": "time, hour, clock, watch, schedule"
     },
     {
-      "english": "Brought",
-      "portuguese": "trouxe"
+      "english": "beach",
+      "portuguese": "praia",
+      "pronuncia": "bich",
+      "tipo": "noun",
+      "example": "Let's go to the beach this weekend.",
+      "random_words": "sand, ocean, sun, wave, coastline"
     },
     {
-      "english": "Bought",
-      "portuguese": "comprou"
+      "english": "bitch",
+      "portuguese": "cadela / insulto",
+      "pronuncia": "bich",
+      "tipo": "noun",
+      "example": "The bitch barked at the stranger.",
+      "random_words": "dog, female, complain, whine, moan"
     },
     {
-      "english": "Rule",
-      "portuguese": "Regra, norma ou princípio; Governar ou controlar algo"
+      "english": "tough",
+      "portuguese": "difícil / resistente",
+      "pronuncia": "taf",
+      "tipo": "adjective",
+      "example": "This is a tough decision to make.",
+      "random_words": "hard, difficult, strong, rough, challenging"
     },
     {
-      "english": "Role",
-      "portuguese": "Papel, função ou posição que alguém desempenha"
+      "english": "though",
+      "portuguese": "embora / porém",
+      "pronuncia": "dó",
+      "tipo": "conjunction",
+      "example": "I like it, though it's expensive.",
+      "random_words": "although, however, but, yet, nevertheless"
     },
     {
-      "english": "unfortunately",
-      "portuguese": "Infelizmente"
+      "english": "thought",
+      "portuguese": "pensamento",
+      "pronuncia": "thót",
+      "tipo": "noun",
+      "example": "That was a thought provoking idea.",
+      "random_words": "idea, thinking, mind, consideration, opinion"
     },
     {
-      "english": "towel",
-      "portuguese": "Toalha"
+      "english": "through",
+      "portuguese": "através / por",
+      "pronuncia": "thru",
+      "tipo": "preposition",
+      "example": "We walked through the forest.",
+      "random_words": "across, via, during, finished, done"
     },
     {
-      "english": "scattered",
-      "portuguese": "Espalhado; disperso; dispersou"
+      "english": "thorough",
+      "portuguese": "minucioso / completo",
+      "pronuncia": "thér-o",
+      "tipo": "adjective",
+      "example": "We need a thorough investigation.",
+      "random_words": "complete, detailed, careful, exhaustive, meticulous"
     },
     {
-      "english": "Hopefully",
-      "portuguese": "Tomara"
+      "english": "throughout",
+      "portuguese": "por todo / ao longo de",
+      "pronuncia": "thru-aut",
+      "tipo": "preposition",
+      "example": "The news spread throughout the town.",
+      "random_words": "everywhere, during, all over, across, fully"
+    },
+    {
+      "english": "brought",
+      "portuguese": "trouxe",
+      "pronuncia": "brot",
+      "tipo": "verb",
+      "example": "She brought cookies to the party.",
+      "random_words": "carry, bring, fetch, deliver, take"
+    },
+    {
+      "english": "bought",
+      "portuguese": "comprou",
+      "pronuncia": "bot",
+      "tipo": "verb",
+      "example": "I bought a new phone yesterday.",
+      "random_words": "purchase, get, acquire, shop, pay"
+    },
+    {
+      "english": "rule",
+      "portuguese": "regra / norma",
+      "pronuncia": "rul",
+      "tipo": "noun",
+      "example": "Follow the rules of the game.",
+      "random_words": "law, regulation, principle, order, guideline"
+    },
+    {
+      "english": "role",
+      "portuguese": "função / posição",
+      "pronuncia": "roul",
+      "tipo": "noun",
+      "example": "She plays an important role in the project.",
+      "random_words": "function, part, position, job, task"
+    },
+    {
+      "english": "claiming",
+      "portuguese": "reivindicando",
+      "pronuncia": "kléi-ming",
+      "tipo": "verb",
+      "example": "He is claiming his rights.",
+      "random_words": "asserting, stating, declaring, maintaining, demanding"
+    },
+    {
+      "english": "actually",
+      "portuguese": "na verdade",
+      "pronuncia": "ách-ual-li",
+      "tipo": "adverb",
+      "example": "Actually, I think you're right.",
+      "random_words": "really, indeed, truly, in fact, genuinely"
+    },
+    {
+      "english": "in fact",
+      "portuguese": "de fato",
+      "pronuncia": "in fákt",
+      "tipo": "expression",
+      "example": "In fact, I've been there twice.",
+      "random_words": "actually, really, indeed, truly, basically"
+    },
+    {
+      "english": "instead of",
+      "portuguese": "em vez de",
+      "pronuncia": "in-stéd ov",
+      "tipo": "expression",
+      "example": "Let's go to the park instead of the mall.",
+      "random_words": "rather, alternatives, prefer, substitute, change"
+    },
+    {
+      "english": "since",
+      "portuguese": "já que / desde que",
+      "pronuncia": "sins",
+      "tipo": "conjunction",
+      "example": "I've lived here since 2010.",
+      "random_words": "because, as, after, from, during"
+    },
+    {
+      "english": "due to",
+      "portuguese": "devido a",
+      "pronuncia": "du tu",
+      "tipo": "expression",
+      "example": "The delay was due to bad weather.",
+      "random_words": "because of, owing to, thanks to, caused by, thanks to"
+    },
+    {
+      "english": "therefore",
+      "portuguese": "portanto",
+      "pronuncia": "fér-ther",
+      "tipo": "adverb",
+      "example": "It was raining; therefore, we stayed inside.",
+      "random_words": "so, thus, hence, consequently, accordingly"
+    },
+    {
+      "english": "in the meantime",
+      "portuguese": "enquanto isso",
+      "pronuncia": "in the mín-taim",
+      "tipo": "expression",
+      "example": "The pizza is in the oven. In the meantime, set the table.",
+      "random_words": "meanwhile, simultaneously, during, pending, awaiting"
+    },
+    {
+      "english": "never mind",
+      "portuguese": "Deixe pra lá",
+      "pronuncia": "né-ver maind",
+      "tipo": "expression",
+      "example": "Never mind, I'll do it myself.",
+      "random_words": "forget it, don't worry, ignore, skip, dismiss"
+    },
+    {
+      "english": "what a pity",
+      "portuguese": "que pena",
+      "pronuncia": "wot e pí-ti",
+      "tipo": "expression",
+      "example": "What a pity that you can't come to the party!",
+      "random_words": "shame, sorry, sad, unfortunate, disappointing"
+    },
+    {
+      "english": "pretty soon",
+      "portuguese": "em breve",
+      "pronuncia": "prí-ti sun",
+      "tipo": "expression",
+      "example": "We'll be there pretty soon.",
+      "random_words": "shortly, soon, momentarily, quickly, rapidly"
+    },
+    {
+      "english": "hopefully",
+      "portuguese": "tomara",
+      "pronuncia": "hóup-fu-li",
+      "tipo": "adverb",
+      "example": "Ideally, the weather will be good tomorrow.",
+      "random_words": "fingers crossed, perhaps, ideally, optimistically, wishfully"
+    },
+    {
+      "english": "you bet",
+      "portuguese": "pode apost you bet",
+      "pronuncia": "iu bét",
+      "tipo": "expression",
+      "example": "You bet I'll be there!",
+      "random_words": "certainly, absolutely, of course, definitely, sure"
+    },
+    {
+      "english": "I got it",
+      "portuguese": "entendi",
+      "pronuncia": "ai gót it",
+      "tipo": "expression",
+      "example": "I got it! Now I understand the problem.",
+      "random_words": "understood, realized, got it, seen, noticed"
+    },
+    {
+      "english": "as if",
+      "portuguese": "até parece",
+      "pronuncia": "áz if",
+      "tipo": "expression",
+      "example": "He acts as if he owns the place.",
+      "random_words": "like, as though, pretend, imagine, seemingly"
+    },
+    {
+      "english": "wake up",
+      "portuguese": "acorda",
+      "pronuncia": "wéik ap",
+      "tipo": "phrasal verb",
+      "example": "I wake up at six every morning.",
+      "random_words": "rise, get up, awaken, arise, stir"
+    },
+    {
+      "english": "how come",
+      "portuguese": "como assim",
+      "pronuncia": "hau kam",
+      "tipo": "expression",
+      "example": "How come you're not coming to the party?",
+      "random_words": "why, what reason, for what, because, since"
+    },
+    {
+      "english": "my bad",
+      "portuguese": "foi mal",
+      "pronuncia": "mai bád",
+      "tipo": "expression",
+      "example": "My bad! I didn't mean to break it.",
+      "random_words": "sorry, mistake, fault, oops, my fault"
+    },
+    {
+      "english": "a matter of fact",
+      "portuguese": "na verdade",
+      "pronuncia": "e má-ter ov fákt",
+      "tipo": "expression",
+      "example": "As a matter of fact, I've never been there.",
+      "random_words": "actually, really, in fact, indeed, truly"
+    },
+    {
+      "english": "last but not least",
+      "portuguese": "por último mas não menos importante",
+      "pronuncia": "last bat not líst",
+      "tipo": "expression",
+      "example": "Last but not least, I'd like to thank my parents.",
+      "random_words": "finally, lastly, concluding, ultimately, in conclusion"
+    },
+    {
+      "english": "kind of",
+      "portuguese": "meio que",
+      "pronuncia": "kaind ov",
+      "tipo": "expression",
+      "example": "I'm kind of tired today.",
+      "random_words": "sort of, somewhat, rather, pretty, partly"
+    },
+    {
+      "english": "process",
+      "portuguese": "processo",
+      "pronuncia": "pró-ses",
+      "tipo": "noun",
+      "example": "The process takes about an hour.",
+      "random_words": "procedure, method, system, step, operation"
+    },
+    {
+      "english": "skim through",
+      "portuguese": "dar uma olhada rápida",
+      "pronuncia": "skim thru",
+      "tipo": "phrasal verb",
+      "example": "I skimmed through the book quickly.",
+      "random_words": "scan, glance, preview, read, browse"
+    },
+    {
+      "english": "cram",
+      "portuguese": "enfiar",
+      "pronuncia": "krám",
+      "tipo": "verb",
+      "example": "I need to cram for the exam.",
+      "random_words": "stuff, pack, fill, force, squeeze"
+    },
+    {
+      "english": "take off",
+      "portuguese": "decolar / levantar voo",
+      "pronuncia": "téik óf",
+      "tipo": "phrasal verb",
+      "example": "The plane will take off at noon.",
+      "random_words": "depart, leave, launch, rise, fly"
+    },
+    {
+      "english": "it's a shame",
+      "portuguese": "é uma pena",
+      "pronuncia": "its e shéim",
+      "tipo": "expression",
+      "example": "It's a shame you can't join us.",
+      "random_words": "pity, sorry, sad, unfortunate, disappointment"
+    },
+    {
+      "english": "it's only a",
+      "portuguese": "é só",
+      "pronuncia": "its ou-nli e",
+      "tipo": "expression",
+      "example": "It's only a small problem.",
+      "random_words": "just, merely, simply, barely, solely"
+    },
+    {
+      "english": "get off",
+      "portuguese": "descer",
+      "pronuncia": "get óf",
+      "tipo": "phrasal verb",
+      "example": "Where should I get off the bus?",
+      "random_words": "exit, leave, disembark, depart, alight"
+    },
+    {
+      "english": "go south",
+      "portuguese": "dar errado / ir para o sul",
+      "pronuncia": "gó sóuth",
+      "tipo": "expression",
+      "example": "The project started going south.",
+      "random_words": "fail, worsen, decline, deteriorate, go wrong"
+    },
+    {
+      "english": "go straight",
+      "portuguese": "segue em frente",
+      "pronuncia": "gó stréit",
+      "tipo": "expression",
+      "example": "Go straight for two blocks.",
+      "random_words": "forward, ahead, continue, directly, onward"
+    },
+    {
+      "english": "pretty good",
+      "portuguese": "muito bom",
+      "pronuncia": "prí-ti gud",
+      "tipo": "expression",
+      "example": "That was a pretty good movie.",
+      "random_words": "great, nice, fine, excellent, decent"
+    },
+    {
+      "english": "practice",
+      "portuguese": "praticar",
+      "pronuncia": "prák-tis",
+      "tipo": "verb",
+      "example": "You need to practice every day.",
+      "random_words": "train, rehearse, exercise, repeat, drill"
+    },
+    {
+      "english": "cycle",
+      "portuguese": "pedalar / ciclo",
+      "pronuncia": "sái-kel",
+      "tipo": "verb",
+      "example": "I like to cycle in the park.",
+      "random_words": "bike, ride, spin, pedal, wheel"
+    },
+    {
+      "english": "tongue in cheek",
+      "portuguese": "brincadeira",
+      "pronuncia": "tang in chík",
+      "tipo": "expression",
+      "example": "He said it tongue in cheek.",
+      "random_words": "joking, serious, playful, ironic, sarcastic"
+    },
+    {
+      "english": "do you mind",
+      "portuguese": "você se importa",
+      "pronuncia": "du iu maind",
+      "tipo": "expression",
+      "example": "Do you mind if I open the window?",
+      "random_words": "care, object, concern, question, ask"
+    },
+    {
+      "english": "there are going to be",
+      "portuguese": "vai ter",
+      "pronuncia": "dér ar góing tu bí",
+      "tipo": "expression",
+      "example": "There are going to be many people at the party.",
+      "random_words": "will be, exist, happen, occur, appear"
+    },
+    {
+      "english": "rent",
+      "portuguese": "alugar",
+      "pronuncia": "rént",
+      "tipo": "verb",
+      "example": "I want to rent a car for the weekend.",
+      "random_words": "lease, hire, borrow, let, sublet"
+    },
+    {
+      "english": "run along",
+      "portuguese": "correr ao longo / ir embora",
+      "pronuncia": "ran e-lóng",
+      "tipo": "phrasal verb",
+      "example": "The children ran along the beach.",
+      "random_words": "run, go, walk, proceed, continue"
+    },
+    {
+      "english": "awesome",
+      "portuguese": "incrível",
+      "pronuncia": "ó-sam",
+      "tipo": "adjective",
+      "example": "That's an awesome view!",
+      "random_words": "amazing, great, incredible, wonderful, fantastic"
+    },
+    {
+      "english": "ceremony",
+      "portuguese": "cerimônia",
+      "pronuncia": "sé-re-mo-ni",
+      "tipo": "noun",
+      "example": "The wedding ceremony was beautiful.",
+      "random_words": "ritual, event, celebration, formal, service"
+    },
+    {
+      "english": "I'm not sure",
+      "portuguese": "Não tenho certeza",
+      "pronuncia": "aim not shur",
+      "tipo": "expression",
+      "example": "I'm not sure about the answer.",
+      "random_words": "uncertain, doubt, maybe, perhaps, unclear"
+    },
+    {
+      "english": "that's exactly what I meant",
+      "portuguese": "Exatamente o que eu quis dizer",
+      "pronuncia": "dáts ig-zák-tli wat ai ment",
+      "tipo": "expression",
+      "example": "That's exactly what I meant by that.",
+      "random_words": "precisely, specifically, clearly, exactly, indeed"
+    },
+    {
+      "english": "let me check on that",
+      "portuguese": "deixa eu verificar",
+      "pronuncia": "let mi chék on dát",
+      "tipo": "expression",
+      "example": "Let me check on that for you.",
+      "random_words": "verify, look, examine, investigate, search"
+    },
+    {
+      "english": "as far as I know",
+      "portuguese": "Pelo que sei",
+      "pronuncia": "áz far az ai nó",
+      "tipo": "expression",
+      "example": "As far as I know, the meeting is at three.",
+      "random_words": "apparently, presumably, supposedly, likely, probably"
+    },
+    {
+      "english": "I'll get back to you",
+      "portuguese": "Volto a falar com você",
+      "pronuncia": "ail get bák tu iu",
+      "tipo": "expression",
+      "example": "I'll get back to you with an answer tomorrow.",
+      "random_words": "reply, respond, return, answer, follow up"
+    },
+    {
+      "english": "that works for me",
+      "portuguese": "Funciona para mim",
+      "pronuncia": "dát wérks fur mi",
+      "tipo": "expression",
+      "example": "That works for me. Let's do it!",
+      "random_words": "fine, okay, good, acceptable, suitable"
+    },
+    {
+      "english": "I didn't catch that",
+      "portuguese": "Não entendi",
+      "pronuncia": "ai díd-ent kách dát",
+      "tipo": "expression",
+      "example": "I didn't catch that. Could you repeat?",
+      "random_words": "hear, understand, get, follow, grasp"
+    },
+    {
+      "english": "I agree with you",
+      "portuguese": "Eu concordo com você",
+      "pronuncia": "ai e-grí wi-dh iu",
+      "tipo": "expression",
+      "example": "I agree with you on that point.",
+      "random_words": "concur, accept, assent, approve, support"
+    },
+    {
+      "english": "let's move on",
+      "portuguese": "Vamos seguir em frente",
+      "pronuncia": "lets muv ón",
+      "tipo": "expression",
+      "example": "Let's move on to the next topic.",
+      "random_words": "continue, proceed, advance, progress, next"
+    },
+    {
+      "english": "I'm still learning",
+      "portuguese": "Ainda estou aprendendo",
+      "pronuncia": "aim stil lér-ning",
+      "tipo": "expression",
+      "example": "I'm still learning how to cook.",
+      "random_words": "studying, practicing, improving, growing, developing"
+    },
+    {
+      "english": "handle",
+      "portuguese": "lidar com / cuidar",
+      "pronuncia": "hán-del",
+      "tipo": "verb",
+      "example": "I can handle this problem.",
+      "random_words": "deal, manage, cope, treat, control"
+    },
+    {
+      "english": "fight",
+      "portuguese": "lutar",
+      "pronuncia": "fáit",
+      "tipo": "verb",
+      "example": "We have to fight for our rights.",
+      "random_words": "battle, struggle, combat, oppose, contend"
+    },
+    {
+      "english": "broom",
+      "portuguese": "vassoura",
+      "pronuncia": "brum",
+      "tipo": "noun",
+      "example": "She used a broom to clean the floor.",
+      "random_words": "sweep, brush, mop, clean, tool"
+    },
+    {
+      "english": "pan",
+      "portuguese": "panela",
+      "pronuncia": "pán",
+      "tipo": "noun",
+      "example": "I fried the eggs in a pan.",
+      "random_words": "pot, skillet, cook, kitchen, cooking"
+    },
+    {
+      "english": "approach",
+      "portuguese": "abordar / aproximar",
+      "pronuncia": "e-próuch",
+      "tipo": "verb",
+      "example": "We need to approach this carefully.",
+      "random_words": "come near, address, tackle, handle, deal"
+    },
+    {
+      "english": "look after",
+      "portuguese": "cuidar",
+      "pronuncia": "luk áf-ter",
+      "tipo": "phrasal verb",
+      "example": "Can you look after my cat while I'm away?",
+      "random_words": "care for, tend, watch, guard, protect"
+    },
+    {
+      "english": "besides",
+      "portuguese": "Além de",
+      "pronuncia": "bá-sáidz",
+      "tipo": "preposition",
+      "example": "Besides English, she speaks French.",
+      "random_words": "also, moreover, furthermore, additionally, too"
+    },
+    {
+      "english": "fishing",
+      "portuguese": "pesca",
+      "pronuncia": "fi-shing",
+      "tipo": "noun",
+      "example": "I enjoy fishing on weekends.",
+      "random_words": "fish, rod, catch, boat, water"
+    },
+    {
+      "english": "prince",
+      "portuguese": "príncipe",
+      "pronuncia": "prins",
+      "tipo": "noun",
+      "example": "The prince lived in a big castle.",
+      "random_words": "royal, king, queen, palace, crown"
+    },
+    {
+      "english": "sailing",
+      "portuguese": "navegação a vela",
+      "pronuncia": "séi-ling",
+      "tipo": "noun",
+      "example": "Sailing is a popular summer activity.",
+      "random_words": "boat, sea, wind, sail, ocean"
+    },
+    {
+      "english": "as usual",
+      "portuguese": "Como sempre",
+      "pronuncia": "áz iu-zhual",
+      "tipo": "expression",
+      "example": "As usual, he arrived late.",
+      "random_words": "normally, typically, always, customarily, ordinarily"
+    },
+    {
+      "english": "I mean it",
+      "portuguese": "Estou falando sério",
+      "pronuncia": "ai min it",
+      "tipo": "expression",
+      "example": "I mean it. I'm really going to do it.",
+      "random_words": "serious, sincere, truly, honestly, genuinely"
+    },
+    {
+      "english": "I wish I knew",
+      "portuguese": "Bem que eu queria saber",
+      "pronuncia": "ai wish ai nud",
+      "tipo": "expression",
+      "example": "I wish I knew how to speak French.",
+      "random_words": "hope, want, desire, longing, dream"
+    },
+    {
+      "english": "I'm just browsing",
+      "portuguese": "Estou só dando uma olhada",
+      "pronuncia": "aim dzhast bráu-zing",
+      "tipo": "expression",
+      "example": "I'm just browsing, thanks.",
+      "random_words": "looking, checking, viewing, scanning, exploring"
+    },
+    {
+      "english": "let's split it",
+      "portuguese": "Vamos dividir",
+      "pronuncia": "lets split it",
+      "tipo": "expression",
+      "example": "Let's split the bill fifty-fifty.",
+      "random_words": "divide, share, separate, half, equal"
+    },
+    {
+      "english": "once in a while",
+      "portuguese": "De vez em quando",
+      "pronuncia": "wans in e wáil",
+      "tipo": "expression",
+      "example": "I eat pizza once in a while.",
+      "random_words": "sometimes, occasionally, periodically, rarely, seldom"
+    },
+    {
+      "english": "by the way",
+      "portuguese": "A propósito",
+      "pronuncia": "bai dhe wéi",
+      "tipo": "expression",
+      "example": "By the way, did you see the game last night?",
+      "random_words": "also, additionally, incidentally, moreover, furthermore"
+    },
+    {
+      "english": "let me think",
+      "portuguese": "Deixa eu pensar",
+      "pronuncia": "let mi think",
+      "tipo": "expression",
+      "example": "Let me think about that for a moment.",
+      "random_words": "consider, ponder, reflect, contemplate, weigh"
+    },
+    {
+      "english": "it's up to you",
+      "portuguese": "Você que sabe",
+      "pronuncia": "its ap tu iu",
+      "tipo": "expression",
+      "example": "It's up to you. You decide.",
+      "random_words": "your choice, your decision, you choose, your call, optionally"
+    },
+    {
+      "english": "I'm on my way",
+      "portuguese": "Estou indo",
+      "pronuncia": "aim on mai wéi",
+      "tipo": "expression",
+      "example": "Don't worry, I'm on my way!",
+      "random_words": "coming, arriving, traveling, heading, journey"
+    },
+    {
+      "english": "sounds good",
+      "portuguese": "Parece bom",
+      "pronuncia": "saunds gud",
+      "tipo": "expression",
+      "example": "That sounds good to me!",
+      "random_words": "great, nice, fine, okay, excellent"
+    },
+    {
+      "english": "just kidding",
+      "portuguese": "Brincadeira",
+      "pronuncia": "dzhast kíd-ing",
+      "tipo": "expression",
+      "example": "Just kidding! I didn't really mean it.",
+      "random_words": "joking, teasing, jokingly, fun, playful"
+    },
+    {
+      "english": "I can't wait",
+      "portuguese": "Mal posso esperar",
+      "pronuncia": "ai kánt wéit",
+      "tipo": "expression",
+      "example": "I can't wait for the weekend!",
+      "random_words": "excited, eager, impatient, anticipate, longing"
+    },
+    {
+      "english": "what do you mean",
+      "portuguese": "Como assim",
+      "pronuncia": "wot du iu min",
+      "tipo": "expression",
+      "example": "What do you mean by that?",
+      "random_words": "understand, interpretation, question, clarify, ask"
+    },
+    {
+      "english": "don't worry about it",
+      "portuguese": "Não se preocupe",
+      "pronuncia": "dount wér-ri e-baut it",
+      "tipo": "expression",
+      "example": "Don't worry about it. Everything will be fine.",
+      "random_words": "relax, calm, okay, fine, reassurance"
+    },
+    {
+      "english": "take your time",
+      "portuguese": "Sem pressa",
+      "pronuncia": "téik iur táim",
+      "tipo": "expression",
+      "example": "Take your time. There's no rush.",
+      "random_words": "slow, patient, unhurried, easy, deliberate"
+    },
+    {
+      "english": "it's been a while",
+      "portuguese": "Já faz um tempo",
+      "pronuncia": "its bin e wáil",
+      "tipo": "expression",
+      "example": "It's been a while since we last met.",
+      "random_words": "long time, ages, while, since, ago"
     }
   ],
   "sentences": [
     {
-      "english": "Have you guys ever gone camping ?",
-      "portuguese": "Vocês já foram acampar ?"
+      "english": "Have you guys ever gone camping?",
+      "portuguese": "Vocês já foram acampar?",
+      "random_words": "tent, fire"
     },
     {
       "english": "He gave her a kiss on the cheek",
-      "portuguese": "Ele deu um beijo na bochecha dela"
+      "portuguese": "Ele deu um beijo na bochecha dela",
+      "random_words": "kiss, cheek"
     },
     {
-      "english": "Which bowl would you like your ice cream in ?",
-      "portuguese": "Em qual tigela gostaria do seu sorvete ?"
+      "english": "Which bowl would you like your ice cream in?",
+      "portuguese": "Em qual tigela gostaria do seu sorvete?",
+      "random_words": "bowl, ice cream"
     },
     {
-      "english": "Am I coming through ok ?",
-      "portuguese": "Está me escutando ?"
+      "english": "Am I coming through ok?",
+      "portuguese": "Está me escutando?",
+      "random_words": "coming, through"
     },
     {
       "english": "People are making fun of me for hugging my friends. They said it's too much.",
-      "portuguese": "As pessoas estão tirando sarro de mim por abraçar meus amigos. Dizem que é demais."
+      "portuguese": "As pessoas estão tirando sarro de mim por abraçar meus amigos. Dizem que é demais.",
+      "random_words": "hugging, friends"
     },
     {
       "english": "And do you want to know something even cooler?",
-      "portuguese": "E quer saber algo ainda mais legal ?"
+      "portuguese": "E quer saber algo ainda mais legal?",
+      "random_words": "cooler, something"
     },
     {
-      "english": "Have all the students finished reviewing the lesson yet ?",
-      "portuguese": "Todos os alunos já terminaram de rever a lição?"
+      "english": "Have all the students finished reviewing the lesson yet?",
+      "portuguese": "Todos os alunos já terminaram de rever a lição?",
+      "random_words": "students, finished"
     },
     {
-      "english": "Have the kids fallen asleep yet ?",
-      "portuguese": "As crianças já caíram no sono?"
+      "english": "Have the kids fallen asleep yet?",
+      "portuguese": "As crianças já caíram no sono?",
+      "random_words": "asleep, kids"
     },
     {
-      "english": "Have you ever fallen asleep in class ?",
-      "portuguese": "Você caiu no sono na aula alguma vez?"
+      "english": "Have you ever fallen asleep in class?",
+      "portuguese": "Você caiu no sono na aula alguma vez?",
+      "random_words": "asleep, class"
     },
     {
       "english": "Only six weeks' worth of research data",
-      "portuguese": "Apenas seis semanas de dados de pesquisa"
+      "portuguese": "Apenas seis semanas de dados de pesquisa",
+      "random_words": "research, worth"
     },
     {
       "english": "Don't be a jerk",
-      "portuguese": "Não seja um idiota"
+      "portuguese": "Não seja um idiota",
+      "random_words": "jerk, don't"
     },
     {
       "english": "In Ireland, it's nice to bring flowers when you go to someone's house.",
-      "portuguese": "Na Irlanda, é simpático levar flores quando você vai a casa de alguém."
+      "portuguese": "Na Irlanda, é simpático levar flores quando você vai a casa de alguém.",
+      "random_words": "flowers, house"
     },
     {
-      "english": "it's nice to meet you",
-      "portuguese": "Prazer em conhecê-lo"
+      "english": "It's nice to meet you",
+      "portuguese": "Prazer em conhecê-lo",
+      "random_words": "meet, nice"
     },
     {
-      "english": "Which sauce would you like the pasta with ?",
-      "portuguese": "Você gostaria da massa com qual molho ?"
+      "english": "Which sauce would you like the pasta with?",
+      "portuguese": "Você gostaria da massa com qual molho?",
+      "random_words": "sauce, pasta"
     },
     {
       "english": "She's been an engineer for seventeen years.",
-      "portuguese": "Ela é engenheira há dezessete anos."
+      "portuguese": "Ela é engenheira há dezessete anos.",
+      "random_words": "engineer, years"
     },
     {
       "english": "That was the worst headache that I've ever had.",
-      "portuguese": "Essa foi a pior dor de cabeça que já tive."
+      "portuguese": "Essa foi a pior dor de cabeça que já tive.",
+      "random_words": "headache, worst"
     },
     {
       "english": "This is the tastiest soup that I've ever had!",
-      "portuguese": "Esta é a sopa mais saborosa que já comi!"
+      "portuguese": "Esta é a sopa mais saborosa que já comi!",
+      "random_words": "soup, tastiest"
     },
     {
       "english": "What a shame!",
-      "portuguese": "Que pena!"
+      "portuguese": "Que pena!",
+      "random_words": "shame, what"
     },
     {
       "english": "The king was kind to everyone, even his lazy horse.",
-      "portuguese": "O rei era amável com todos, mesmo com o cavalo preguiçoso dele."
+      "portuguese": "O rei era amável com todos, mesmo com o cavalo preguiçoso dele.",
+      "random_words": "king, horse"
     },
     {
-      "english": "The ticket says the bus arrives at nine. But there's a delay...",
-      "portuguese": "O bilhete diz que o ônibus chega às nove. Mas há um atraso..."
+      "english": "The ticket says the bus arrives at nine. But there's a delay, so we won't get there until about nine thirty.",
+      "portuguese": "O bilhete diz que o ônibus chega às nove. Mas há um atraso, então não chegaremos lá antes das nove e meia.",
+      "random_words": "bus, delay"
     },
     {
-      "english": "It isn't an international flight, so you won't need to show your passport.",
-      "portuguese": "Não é um voo internacional, então você não precisará mostrar seu passaporte."
+      "english": "It isn't an international flight, so you won't need to show your passport at the airport.",
+      "portuguese": "Não é um voo internacional, então você não precisará mostrar seu passaporte no aeroporto.",
+      "random_words": "passport, flight"
     },
     {
-      "english": "How long does it take you to get home ?",
-      "portuguese": "Quanto tempo você demora para chegar em casa?"
+      "english": "How long does it take you to get home?",
+      "portuguese": "Quanto tempo você demora para chegar em casa?",
+      "random_words": "home, long"
     },
     {
       "english": "That's such a shame!",
-      "portuguese": "Isso é uma pena e tanto!"
+      "portuguese": "Isso é pena e tanto!",
+      "random_words": "shame, such"
     },
     {
       "english": "People still told stories about dragons, even many years later.",
-      "portuguese": "Pessoas ainda contavam histórias sobre dragões, mesmo muitos anos depois."
+      "portuguese": "Pessoas ainda contavam histórias sobre dragões, mesmo muitos anos depois.",
+      "random_words": "dragons, stories"
     },
     {
-      "english": "What kind of bread would you like the ham on ?",
-      "portuguese": "Em que tipo de pão você gostaria do presunto ?"
+      "english": "What kind of bread would you like the ham on?",
+      "portuguese": "Em que tipo de pão você gostaria do presunto?",
+      "random_words": "bread, ham"
     },
     {
-      "english": "Have you ever tried onion sauce ?",
-      "portuguese": "Você já experimentou molho de cebola ?"
+      "english": "Have you ever tried onion sauce?",
+      "portuguese": "Você já experimentou molho de cebola?",
+      "random_words": "onion, sauce"
     },
     {
       "english": "There's a no parking sign.",
-      "portuguese": "Há uma placa de proibido estacionar."
+      "portuguese": "Há uma placa de proibido estacionar.",
+      "random_words": "parking, sign"
     },
     {
       "english": "You should try on this green sweater. It's going to look good on you.",
-      "portuguese": "Você deveria experimentar esse suéter verde"
+      "portuguese": "Você deveria experimentar esse suéter verde. Vai ficar bem em você.",
+      "random_words": "sweater, green"
     },
     {
-      "english": "In the meantime",
-      "portuguese": "Enquanto isso"
+      "english": "Running an errand. Call when you're up! Love You! Ben.",
+      "portuguese": "Fui resolver uma pendência. Ligue quando acordar! Amo você! Ben.",
+      "random_words": "errand, love"
     },
     {
-      "english": "As usual",
-      "portuguese": "Como sempre"
+      "english": "We can look after ourselves.",
+      "portuguese": "Nós sabemos nos cuidar.",
+      "random_words": "ourselves, after"
     },
     {
-      "english": "I mean it",
-      "portuguese": "Estou falando sério"
+      "english": "I'm actually 59 and 6 months I will be 60 and it's kind of weird because 60.",
+      "portuguese": "Atualmente tenho 59 anos e daqui a 6 meses faço 60 e é um pouco estranho porque 60.",
+      "random_words": "actually, weird"
     },
     {
-      "english": "I wish I knew",
-      "portuguese": "Bem que eu queria saber"
+      "english": "Was there actually a magic cup somewhere in the east?",
+      "portuguese": "Havia realmente um cálice mágico em algum lugar no leste?",
+      "random_words": "magic, east"
     },
     {
-      "english": "I'm just browsing",
-      "portuguese": "Estou só dando uma olhada"
+      "english": "Can you look after my cats?",
+      "portuguese": "Você pode cuidar dos meus gatos?",
+      "random_words": "cats, look"
     },
     {
-      "english": "Let's split it",
-      "portuguese": "Vamos dividir"
+      "english": "When did their airplane take off?",
+      "portuguese": "Quando o avião deles levantou voo?",
+      "random_words": "airplane, when"
     },
     {
-      "english": "Once in a while",
-      "portuguese": "De vez em quando"
+      "english": "I got an extra dessert for free",
+      "portuguese": "Eu recebi uma sobremesa extra de graça",
+      "random_words": "dessert, extra"
     },
     {
-      "english": "By the way",
-      "portuguese": "A propósito"
+      "english": "Parking will cost at least five dollars.",
+      "portuguese": "O estacionamento custará pelo menos cinco dólares.",
+      "random_words": "parking, dollars"
     },
     {
-      "english": "Let me think",
-      "portuguese": "Deixa eu pensar"
+      "english": "Come to us?",
+      "portuguese": "Vem buscar a gente?",
+      "random_words": "come, us"
     },
     {
-      "english": "It's up to you",
-      "portuguese": "Você que sabe"
+      "english": "Ask a tour guide for further information.",
+      "portuguese": "Peça mais informações a um guia turístico.",
+      "random_words": "guide, further"
     },
     {
-      "english": "I'm on my way",
-      "portuguese": "Tô indo"
+      "english": "Yes, of course",
+      "portuguese": "Sim, é claro",
+      "random_words": "course, yes"
     },
     {
-      "english": "Sounds good",
-      "portuguese": "Parece bom"
+      "english": "I've never touched it as a matter of fact I've only read a few things about it like really how it compares to Java",
+      "portuguese": "Na verdade, nunca toquei nele, só li algumas coisas sobre ele, como realmente se compara ao Java.",
+      "random_words": "Java, touched"
     },
     {
-      "english": "Just kidding",
-      "portuguese": "Brincadeira"
+      "english": "I'll kind of skim through",
+      "portuguese": "Vou dar uma olhada rápida",
+      "random_words": "skim, kind"
     },
     {
-      "english": "I can't wait",
-      "portuguese": "Mal posso esperar"
+      "english": "Why has he taken so long to contact you?",
+      "portuguese": "Por que ele demorou tanto para contatar você?",
+      "random_words": "contact, taken"
     },
     {
-      "english": "What do you mean?",
-      "portuguese": "Como assim?"
+      "english": "Please tell me that this is the end.",
+      "portuguese": "Por favor, me diga que isto é o fim.",
+      "random_words": "please, end"
     },
     {
-      "english": "Don't worry about it",
-      "portuguese": "Deixa pra lá"
+      "english": "it's a shame that they'll miss the barbecue",
+      "portuguese": "É uma pena que elas perderão o churrasco.",
+      "random_words": "barbecue, shame"
     },
     {
-      "english": "Take your time",
-      "portuguese": "Sem pressa"
+      "english": "Do you mind bringing a salad?",
+      "portuguese": "Você se importa de trazer uma salada?",
+      "random_words": "salad, bringing"
     },
     {
-      "english": "It's been a while since we've talked",
-      "portuguese": "Já faz um tempo que não conversamos"
+      "english": "What grade is she in?",
+      "portuguese": "Em que ano ela está?",
+      "random_words": "grade, she"
     },
     {
-      "english": "I am learning English right now",
-      "portuguese": "Eu estou aprendendo inglês neste momento"
+      "english": "I have had a stomachache since dinner",
+      "portuguese": "Eu estou com dor de estômago desde o jantar.",
+      "random_words": "stomachache, dinner"
     },
     {
-      "english": "The dog is very happy",
-      "portuguese": "O cachorro está muito feliz"
+      "english": "She ate the cake by herself.",
+      "portuguese": "Ela comeu o bolo sozinha.",
+      "random_words": "herself, cake"
     },
     {
-      "english": "She reads a book every day",
-      "portuguese": "Ela lê um livro todos os dias"
+      "english": "It's only a shoe store, what are you afraid of?",
+      "portuguese": "É só uma loja de sapatos, do que você tem medo?",
+      "random_words": "shoe, afraid"
     },
     {
-      "english": "We love to eat food",
-      "portuguese": "Nós amamos comer comida"
+      "english": "Where should I get off the train?",
+      "portuguese": "Onde eu deveria descer do trem?",
+      "random_words": "train, where"
     },
     {
-      "english": "The sun is bright today",
-      "portuguese": "O sol está brilhante hoje"
+      "english": "I think we're going south",
+      "portuguese": "Eu acho que nós estamos indo para o sul",
+      "random_words": "south, think"
     },
     {
-      "english": "My friend goes to school",
-      "portuguese": "Meu amigo vai para a escola"
+      "english": "Go straight for a few kilometers",
+      "portuguese": "Siga em frente por alguns quilômetros.",
+      "random_words": "straight, kilometers"
     },
     {
-      "english": "Time flies very fast",
-      "portuguese": "O tempo voa muito rápido"
+      "english": "I'm a rather ordinary person and to me it's all but earth shattering.",
+      "portuguese": "Sou uma pessoa bastante comum e para mim isso é quase algo avassalador.",
+      "random_words": "ordinary, rather"
+    },
+    {
+      "english": "pretty good name if I do say so myself",
+      "portuguese": "nome muito bom se me permite dizer",
+      "random_words": "pretty, myself"
+    },
+    {
+      "english": "I've practiced soccer every day since then",
+      "portuguese": "Eu tenho treinado futebol todos os dias desde então",
+      "random_words": "soccer, practiced"
+    },
+    {
+      "english": "Piece of cake, right?",
+      "portuguese": "Fácil, né?",
+      "random_words": "piece, cake"
+    },
+    {
+      "english": "Today, I cycled more than 200 kilometers",
+      "portuguese": "Hoje pedalei mais de 200 quilômetros",
+      "random_words": "cycled, kilometers"
+    },
+    {
+      "english": "Intro was just a little tongue and cheek",
+      "portuguese": "A introdução foi só uma brincadeira",
+      "random_words": "tongue, cheek"
+    },
+    {
+      "english": "There are going to be so many people at the dance",
+      "portuguese": "Vai ter tantas pessoas no baile!",
+      "random_words": "dance, people"
+    },
+    {
+      "english": "I'll be renting the car by Friday.",
+      "portuguese": "Eu alugarei o carro até sexta-feira.",
+      "random_words": "renting, Friday"
+    },
+    {
+      "english": "They should eat healthier food, shouldn't they?",
+      "portuguese": "Eles deveriam comer comida mais saudável, não deveriam?",
+      "random_words": "healthier, should"
+    },
+    {
+      "english": "I'm going to need a little time to get ready.",
+      "portuguese": "Eu vou precisar de um pouquinho de tempo para ficar pronto.",
+      "random_words": "ready, little"
+    },
+    {
+      "english": "Remember to bring a little cash.",
+      "portuguese": "Lembre de trazer um pouquinho de dinheiro.",
+      "random_words": "cash, remember"
+    },
+    {
+      "english": "We'll be having the barbecue in the front yard.",
+      "portuguese": "Nós faremos o churrasco no quintal da frente.",
+      "random_words": "barbecue, yard"
+    },
+    {
+      "english": "He dried the dishes with that towel.",
+      "portuguese": "Ele secou a louça com aquela toalha.",
+      "random_words": "towel, dishes"
+    },
+    {
+      "english": "Ok, let me know!",
+      "portuguese": "Certo, avise-me!",
+      "random_words": "know, let"
+    },
+    {
+      "english": "Do you mind shutting the door?",
+      "portuguese": "Você se importa de fechar a porta?",
+      "random_words": "door, mind"
+    },
+    {
+      "english": "I've never taken care of my teeth.",
+      "portuguese": "Eu nunca cuidei dos meus dentes.",
+      "random_words": "teeth, taken"
+    },
+    {
+      "english": "Could I have a piece of that apple?",
+      "portuguese": "Você poderia me dar um pedaço dessa maçã?",
+      "random_words": "piece, apple"
+    },
+    {
+      "english": "I never feel like cleaning the apartment!",
+      "portuguese": "Eu nunca tenho vontade de limpar o apartamento.",
+      "random_words": "apartment, cleaning"
+    },
+    {
+      "english": "Has she ever gone skateboarding at that park?",
+      "portuguese": "Ela já andou de skate naquele parque alguma vez?",
+      "random_words": "skateboarding, park"
+    },
+    {
+      "english": "Who's the boss talking to?",
+      "portuguese": "Com quem a chefe está falando?",
+      "random_words": "boss, talking"
+    },
+    {
+      "english": "They might ask us to get there early.",
+      "portuguese": "Pode ser que elas nos peçam para chegar lá cedo.",
+      "random_words": "early, might"
+    },
+    {
+      "english": "They will be running along the beach.",
+      "portuguese": "Eles correrão ao longo da praia.",
+      "random_words": "running, beach"
+    },
+    {
+      "english": "They will run along the beach.",
+      "portuguese": "Eles correrão pela praia.",
+      "random_words": "beach, will"
+    },
+    {
+      "english": "That's awesome! I'm sure you'll do great. What will you pair it with?",
+      "portuguese": "Isso é incrível! Tenho certeza de que você vai se sair muito bem. Com o que você vai combiná-lo?",
+      "random_words": "awesome, pair"
+    },
+    {
+      "english": "How long will the ceremony last?",
+      "portuguese": "Quanto tempo vai durar a cerimonia?",
+      "random_words": "ceremony, long"
+    },
+    {
+      "english": "Lin grabs a broom and Vikram picks up a pan. They slowly approach the door.",
+      "portuguese": "Lin pega uma vassoura e Vikram pega uma panela. Eles lentamente se aproximam da porta.",
+      "random_words": "broom, door"
+    },
+    {
+      "english": "My sister will be looking after the kids",
+      "portuguese": "Minha irmã cuidará das crianças",
+      "random_words": "sister, kids"
+    },
+    {
+      "english": "Look out, you're too close to the candle",
+      "portuguese": "Tenha cuidado, você está perto demais da vela!",
+      "random_words": "candle, close"
+    },
+    {
+      "english": "Besides fishing, the prince also enjoys sailing",
+      "portuguese": "Além de pesca, o príncipe também curte navegação a vela",
+      "random_words": "prince, sailing"
+    },
+    {
+      "english": "This is the best day of my life!",
+      "portuguese": "Este é o melhor dia da minha vida!",
+      "random_words": "best, life"
     }
   ]
 }
