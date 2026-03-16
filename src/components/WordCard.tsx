@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { Check, X, Lightbulb, Loader2 } from 'lucide-react';
+import { Check, X, Lightbulb, Volume2 } from 'lucide-react';
 import { WordCard as WordCardType } from '@/lib/types';
 
 type Props = {
@@ -14,8 +14,8 @@ type Props = {
 export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
-  const [geminiHint, setGeminiHint] = useState<string | null>(null);
-  const [geminiLoading, setGeminiLoading] = useState(false);
+  const [showExample, setShowExample] = useState(false);
+  const [showPronunciation, setShowPronunciation] = useState(false);
 
   const handleSelect = useCallback(
     (option: string) => {
@@ -33,49 +33,32 @@ export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
     [card.english, feedback, onCorrect, onWrong]
   );
 
-  const fetchGeminiExample = useCallback(async () => {
-    setGeminiLoading(true);
-    try {
-      const res = await fetch('/api/gemini', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'word_example',
-          word: card.english,
-          portuguese: card.portuguese,
-        }),
-      });
-      if (!res.ok) throw new Error('API error');
-      const data = await res.json();
-      setGeminiHint(data.result);
-    } catch {
-      setGeminiHint('Could not load examples. Check your API key configuration.');
-    } finally {
-      setGeminiLoading(false);
-    }
-  }, [card.english, card.portuguese]);
-
   return (
     <div className="mx-auto w-full max-w-lg">
       <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg transition-all dark:border-gray-700 dark:bg-gray-800">
         {/* Card type badge */}
         <div className="mb-4 flex items-center justify-between">
           <span className="rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">
-            Word Card
+            {card.tipo}
           </span>
-          <button
-            onClick={fetchGeminiExample}
-            disabled={geminiLoading || !!geminiHint}
-            className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-amber-600 transition-colors hover:bg-amber-50 disabled:opacity-50 dark:text-amber-400 dark:hover:bg-amber-900/20"
-            aria-label="Get example sentences"
-          >
-            {geminiLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
+          <div className="flex gap-2">
+            <button
+              onClick={() => setShowPronunciation(!showPronunciation)}
+              className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-emerald-600 transition-colors hover:bg-emerald-50 disabled:opacity-50 dark:text-emerald-400 dark:hover:bg-emerald-900/20"
+              aria-label="Show pronunciation"
+            >
+              <Volume2 className="h-4 w-4" />
+              {showPronunciation ? 'Hide' : 'Pronounce'}
+            </button>
+            <button
+              onClick={() => setShowExample(!showExample)}
+              className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-amber-600 transition-colors hover:bg-amber-50 disabled:opacity-50 dark:text-amber-400 dark:hover:bg-amber-900/20"
+              aria-label="Show example"
+            >
               <Lightbulb className="h-4 w-4" />
-            )}
-            Example
-          </button>
+              {showExample ? 'Hide' : 'Example'}
+            </button>
+          </div>
         </div>
 
         {/* Portuguese word */}
@@ -88,10 +71,17 @@ export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
           </h2>
         </div>
 
-        {/* Gemini hint */}
-        {geminiHint && (
+        {/* Pronunciation */}
+        {showPronunciation && (
+          <div className="mb-4 rounded-lg bg-emerald-50 p-3 text-sm text-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-200">
+            <span className="font-medium">Pronunciation:</span> {card.pronunciacion}
+          </div>
+        )}
+
+        {/* Example sentence */}
+        {showExample && (
           <div className="mb-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-900/20 dark:text-amber-200">
-            {geminiHint}
+            <span className="font-medium">Example:</span> {card.example}
           </div>
         )}
 

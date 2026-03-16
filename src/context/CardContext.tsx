@@ -15,7 +15,7 @@ type CardState = {
 
 // ─── Actions ────────────────────────────────────────────
 type CardAction =
-  | { type: 'ADD_WORD'; english: string; portuguese: string }
+  | { type: 'ADD_WORD'; english: string; portuguese: string; tipo: string; pronunciacion: string; example: string }
   | { type: 'ADD_SENTENCE'; english: string; portuguese: string }
   | { type: 'DELETE_CARD'; id: string }
   | { type: 'MARK_CORRECT'; id: string }
@@ -52,6 +52,9 @@ function cardReducer(state: CardState, action: CardAction): CardState {
         type: 'word',
         english: action.english.trim(),
         portuguese: action.portuguese.trim(),
+        tipo: action.tipo.trim(),
+        pronunciacion: action.pronunciacion.trim(),
+        example: action.example.trim(),
         status: { ...defaultStatus },
       };
       return {
@@ -273,8 +276,8 @@ export function CardProvider({ children }: { children: React.ReactNode }) {
     setHydrated(true);
   }, []);
 
-  const addWord = useCallback((english: string, portuguese: string) => {
-    dispatch({ type: 'ADD_WORD', english, portuguese });
+  const addWord = useCallback((english: string, portuguese: string, tipo: string = '', pronunciacion: string = '', example: string = '') => {
+    dispatch({ type: 'ADD_WORD', english, portuguese, tipo, pronunciacion, example });
   }, []);
 
   const addSentence = useCallback((english: string, portuguese: string) => {

@@ -12,6 +12,9 @@ export type WordCard = {
   type: 'word';
   english: string;
   portuguese: string;
+  tipo: string;
+  pronunciacion: string;
+  example: string;
   status: CardStatus;
 };
 

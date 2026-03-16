@@ -15,6 +15,9 @@ export const defaultWordCards: WordCard[] = vocab.words.map((item, index) => ({
   type: 'word',
   english: item.english,
   portuguese: item.portuguese,
+  tipo: item.tipo,
+  pronunciacion: item.pronuncia,
+  example: item.example,
   status: { ...defaultStatus },
 }));
 
