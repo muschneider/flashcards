@@ -15,6 +15,7 @@ export type WordCard = {
   tipo: string;
   pronunciacion: string;
   example: string;
+  randomWords?: { word: string; pronunciacion: string }[];
   status: CardStatus;
 };
 

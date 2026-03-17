@@ -35,21 +35,34 @@ export type WordOption = {
 
 /**
  * Generate distractor options for a word card.
- * Returns an array of word options including the correct answer, shuffled.
+ * Uses all random_words from the card if available, plus the correct answer.
+ * Otherwise falls back to other cards from the deck.
  */
 export function generateWordOptions(
   correctCard: WordCard,
   allWordCards: WordCard[],
   count: number = 4
 ): WordOption[] {
-  const others = allWordCards
-    .filter((c) => c.id !== correctCard.id)
-    .map((c) => ({ word: c.english, pronunciacion: c.pronunciacion }));
+  let options: WordOption[];
 
-  const distractors = shuffle(others).slice(0, count - 1);
-  const correctOption = { word: correctCard.english, pronunciacion: correctCard.pronunciacion };
-  const options = [...distractors, correctOption];
-  return shuffle(options);
+  if (correctCard.randomWords && correctCard.randomWords.length > 0) {
+    const distractors = correctCard.randomWords.map((rw) => ({
+      word: rw.word,
+      pronunciacion: rw.pronunciacion,
+    }));
+    const correctOption = { word: correctCard.english, pronunciacion: correctCard.pronunciacion };
+    options = [...distractors, correctOption];
+  } else {
+    const others = allWordCards
+      .filter((c) => c.id !== correctCard.id)
+      .map((c) => ({ word: c.english, pronunciacion: c.pronunciacion }));
+    const selectedDistractors = shuffle(others).slice(0, count - 1);
+    const correctOption = { word: correctCard.english, pronunciacion: correctCard.pronunciacion };
+    options = [...selectedDistractors, correctOption];
+    options = shuffle(options);
+  }
+
+  return options;
 }
 
 /**
