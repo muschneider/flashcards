@@ -1,6 +1,6 @@
 'use client';
 
-import { useReducer, useCallback, useEffect, useRef } from 'react';
+import { useReducer, useCallback, useEffect } from 'react';
 import { FlashCard } from '@/lib/types';
 import { shuffle } from '@/lib/studyUtils';
 import { buildStudyQueue, QueueOptions } from '@/lib/studyQueue';
@@ -113,15 +113,6 @@ export function useStudySession({ queueOptions }: UseStudySessionOptions) {
   );
 
   const currentCard = session.queue[session.currentIndex] || null;
-
-  // Track whether we've already initialized to avoid re-init
-  const initialized = useRef(false);
-  useEffect(() => {
-    if (!initialized.current) {
-      initialized.current = true;
-      return;
-    }
-  }, []);
 
   // Mark card as seen when it's displayed
   useEffect(() => {

@@ -56,11 +56,3 @@ export function getNextReviewTime(correctCount: number): number {
   const index = Math.min(correctCount, multipliers.length - 1);
   return Date.now() + REVIEW_DELAY_MS * multipliers[index];
 }
-
-/**
- * Get the delay for re-showing a wrong answer within a session.
- * Card reappears after N other cards (minimum 3).
- */
-export function getReinsertionIndex(queueLength: number): number {
-  return Math.min(3, Math.max(1, Math.floor(queueLength / 2)));
-}
