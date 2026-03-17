@@ -29,6 +29,11 @@ export type SentenceCard = {
 
 export type FlashCard = WordCard | SentenceCard;
 
+export type WordOption = {
+  word: string;
+  pronunciacion: string;
+};
+
 export type PersistedCardProgress = {
   type: 'word' | 'sentence';
   mastered: boolean;

@@ -28,21 +28,27 @@ export function shuffle<T>(array: T[]): T[] {
   return arr;
 }
 
+export type WordOption = {
+  word: string;
+  pronunciacion: string;
+};
+
 /**
  * Generate distractor options for a word card.
- * Returns an array of english words including the correct answer, shuffled.
+ * Returns an array of word options including the correct answer, shuffled.
  */
 export function generateWordOptions(
   correctCard: WordCard,
   allWordCards: WordCard[],
   count: number = 4
-): string[] {
+): WordOption[] {
   const others = allWordCards
     .filter((c) => c.id !== correctCard.id)
-    .map((c) => c.english);
+    .map((c) => ({ word: c.english, pronunciacion: c.pronunciacion }));
 
   const distractors = shuffle(others).slice(0, count - 1);
-  const options = [...distractors, correctCard.english];
+  const correctOption = { word: correctCard.english, pronunciacion: correctCard.pronunciacion };
+  const options = [...distractors, correctOption];
   return shuffle(options);
 }
 

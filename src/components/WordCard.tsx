@@ -1,28 +1,27 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { Check, X, Lightbulb, Volume2 } from 'lucide-react';
-import { WordCard as WordCardType } from '@/lib/types';
+import { Check, X, Lightbulb } from 'lucide-react';
+import { WordCard as WordCardType, WordOption } from '@/lib/types';
 
 type Props = {
   card: WordCardType;
-  options: string[];
+  options: WordOption[];
   onCorrect: () => void;
   onWrong: () => void;
 };
 
 export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<WordOption | null>(null);
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
   const [showExample, setShowExample] = useState(false);
-  const [showPronunciation, setShowPronunciation] = useState(false);
 
   const handleSelect = useCallback(
-    (option: string) => {
+    (option: WordOption) => {
       if (feedback) return; // already answered
       setSelected(option);
 
-      if (option === card.english) {
+      if (option.word === card.english) {
         setFeedback('correct');
         setTimeout(() => onCorrect(), 1200);
       } else {
@@ -42,14 +41,6 @@ export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
             {card.tipo}
           </span>
           <div className="flex gap-2">
-            <button
-              onClick={() => setShowPronunciation(!showPronunciation)}
-              className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-emerald-600 transition-colors hover:bg-emerald-50 disabled:opacity-50 dark:text-emerald-400 dark:hover:bg-emerald-900/20"
-              aria-label="Show pronunciation"
-            >
-              <Volume2 className="h-4 w-4" />
-              {showPronunciation ? 'Hide' : 'Pronounce'}
-            </button>
             <button
               onClick={() => setShowExample(!showExample)}
               className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-amber-600 transition-colors hover:bg-amber-50 disabled:opacity-50 dark:text-amber-400 dark:hover:bg-amber-900/20"
@@ -71,13 +62,6 @@ export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
           </h2>
         </div>
 
-        {/* Pronunciation */}
-        {showPronunciation && (
-          <div className="mb-4 rounded-lg bg-emerald-50 p-3 text-sm text-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-200">
-            <span className="font-medium">Pronunciation:</span> {card.pronunciacion}
-          </div>
-        )}
-
         {/* Example sentence */}
         {showExample && (
           <div className="mb-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-900/20 dark:text-amber-200">
@@ -92,10 +76,10 @@ export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
               'rounded-xl border-2 px-4 py-3 text-center font-semibold transition-all duration-200';
 
             if (feedback) {
-              if (option === card.english) {
+              if (option.word === card.english) {
                 btnClass +=
                   ' border-green-500 bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300';
-              } else if (option === selected && feedback === 'wrong') {
+              } else if (selected?.word === option.word && feedback === 'wrong') {
                 btnClass +=
                   ' border-red-500 bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300 animate-shake';
               } else {
@@ -109,13 +93,14 @@ export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
 
             return (
               <button
-                key={option}
+                key={option.word}
                 onClick={() => handleSelect(option)}
                 disabled={!!feedback}
                 className={btnClass}
-                aria-label={`Select ${option}`}
+                aria-label={`Select ${option.word}`}
               >
-                {option}
+                <span className="block text-base">{option.word}</span>
+                <span className="block text-xs opacity-70">{option.pronunciacion}</span>
               </button>
             );
           })}
@@ -136,7 +121,7 @@ export default function WordCard({ card, options, onCorrect, onWrong }: Props) {
               </>
             ) : (
               <>
-                <X className="h-5 w-5" /> Wrong! The answer is &quot;{card.english}&quot;
+                <X className="h-5 w-5" /> Wrong! The answer is &quot;{card.english}&quot; ({card.pronunciacion})
               </>
             )}
           </div>
