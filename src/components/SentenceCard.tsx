@@ -9,9 +9,10 @@ type Props = {
   card: SentenceCardType;
   onCorrect: () => void;
   onWrong: () => void;
+  onSkip: () => void;
 };
 
-export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
+export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props) {
   const allWords = [...card.words, ...(card.random_words || [])];
   const [scrambled] = useState(() => shuffle(allWords));
   const [selectedWords, setSelectedWords] = useState<string[]>([]);
@@ -55,8 +56,8 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
 
   const handleNext = useCallback(() => {
     if (feedback) return;
-    onWrong();
-  }, [feedback, onWrong]);
+    onSkip();
+  }, [feedback, onSkip]);
 
   useEffect(() => {
     if (selectedWords.length === card.words.length && !feedback) {

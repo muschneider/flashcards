@@ -22,7 +22,8 @@ type SessionAction =
   | { type: 'INIT'; payload: { queue: FlashCard[] } }
   | { type: 'ADVANCE' }
   | { type: 'CORRECT' }
-  | { type: 'WRONG'; payload: { card: FlashCard; currentIndex: number } };
+  | { type: 'WRONG'; payload: { card: FlashCard; currentIndex: number } }
+  | { type: 'SKIP' };
 
 function sessionReducer(state: SessionState, action: SessionAction): SessionState {
   switch (action.type) {
@@ -71,6 +72,16 @@ function sessionReducer(state: SessionState, action: SessionAction): SessionStat
         sessionTotal: state.sessionTotal + 1,
         cardKey: state.cardKey + 1,
         currentIndex: state.currentIndex + 1,
+      };
+    }
+
+    case 'SKIP': {
+      return {
+        ...state,
+        completed: state.completed + 1,
+        cardKey: state.cardKey + 1,
+        currentIndex: state.currentIndex + 1,
+        isComplete: state.currentIndex + 1 >= state.queue.length,
       };
     }
 
@@ -137,6 +148,11 @@ export function useStudySession({ queueOptions }: UseStudySessionOptions) {
     });
   }, [currentCard, ctxMarkWrong, session.currentIndex]);
 
+  const handleSkip = useCallback(() => {
+    if (!currentCard) return;
+    dispatch({ type: 'SKIP' });
+  }, [currentCard]);
+
   return {
     queue: session.queue,
     currentCard,
@@ -149,5 +165,6 @@ export function useStudySession({ queueOptions }: UseStudySessionOptions) {
     cardKey: session.cardKey,
     handleCorrect,
     handleWrong,
+    handleSkip,
   };
 }

@@ -23,6 +23,7 @@ export default function StudySentencesPage() {
     cardKey,
     handleCorrect,
     handleWrong,
+    handleSkip,
   } = useStudySession({
     queueOptions: {
       type: 'sentence',
@@ -73,6 +74,7 @@ export default function StudySentencesPage() {
           card={currentCard as SentenceCardType}
           onCorrect={handleCorrect}
           onWrong={handleWrong}
+          onSkip={handleSkip}
         />
       )}
     </div>
