@@ -1,4 +1,5 @@
 import { FlashCard } from './types';
+import { shuffle } from './studyUtils';
 
 export type QueueOptions = {
   type: 'word' | 'sentence';
@@ -48,19 +49,21 @@ export function buildStudyQueue(options: QueueOptions): FlashCard[] {
     }
   }
 
-  // Merge: review-due first, then unseen, cap at cardsPerSession
+  // Merge: shuffled review-due first, then shuffled unseen, cap at cardsPerSession
+  const shuffledDue = shuffle(dueForReview);
+  const shuffledUnseen = shuffle(unseen);
   const result: FlashCard[] = [];
   const remaining = cardsPerSession;
 
-  // Add due for review first
-  for (let i = 0; i < dueForReview.length && result.length < remaining; i++) {
-    result.push(dueForReview[i]);
+  // Add shuffled due for review first
+  for (let i = 0; i < shuffledDue.length && result.length < remaining; i++) {
+    result.push(shuffledDue[i]);
   }
 
-  // Add unseen cards (skip duplicates)
-  for (let i = 0; i < unseen.length && result.length < remaining; i++) {
-    if (!seenIds.has(unseen[i].id)) {
-      result.push(unseen[i]);
+  // Add shuffled unseen cards (skip duplicates)
+  for (let i = 0; i < shuffledUnseen.length && result.length < remaining; i++) {
+    if (!seenIds.has(shuffledUnseen[i].id)) {
+      result.push(shuffledUnseen[i]);
     }
   }
 
