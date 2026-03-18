@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
-import { Check, X, Eraser, ArrowRight, Lightbulb, Loader2 } from 'lucide-react';
+import { Check, X, Eraser, ArrowRight, Lightbulb } from 'lucide-react';
 import { SentenceCard as SentenceCardType } from '@/lib/types';
 import { shuffle } from '@/lib/studyUtils';
 
@@ -19,8 +19,20 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
     () => new Set(scrambled.map((_, i) => i))
   );
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
-  const [geminiHint, setGeminiHint] = useState<string | null>(null);
-  const [geminiLoading, setGeminiLoading] = useState(false);
+  const [showWordHint, setShowWordHint] = useState(false);
+
+  const correctWordsSet = new Set(card.words);
+  const mistakeWords = scrambled
+    .map((w, i) => ({ word: w, index: i }))
+    .filter((w) => !correctWordsSet.has(w.word))
+    .map((w) => w.index);
+
+  const handleHintClick = useCallback(() => {
+    setShowWordHint(true);
+    setTimeout(() => {
+      setShowWordHint(false);
+    }, 3000);
+  }, []);
 
   const handleWordClick = useCallback(
     (index: number) => {
@@ -58,28 +70,6 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
     }
   }, [selectedWords, feedback, card.words.length, card.english, onCorrect]);
 
-  const fetchGeminiHint = useCallback(async () => {
-    setGeminiLoading(true);
-    try {
-      const res = await fetch('/api/gemini', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          type: 'sentence_hint',
-          sentence: card.english,
-          portuguese: card.portuguese,
-        }),
-      });
-      if (!res.ok) throw new Error('API error');
-      const data = await res.json();
-      setGeminiHint(data.result);
-    } catch {
-      setGeminiHint('Could not load hint. Check your API key configuration.');
-    } finally {
-      setGeminiLoading(false);
-    }
-  }, [card.english, card.portuguese]);
-
   return (
     <div className="mx-auto w-full max-w-lg">
       <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg transition-all dark:border-gray-700 dark:bg-gray-800">
@@ -89,16 +79,15 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
             Sentence Card
           </span>
           <button
-            onClick={fetchGeminiHint}
-            disabled={geminiLoading || !!geminiHint}
-            className="flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium text-amber-600 transition-colors hover:bg-amber-50 disabled:opacity-50 dark:text-amber-400 dark:hover:bg-amber-900/20"
+            onClick={handleHintClick}
+            className={`flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+              showWordHint
+                ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300'
+                : 'text-amber-600 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-900/20'
+            }`}
             aria-label="Get a hint"
           >
-            {geminiLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <Lightbulb className="h-4 w-4" />
-            )}
+            <Lightbulb className="h-4 w-4" />
             Hint
           </button>
         </div>
@@ -112,13 +101,6 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
             {card.portuguese}
           </h2>
         </div>
-
-        {/* Gemini hint */}
-        {geminiHint && (
-          <div className="mb-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-900/20 dark:text-amber-200">
-            {geminiHint}
-          </div>
-        )}
 
         {/* Answer area */}
         <div className="mb-4 min-h-[3rem] rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-3 dark:border-gray-600 dark:bg-gray-700/50">
@@ -144,6 +126,21 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
         <div className="mb-4 flex flex-wrap justify-center gap-2">
           {scrambled.map((word, index) => {
             const isAvailable = availableIndices.has(index);
+            const isCorrectWord = correctWordsSet.has(word);
+            const showAsHidden = showWordHint && mistakeWords.includes(index);
+
+            if (showAsHidden) {
+              return (
+                <span
+                  key={`${word}-${index}`}
+                  className="pointer-events-none opacity-0"
+                  aria-hidden="true"
+                >
+                  {word}
+                </span>
+              );
+            }
+
             return (
               <button
                 key={`${word}-${index}`}
@@ -151,7 +148,11 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
                 disabled={!isAvailable || !!feedback}
                 className={`rounded-xl border-2 px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                   isAvailable
-                    ? 'border-gray-200 bg-white text-gray-700 hover:border-indigo-400 hover:bg-indigo-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-indigo-400 dark:hover:bg-indigo-900/30 cursor-pointer'
+                    ? `${
+                        showWordHint && isCorrectWord
+                          ? 'border-amber-400 bg-amber-50 ring-2 ring-amber-400/50 dark:border-amber-400 dark:bg-amber-900/30 dark:ring-amber-400/30'
+                          : 'border-gray-200 bg-white text-gray-700 hover:border-indigo-400 hover:bg-indigo-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-indigo-400 dark:hover:bg-indigo-900/30'
+                      } cursor-pointer`
                     : 'border-transparent bg-gray-100 text-gray-300 dark:bg-gray-800 dark:text-gray-600'
                 }`}
                 aria-label={`Select word: ${word}`}
