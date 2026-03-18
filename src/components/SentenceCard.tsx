@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useCallback } from 'react';
-import { Check, X, Eraser, CheckCircle, Lightbulb, Loader2 } from 'lucide-react';
+import { useState, useCallback, useEffect } from 'react';
+import { Check, X, Eraser, ArrowRight, Lightbulb, Loader2 } from 'lucide-react';
 import { SentenceCard as SentenceCardType } from '@/lib/types';
 import { shuffle } from '@/lib/studyUtils';
 
@@ -41,19 +41,22 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
     setAvailableIndices(new Set(scrambled.map((_, i) => i)));
   }, [feedback, scrambled]);
 
-  const handleCheck = useCallback(() => {
+  const handleNext = useCallback(() => {
     if (feedback) return;
-    const userSentence = selectedWords.join(' ');
-    const correctSentence = card.english;
+    onWrong();
+  }, [feedback, onWrong]);
 
-    if (userSentence === correctSentence) {
-      setFeedback('correct');
-      setTimeout(() => onCorrect(), 1200);
-    } else {
-      setFeedback('wrong');
-      setTimeout(() => onWrong(), 2500);
+  useEffect(() => {
+    if (selectedWords.length === card.words.length && !feedback) {
+      const userSentence = selectedWords.join(' ');
+      const correctSentence = card.english;
+
+      if (userSentence === correctSentence) {
+        setFeedback('correct');
+        setTimeout(() => onCorrect(), 1200);
+      }
     }
-  }, [feedback, selectedWords, card.english, onCorrect, onWrong]);
+  }, [selectedWords, feedback, card.words.length, card.english, onCorrect]);
 
   const fetchGeminiHint = useCallback(async () => {
     setGeminiLoading(true);
@@ -172,13 +175,12 @@ export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
               Clear
             </button>
             <button
-              onClick={handleCheck}
-              disabled={selectedWords.length !== card.words.length}
+              onClick={handleNext}
               className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-700 disabled:opacity-40 dark:bg-indigo-500 dark:hover:bg-indigo-600"
-              aria-label="Check answer"
+              aria-label="Skip to next card"
             >
-              <CheckCircle className="h-4 w-4" />
-              Check
+              <ArrowRight className="h-4 w-4" />
+              Next
             </button>
           </div>
         )}
