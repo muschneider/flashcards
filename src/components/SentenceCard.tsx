@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { Check, X, Eraser, ArrowRight, Lightbulb } from 'lucide-react';
 import { SentenceCard as SentenceCardType } from '@/lib/types';
 import { shuffle } from '@/lib/studyUtils';
@@ -12,28 +12,50 @@ type Props = {
   onSkip: () => void;
 };
 
-export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props) {
-  const allWords = [...card.words, ...(card.random_words || [])];
-  const [scrambled] = useState(() => shuffle(allWords));
-  const [selectedWords, setSelectedWords] = useState<string[]>([]);
-  const [availableIndices, setAvailableIndices] = useState<Set<number>>(
-    () => new Set(scrambled.map((_, i) => i))
+export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
+  const allWords = useMemo(
+    () => [...card.words, ...(card.random_words || [])],
+    [card.words, card.random_words]
   );
+
+  const scrambled = useMemo(() => shuffle(allWords), [allWords]);
+
+  // Use key prop for resetting state on card change instead of effect
+  const [selectedWords, setSelectedWords] = useState<string[]>([]);
+  const [availableIndices, setAvailableIndices] = useState<Set<number>>(() => new Set(scrambled.map((_, i) => i)));
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
   const [showWordHint, setShowWordHint] = useState(false);
 
-  const correctWordsSet = new Set(card.words);
-  const mistakeWords = scrambled
-    .map((w, i) => ({ word: w, index: i }))
-    .filter((w) => !correctWordsSet.has(w.word))
-    .map((w) => w.index);
+  // Reset state when card changes
+  useEffect(() => {
+    setSelectedWords([]);
+    setAvailableIndices(new Set(scrambled.map((_, i) => i)));
+    setFeedback(null);
+    setShowWordHint(false);
+  }, [card.id, scrambled]);
+
+  const correctWordsSet = useMemo(() => new Set(card.words), [card.words]);
+
+  const mistakeIndices = useMemo(() => {
+    return scrambled
+      .map((w, i) => ({ word: w, index: i }))
+      .filter((w) => !correctWordsSet.has(w.word))
+      .map((w) => w.index);
+  }, [scrambled, correctWordsSet]);
 
   const handleHintClick = useCallback(() => {
     setShowWordHint(true);
-    setTimeout(() => {
-      setShowWordHint(false);
-    }, 3000);
   }, []);
+
+  // Auto-hide hint after 3 seconds
+  useEffect(() => {
+    if (showWordHint) {
+      const timeout = setTimeout(() => {
+        setShowWordHint(false);
+      }, 3000);
+      return () => clearTimeout(timeout);
+    }
+  }, [showWordHint]);
 
   const handleWordClick = useCallback(
     (index: number) => {
@@ -59,6 +81,7 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
     onSkip();
   }, [feedback, onSkip]);
 
+  // Check answer when all words selected
   useEffect(() => {
     if (selectedWords.length === card.words.length && !feedback) {
       const userSentence = selectedWords.join(' ');
@@ -66,7 +89,8 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
 
       if (userSentence === correctSentence) {
         setFeedback('correct');
-        setTimeout(() => onCorrect(), 1200);
+        const timeout = setTimeout(() => onCorrect(), 1200);
+        return () => clearTimeout(timeout);
       }
     }
   }, [selectedWords, feedback, card.words.length, card.english, onCorrect]);
@@ -74,7 +98,6 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
   return (
     <div className="mx-auto w-full max-w-lg">
       <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg transition-all dark:border-gray-700 dark:bg-gray-800">
-        {/* Card type badge */}
         <div className="mb-4 flex items-center justify-between">
           <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300">
             Sentence Card
@@ -93,17 +116,11 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
           </button>
         </div>
 
-        {/* Portuguese sentence */}
         <div className="mb-6 text-center">
-          <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
-            Arrange the words to translate:
-          </p>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            {card.portuguese}
-          </h2>
+          <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">Arrange the words to translate:</p>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{card.portuguese}</h2>
         </div>
 
-        {/* Answer area */}
         <div className="mb-4 min-h-[3rem] rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-3 dark:border-gray-600 dark:bg-gray-700/50">
           {selectedWords.length > 0 ? (
             <div className="flex flex-wrap gap-2">
@@ -123,12 +140,11 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
           )}
         </div>
 
-        {/* Scrambled word bank */}
         <div className="mb-4 flex flex-wrap justify-center gap-2">
           {scrambled.map((word, index) => {
             const isAvailable = availableIndices.has(index);
             const isCorrectWord = correctWordsSet.has(word);
-            const showAsHidden = showWordHint && mistakeWords.includes(index);
+            const showAsHidden = showWordHint && mistakeIndices.includes(index);
 
             if (showAsHidden) {
               return (
@@ -142,19 +158,19 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
               );
             }
 
+            const buttonClass = isAvailable
+              ? showWordHint && isCorrectWord
+                ? 'border-amber-400 bg-amber-50 ring-2 ring-amber-400/50 dark:border-amber-400 dark:bg-amber-900/30 dark:ring-amber-400/30'
+                : 'border-gray-200 bg-white text-gray-700 hover:border-indigo-400 hover:bg-indigo-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-indigo-400 dark:hover:bg-indigo-900/30'
+              : 'border-transparent bg-gray-100 text-gray-300 dark:bg-gray-800 dark:text-gray-600';
+
             return (
               <button
                 key={`${word}-${index}`}
                 onClick={() => handleWordClick(index)}
                 disabled={!isAvailable || !!feedback}
-                className={`rounded-xl border-2 px-4 py-2 text-sm font-semibold transition-all duration-200 ${
-                  isAvailable
-                    ? `${
-                        showWordHint && isCorrectWord
-                          ? 'border-amber-400 bg-amber-50 ring-2 ring-amber-400/50 dark:border-amber-400 dark:bg-amber-900/30 dark:ring-amber-400/30'
-                          : 'border-gray-200 bg-white text-gray-700 hover:border-indigo-400 hover:bg-indigo-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-indigo-400 dark:hover:bg-indigo-900/30'
-                      } cursor-pointer`
-                    : 'border-transparent bg-gray-100 text-gray-300 dark:bg-gray-800 dark:text-gray-600'
+                className={`rounded-xl border-2 px-4 py-2 text-sm font-semibold transition-all duration-200 ${buttonClass} ${
+                  isAvailable ? 'cursor-pointer' : ''
                 }`}
                 aria-label={`Select word: ${word}`}
               >
@@ -164,7 +180,6 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
           })}
         </div>
 
-        {/* Action buttons */}
         {!feedback && (
           <div className="flex gap-3">
             <button
@@ -187,7 +202,6 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
           </div>
         )}
 
-        {/* Feedback message */}
         {feedback && (
           <div
             className={`mt-4 flex flex-col items-center gap-2 rounded-lg p-3 text-sm font-medium transition-all duration-300 ${
@@ -205,9 +219,7 @@ export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props
                 <span className="flex items-center gap-2">
                   <X className="h-5 w-5" /> Not quite right!
                 </span>
-                <span className="text-xs opacity-80">
-                  Correct: &quot;{card.english}&quot;
-                </span>
+                <span className="text-xs opacity-80">Correct: &quot;{card.english}&quot;</span>
               </>
             )}
           </div>

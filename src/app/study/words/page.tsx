@@ -2,14 +2,16 @@
 
 import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import { useCards } from '@/context/CardContext';
 import { generateWordOptions } from '@/lib/studyUtils';
 import { WordCard as WordCardType } from '@/lib/types';
 import { useStudySession } from '@/hooks/useStudySession';
-import WordCard from '@/components/WordCard';
 import StudyEmptyState from '@/components/StudyEmptyState';
 import StudyCompleteState from '@/components/StudyCompleteState';
 import StudyProgress from '@/components/StudyProgress';
+
+const WordCard = dynamic(() => import('@/components/WordCard'), { ssr: false });
 
 export default function StudyWordsPage() {
   const router = useRouter();

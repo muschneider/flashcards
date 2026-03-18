@@ -1,10 +1,10 @@
 'use client';
 
-import React, { createContext, useContext, useReducer, useCallback, useMemo, useSyncExternalStore, useState, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useCallback, useMemo, useState, useEffect, useRef, useSyncExternalStore } from 'react';
 import { FlashCard, WordCard, SentenceCard, CardStatus, PersistedState, SessionSettings } from '@/lib/types';
 import { defaultWordCards, defaultSentenceCards } from '@/lib/defaultCards';
 import { getNextReviewTime } from '@/lib/studyUtils';
-import { loadState, DEFAULT_SETTINGS } from '@/lib/storage';
+import { loadState, DEFAULT_SETTINGS, saveState } from '@/lib/storage';
 
 // ─── State ──────────────────────────────────────────────
 type CardState = {
@@ -26,7 +26,6 @@ type CardAction =
   | { type: 'UPDATE_SETTINGS'; payload: Partial<SessionSettings> }
   | { type: 'HYDRATE'; payload: PersistedState };
 
-// Wrong answers become "due for review" after 2 minutes
 const WRONG_REVIEW_DELAY_MS = 2 * 60 * 1000;
 
 const defaultStatus: CardStatus = {
@@ -132,7 +131,7 @@ function cardReducer(state: CardState, action: CardAction): CardState {
         ...state,
         cards: state.cards.map((c) => {
           if (c.id !== action.payload.cardId) return c;
-          if (c.status.seen) return c; // already seen, no-op
+          if (c.status.seen) return c;
           return {
             ...c,
             status: {
@@ -204,7 +203,6 @@ function cardReducer(state: CardState, action: CardAction): CardState {
   }
 }
 
-// ─── Helper to extract progress for persistence ─────────
 export function extractProgress(cards: FlashCard[]): PersistedState['cardProgress'] {
   const progress: PersistedState['cardProgress'] = {};
   for (const card of cards) {
@@ -222,12 +220,20 @@ export function extractProgress(cards: FlashCard[]): PersistedState['cardProgres
 }
 
 // ─── Context ────────────────────────────────────────────
+type Stats = {
+  total: number;
+  mastered: number;
+  pending: number;
+  unseen: number;
+  dueForReview: number;
+};
+
 type CardContextType = {
   cards: FlashCard[];
   wordCards: WordCard[];
   sentenceCards: SentenceCard[];
   settings: SessionSettings;
-  addWord: (english: string, portuguese: string) => void;
+  addWord: (english: string, portuguese: string, tipo?: string, pronunciacion?: string, example?: string) => void;
   addSentence: (english: string, portuguese: string) => void;
   deleteCard: (id: string) => void;
   markCorrect: (id: string) => void;
@@ -237,37 +243,42 @@ type CardContextType = {
   resetProgress: (cardType: 'word' | 'sentence') => void;
   updateSettings: (settings: Partial<SessionSettings>) => void;
   hydrated: boolean;
-  stats: {
-    total: number;
-    mastered: number;
-    pending: number;
-    dueForReview: number;
-  };
+  stats: Stats;
+  getWordStats: () => Stats;
+  getSentenceStats: () => Stats;
 };
 
 const CardContext = createContext<CardContextType | undefined>(undefined);
 
-// External time store — updates every 30s so dueForReview stays fresh
-// without calling Date.now() during render
+// Time tracking for dueForReview calculations
 let _now = Date.now();
 const _listeners = new Set<() => void>();
+
 if (typeof window !== 'undefined') {
   setInterval(() => {
     _now = Date.now();
     _listeners.forEach((l) => l());
   }, 30_000);
 }
+
 function subscribeToTime(listener: () => void) {
   _listeners.add(listener);
   return () => { _listeners.delete(listener); };
 }
-function getTimeSnapshot() { return _now; }
-function getServerTimeSnapshot() { return 0; }
+
+function getTimeSnapshot() {
+  return _now;
+}
+
+function getServerTimeSnapshot() {
+  return 0;
+}
 
 export function CardProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cardReducer, initialState);
   const [hydrated, setHydrated] = useState(false);
 
+  // Hydrate from localStorage
   useEffect(() => {
     const saved = loadState();
     if (saved) {
@@ -276,9 +287,129 @@ export function CardProvider({ children }: { children: React.ReactNode }) {
     setHydrated(true);
   }, []);
 
-  const addWord = useCallback((english: string, portuguese: string, tipo: string = '', pronunciacion: string = '', example: string = '') => {
-    dispatch({ type: 'ADD_WORD', english, portuguese, tipo, pronunciacion, example });
-  }, []);
+  // Memoized card filters
+  const wordCards = useMemo(
+    () => state.cards.filter((c): c is WordCard => c.type === 'word'),
+    [state.cards]
+  );
+
+  const sentenceCards = useMemo(
+    () => state.cards.filter((c): c is SentenceCard => c.type === 'sentence'),
+    [state.cards]
+  );
+
+  // Get current time from external store
+  const now = useSyncExternalStore(subscribeToTime, getTimeSnapshot, getServerTimeSnapshot);
+
+  // Memoized stats computation
+  const stats = useMemo<Stats>(() => {
+    const cards = state.cards;
+    let mastered = 0;
+    let pending = 0;
+    let unseen = 0;
+    let dueForReview = 0;
+
+    for (let i = 0; i < cards.length; i++) {
+      const c = cards[i];
+      if (c.status.mastered) {
+        mastered++;
+        if (c.status.reviewAfter !== null && c.status.reviewAfter <= now) {
+          dueForReview++;
+        }
+      } else {
+        pending++;
+        if (!c.status.seen) {
+          unseen++;
+        }
+        if (c.status.reviewAfter !== null && c.status.reviewAfter <= now) {
+          dueForReview++;
+        }
+      }
+    }
+
+    return {
+      total: cards.length,
+      mastered,
+      pending,
+      unseen,
+      dueForReview,
+    };
+  }, [state, now]);
+
+  // Memoized type-specific stats getters
+  const getWordStats = useCallback((): Stats => {
+    let mastered = 0;
+    let pending = 0;
+    let unseen = 0;
+    let dueForReview = 0;
+
+    for (let i = 0; i < wordCards.length; i++) {
+      const c = wordCards[i];
+      if (c.status.mastered) {
+        mastered++;
+        if (c.status.reviewAfter !== null && c.status.reviewAfter <= now) {
+          dueForReview++;
+        }
+      } else {
+        pending++;
+        if (!c.status.seen) {
+          unseen++;
+        }
+        if (c.status.reviewAfter !== null && c.status.reviewAfter <= now) {
+          dueForReview++;
+        }
+      }
+    }
+
+    return {
+      total: wordCards.length,
+      mastered,
+      pending,
+      unseen,
+      dueForReview,
+    };
+  }, [wordCards, now]);
+
+  const getSentenceStats = useCallback((): Stats => {
+    let mastered = 0;
+    let pending = 0;
+    let unseen = 0;
+    let dueForReview = 0;
+
+    for (let i = 0; i < sentenceCards.length; i++) {
+      const c = sentenceCards[i];
+      if (c.status.mastered) {
+        mastered++;
+        if (c.status.reviewAfter !== null && c.status.reviewAfter <= now) {
+          dueForReview++;
+        }
+      } else {
+        pending++;
+        if (!c.status.seen) {
+          unseen++;
+        }
+        if (c.status.reviewAfter !== null && c.status.reviewAfter <= now) {
+          dueForReview++;
+        }
+      }
+    }
+
+    return {
+      total: sentenceCards.length,
+      mastered,
+      pending,
+      unseen,
+      dueForReview,
+    };
+  }, [sentenceCards, now]);
+
+  // Memoized action creators
+  const addWord = useCallback(
+    (english: string, portuguese: string, tipo = '', pronunciacion = '', example = '') => {
+      dispatch({ type: 'ADD_WORD', english, portuguese, tipo, pronunciacion, example });
+    },
+    []
+  );
 
   const addSentence = useCallback((english: string, portuguese: string) => {
     dispatch({ type: 'ADD_SENTENCE', english, portuguese });
@@ -312,39 +443,78 @@ export function CardProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: 'UPDATE_SETTINGS', payload: settings });
   }, []);
 
-  const wordCards = state.cards.filter((c): c is WordCard => c.type === 'word');
-  const sentenceCards = state.cards.filter((c): c is SentenceCard => c.type === 'sentence');
+  // Debounced persistence
+  const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const now = useSyncExternalStore(subscribeToTime, getTimeSnapshot, getServerTimeSnapshot);
-  const stats = useMemo(() => ({
-    total: state.cards.length,
-    mastered: state.cards.filter((c) => c.status.mastered).length,
-    pending: state.cards.filter((c) => !c.status.mastered).length,
-    dueForReview: state.cards.filter(
-      (c) => c.status.mastered && c.status.reviewAfter !== null && c.status.reviewAfter <= now,
-    ).length,
-  }), [state.cards, now]);
+  useEffect(() => {
+    if (!hydrated) return;
+
+    // Clear existing timeout
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+    }
+
+    // Debounce save by 500ms
+    saveTimeoutRef.current = setTimeout(() => {
+      // Note: Theme is handled separately in ThemeContext
+      saveState({
+        version: 2,
+        theme: 'light', // Will be updated by ThemeContext
+        settings: state.settings,
+        cardProgress: extractProgress(state.cards),
+      });
+    }, 500);
+
+    return () => {
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+      }
+    };
+  }, [state.cards, state.settings, hydrated]);
+
+  const value = useMemo<CardContextType>(
+    () => ({
+      cards: state.cards,
+      wordCards,
+      sentenceCards,
+      settings: state.settings,
+      addWord,
+      addSentence,
+      deleteCard,
+      markCorrect,
+      markWrong,
+      markSeen,
+      resetAll,
+      resetProgress,
+      updateSettings,
+      hydrated,
+      stats,
+      getWordStats,
+      getSentenceStats,
+    }),
+    [
+      state.cards,
+      state.settings,
+      wordCards,
+      sentenceCards,
+      addWord,
+      addSentence,
+      deleteCard,
+      markCorrect,
+      markWrong,
+      markSeen,
+      resetAll,
+      resetProgress,
+      updateSettings,
+      hydrated,
+      stats,
+      getWordStats,
+      getSentenceStats,
+    ]
+  );
 
   return (
-    <CardContext.Provider
-      value={{
-        cards: state.cards,
-        wordCards,
-        sentenceCards,
-        settings: state.settings,
-        addWord,
-        addSentence,
-        deleteCard,
-        markCorrect,
-        markWrong,
-        markSeen,
-        resetAll,
-        resetProgress,
-        updateSettings,
-        hydrated,
-        stats,
-      }}
-    >
+    <CardContext.Provider value={value}>
       {children}
     </CardContext.Provider>
   );

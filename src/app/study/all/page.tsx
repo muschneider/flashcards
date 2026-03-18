@@ -1,15 +1,17 @@
 'use client';
 
 import { useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { useCards } from '@/context/CardContext';
 import { generateWordOptions } from '@/lib/studyUtils';
 import { WordCard as WordCardType, SentenceCard as SentenceCardType } from '@/lib/types';
 import { useStudySession } from '@/hooks/useStudySession';
-import WordCard from '@/components/WordCard';
-import SentenceCard from '@/components/SentenceCard';
 import StudyEmptyState from '@/components/StudyEmptyState';
 import StudyCompleteState from '@/components/StudyCompleteState';
 import StudyProgress from '@/components/StudyProgress';
+
+const WordCard = dynamic(() => import('@/components/WordCard'), { ssr: false });
+const SentenceCard = dynamic(() => import('@/components/SentenceCard'), { ssr: false });
 
 export default function StudyAllPage() {
   const { cards, wordCards, settings } = useCards();

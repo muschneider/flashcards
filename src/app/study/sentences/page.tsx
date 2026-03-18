@@ -1,13 +1,15 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import { useCards } from '@/context/CardContext';
 import { SentenceCard as SentenceCardType } from '@/lib/types';
 import { useStudySession } from '@/hooks/useStudySession';
-import SentenceCard from '@/components/SentenceCard';
 import StudyEmptyState from '@/components/StudyEmptyState';
 import StudyCompleteState from '@/components/StudyCompleteState';
 import StudyProgress from '@/components/StudyProgress';
+
+const SentenceCard = dynamic(() => import('@/components/SentenceCard'), { ssr: false });
 
 export default function StudySentencesPage() {
   const router = useRouter();

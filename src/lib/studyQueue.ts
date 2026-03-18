@@ -6,6 +6,19 @@ export type QueueOptions = {
   cardsPerSession: number;
 };
 
+function isDueForReview(status: FlashCard['status'], now: number): boolean {
+  return (
+    status.reviewAfter !== null &&
+    status.reviewAfter !== undefined &&
+    now >= status.reviewAfter &&
+    !status.mastered
+  );
+}
+
+function isUnseen(status: FlashCard['status']): boolean {
+  return !status.seen && !status.mastered;
+}
+
 /**
  * Build a study queue for a session.
  *
@@ -17,35 +30,41 @@ export type QueueOptions = {
  */
 export function buildStudyQueue(options: QueueOptions): FlashCard[] {
   const { type, allCards, cardsPerSession } = options;
-
-  // 1. Filter by type
-  const ofType = allCards.filter((c) => c.type === type);
-
-  // 2. Due for re-review (wrong answer, timer expired) — highest priority
   const now = Date.now();
-  const dueForReview = ofType.filter((c) => {
-    const s = c.status;
-    return (
-      s.reviewAfter !== null &&
-      s.reviewAfter !== undefined &&
-      now >= s.reviewAfter &&
-      !s.mastered
-    );
-  });
+  const dueForReview: FlashCard[] = [];
+  const unseen: FlashCard[] = [];
+  const seenIds = new Set<string>();
 
-  // 3. Never seen before (unseen cards) — second priority
-  const unseen = ofType.filter((c) => {
-    return !c.status.seen && !c.status.mastered;
-  });
+  // Single pass through cards
+  for (let i = 0; i < allCards.length; i++) {
+    const card = allCards[i];
+    if (card.type !== type) continue;
 
-  // 4. Merge: review-due first, then unseen, deduplicate, cap at cardsPerSession
-  const reviewIds = new Set(dueForReview.map((c) => c.id));
-  const merged = [
-    ...dueForReview,
-    ...unseen.filter((c) => !reviewIds.has(c.id)),
-  ];
+    if (isDueForReview(card.status, now)) {
+      dueForReview.push(card);
+      seenIds.add(card.id);
+    } else if (isUnseen(card.status)) {
+      unseen.push(card);
+    }
+  }
 
-  return merged.slice(0, cardsPerSession);
+  // Merge: review-due first, then unseen, cap at cardsPerSession
+  const result: FlashCard[] = [];
+  const remaining = cardsPerSession;
+
+  // Add due for review first
+  for (let i = 0; i < dueForReview.length && result.length < remaining; i++) {
+    result.push(dueForReview[i]);
+  }
+
+  // Add unseen cards (skip duplicates)
+  for (let i = 0; i < unseen.length && result.length < remaining; i++) {
+    if (!seenIds.has(unseen[i].id)) {
+      result.push(unseen[i]);
+    }
+  }
+
+  return result;
 }
 
 /**
@@ -55,18 +74,32 @@ export function getTypeStats(
   allCards: FlashCard[],
   type: 'word' | 'sentence',
 ): { total: number; unseen: number; mastered: number; dueForReview: number } {
-  const ofType = allCards.filter((c) => c.type === type);
   const now = Date.now();
+  let total = 0;
+  let unseen = 0;
+  let mastered = 0;
+  let dueForReview = 0;
 
-  return {
-    total: ofType.length,
-    unseen: ofType.filter((c) => !c.status.seen && !c.status.mastered).length,
-    mastered: ofType.filter((c) => c.status.mastered).length,
-    dueForReview: ofType.filter(
-      (c) =>
-        c.status.reviewAfter !== null &&
-        now >= c.status.reviewAfter &&
-        !c.status.mastered,
-    ).length,
-  };
+  for (let i = 0; i < allCards.length; i++) {
+    const card = allCards[i];
+    if (card.type !== type) continue;
+
+    total++;
+
+    if (card.status.mastered) {
+      mastered++;
+      if (card.status.reviewAfter !== null && now >= card.status.reviewAfter) {
+        dueForReview++;
+      }
+    } else {
+      if (!card.status.seen) {
+        unseen++;
+      }
+      if (card.status.reviewAfter !== null && now >= card.status.reviewAfter) {
+        dueForReview++;
+      }
+    }
+  }
+
+  return { total, unseen, mastered, dueForReview };
 }
