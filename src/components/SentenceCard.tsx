@@ -21,14 +21,14 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
   const scrambled = useMemo(() => shuffle(allWords), [allWords]);
 
   // Use key prop for resetting state on card change instead of effect
-  const [selectedWords, setSelectedWords] = useState<string[]>([]);
+  const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
   const [availableIndices, setAvailableIndices] = useState<Set<number>>(() => new Set(scrambled.map((_, i) => i)));
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
   const [showWordHint, setShowWordHint] = useState(false);
 
   // Reset state when card changes
   useEffect(() => {
-    setSelectedWords([]);
+    setSelectedIndices([]);
     setAvailableIndices(new Set(scrambled.map((_, i) => i)));
     setFeedback(null);
     setShowWordHint(false);
@@ -60,19 +60,34 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
   const handleWordClick = useCallback(
     (index: number) => {
       if (feedback) return;
-      setSelectedWords((prev) => [...prev, scrambled[index]]);
+      setSelectedIndices((prev) => [...prev, index]);
       setAvailableIndices((prev) => {
         const next = new Set(prev);
         next.delete(index);
         return next;
       });
+      if (feedback) setFeedback(null);
     },
-    [feedback, scrambled]
+    [feedback]
+  );
+
+  const handleDeselectWord = useCallback(
+    (index: number) => {
+      if (feedback === 'correct') return;
+      setSelectedIndices((prev) => prev.filter((i) => i !== index));
+      setAvailableIndices((prev) => {
+        const next = new Set(prev);
+        next.add(index);
+        return next;
+      });
+      if (feedback === 'wrong') setFeedback(null);
+    },
+    [feedback]
   );
 
   const handleClear = useCallback(() => {
     if (feedback) return;
-    setSelectedWords([]);
+    setSelectedIndices([]);
     setAvailableIndices(new Set(scrambled.map((_, i) => i)));
   }, [feedback, scrambled]);
 
@@ -83,17 +98,19 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
 
   // Check answer when all words selected
   useEffect(() => {
-    if (selectedWords.length === card.words.length && !feedback) {
-      const userSentence = selectedWords.join(' ');
+    if (selectedIndices.length === card.words.length && !feedback) {
+      const userSentence = selectedIndices.map((i) => scrambled[i]).join(' ');
       const correctSentence = card.english;
 
       if (userSentence === correctSentence) {
         setFeedback('correct');
         const timeout = setTimeout(() => onCorrect(), 1200);
         return () => clearTimeout(timeout);
+      } else {
+        setFeedback('wrong');
       }
     }
-  }, [selectedWords, feedback, card.words.length, card.english, onCorrect]);
+  }, [selectedIndices, feedback, card.words.length, card.english, onCorrect, scrambled]);
 
   return (
     <div className="mx-auto w-full max-w-lg">
@@ -122,15 +139,17 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
         </div>
 
         <div className="mb-4 min-h-[3rem] rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-3 dark:border-gray-600 dark:bg-gray-700/50">
-          {selectedWords.length > 0 ? (
+          {selectedIndices.length > 0 ? (
             <div className="flex flex-wrap gap-2">
-              {selectedWords.map((word, i) => (
-                <span
-                  key={`${word}-${i}`}
-                  className="rounded-lg bg-indigo-100 px-3 py-1.5 text-sm font-medium text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300"
+              {selectedIndices.map((index) => (
+                <button
+                  key={`${scrambled[index]}-${index}`}
+                  onClick={() => handleDeselectWord(index)}
+                  disabled={feedback === 'correct'}
+                  className="cursor-pointer rounded-lg bg-indigo-100 px-3 py-1.5 text-sm font-medium text-indigo-700 transition-colors hover:bg-indigo-200 disabled:cursor-default disabled:hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-300 dark:hover:bg-indigo-900 dark:disabled:hover:bg-indigo-900/50"
                 >
-                  {word}
-                </span>
+                  {scrambled[index]}
+                </button>
               ))}
             </div>
           ) : (
@@ -184,7 +203,7 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
           <div className="flex gap-3">
             <button
               onClick={handleClear}
-              disabled={selectedWords.length === 0}
+              disabled={selectedIndices.length === 0}
               className="flex flex-1 items-center justify-center gap-2 rounded-xl border-2 border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-600 transition-colors hover:bg-gray-50 disabled:opacity-40 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               aria-label="Clear selected words"
             >
