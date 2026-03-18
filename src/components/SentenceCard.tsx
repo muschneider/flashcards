@@ -13,9 +13,19 @@ type Props = {
 };
 
 export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
+  const correctWordsSet = useMemo(() => new Set(card.words), [card.words]);
+
+  const mistakeIndices = useMemo(() => {
+    return card.words
+      .concat(card.random_words || [])
+      .map((w, i) => ({ word: w, index: i }))
+      .filter((w) => !correctWordsSet.has(w.word))
+      .map((w) => w.index);
+  }, [card.words, card.random_words, correctWordsSet]);
+
   const allWords = useMemo(
-    () => [...card.words, ...(card.random_words || [])],
-    [card.words, card.random_words]
+    () => card.words.concat(card.random_words || []),
+    [card.words, card.random_words],
   );
 
   const scrambled = useMemo(() => shuffle(allWords), [allWords]);
@@ -33,15 +43,6 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
     setFeedback(null);
     setShowWordHint(false);
   }, [card.id, scrambled]);
-
-  const correctWordsSet = useMemo(() => new Set(card.words), [card.words]);
-
-  const mistakeIndices = useMemo(() => {
-    return scrambled
-      .map((w, i) => ({ word: w, index: i }))
-      .filter((w) => !correctWordsSet.has(w.word))
-      .map((w) => w.index);
-  }, [scrambled, correctWordsSet]);
 
   const handleHintClick = useCallback(() => {
     setShowWordHint(true);
@@ -104,13 +105,21 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
 
       if (userSentence === correctSentence) {
         setFeedback('correct');
-        const timeout = setTimeout(() => onCorrect(), 1200);
-        return () => clearTimeout(timeout);
       } else {
         setFeedback('wrong');
       }
     }
-  }, [selectedIndices, feedback, card.words.length, card.english, onCorrect, scrambled]);
+  }, [selectedIndices, feedback, card.words.length, card.english, scrambled]);
+
+  // Trigger onCorrect after showing correct feedback
+  useEffect(() => {
+    if (feedback === 'correct') {
+      const timeout = setTimeout(() => {
+        onCorrect();
+      }, 1200);
+      return () => clearTimeout(timeout);
+    }
+  }, [feedback, onCorrect]);
 
   return (
     <div className="mx-auto w-full max-w-lg">
