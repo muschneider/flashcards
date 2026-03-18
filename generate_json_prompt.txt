@@ -1,0 +1,46 @@
+You are an expert language teacher and data formatter. Your task is to read a Markdown file @/home/mauro/ws/obsidian/mauro/english/words_and_sentences/flashcard.md containing English words and sentences with their Portuguese translations, and convert them into a strictly formatted JSON object @vocab.json
+
+Here are the specific rules you must follow:
+
+1. For the "# Words" section:
+- Extract the English word and its Portuguese translation (ignore the markdown formatting like asterisks or hyphens).
+- Generate "pronuncia": The phonetic pronunciation written in a way that makes sense for a Brazilian Portuguese speaker (e.g., "át list").
+- Generate "tipo": The grammatical part of speech (e.g., noun, verb, pronoun, expression).
+- Generate "example": A short, clear English sentence using the word in context.
+- Generate "random_words": Create an array of exactly 5 dictionary objects. Each object must contain a "word" and its "pronuncia". These 5 words MUST be different from the target English word, but they should be easily confused with it (e.g., similar spelling, homophones, or related categories) to serve as tricky distractors in a multiple-choice flashcard.
+
+2. For the "# Sentences" section:
+- Extract the English sentence and its Portuguese translation. Note that they appear on consecutive lines in the input.
+- Generate "random_words": A single string containing exactly two random English words, separated by a comma (e.g., "blanket, forest"). These two words MUST NOT appear anywhere in the target English sentence.
+
+3. JSON Output Rules:
+- Return ONLY valid JSON. 
+- Do not include any introductory or concluding text.
+- Ensure all keys and string values are properly enclosed in double quotes.
+
+Here is the expected JSON structure:
+{
+  "words": [
+    {
+      "english": "...",
+      "portuguese": "...",
+      "pronuncia": "...",
+      "tipo": "...",
+      "example": "...",
+      "random_words": [
+        { "word": "...", "pronuncia": "..." },
+        { "word": "...", "pronuncia": "..." },
+        ...
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "english": "...",
+      "portuguese": "...",
+      "random_words": "word1, word2"
+    }
+  ]
+}
+
+Write the json output to vocab.json. Make sure to follow all the rules precisely to ensure the output is correctly formatted and useful for language learning flashcards.
