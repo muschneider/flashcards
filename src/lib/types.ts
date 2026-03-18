@@ -25,6 +25,7 @@ export type SentenceCard = {
   english: string;
   words: string[];
   portuguese: string;
+  random_words?: string[];
   status: CardStatus;
 };
 

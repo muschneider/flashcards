@@ -12,7 +12,8 @@ type Props = {
 };
 
 export default function SentenceCard({ card, onCorrect, onWrong }: Props) {
-  const [scrambled] = useState(() => shuffle(card.words));
+  const allWords = [...card.words, ...(card.random_words || [])];
+  const [scrambled] = useState(() => shuffle(allWords));
   const [selectedWords, setSelectedWords] = useState<string[]>([]);
   const [availableIndices, setAvailableIndices] = useState<Set<number>>(
     () => new Set(scrambled.map((_, i) => i))

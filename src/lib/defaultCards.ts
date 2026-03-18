@@ -31,5 +31,6 @@ export const defaultSentenceCards: SentenceCard[] = vocab.sentences.map((item, i
   english: item.english,
   words: item.english.split(/\s+/),
   portuguese: item.portuguese,
+  random_words: item.random_words ? item.random_words.split(',').map((w: string) => w.trim()) : undefined,
   status: { ...defaultStatus },
 }));
