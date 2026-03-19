@@ -799,242 +799,242 @@
       ]
     },
     {
-        "english": "as usual",
-        "portuguese": "como sempre",
-        "pronuncia": "éz iú-zhu-al",
-        "tipo": "expression",
-        "example": "He is late, as usual.",
-        "random_words": [
-            { "word": "usual", "pronuncia": "iú-zhu-al" },
-            { "word": "casual", "pronuncia": "ké-zhu-al" },
-            { "word": "use", "pronuncia": "iúz" },
-            { "word": "useful", "pronuncia": "iús-ful" },
-            { "word": "visual", "pronuncia": "ví-zhu-al" }
-        ]
+      "english": "as usual",
+      "portuguese": "como sempre",
+      "pronuncia": "éz iú-zhu-al",
+      "tipo": "expression",
+      "example": "He is late, as usual.",
+      "random_words": [
+        { "word": "usual", "pronuncia": "iú-zhu-al" },
+        { "word": "casual", "pronuncia": "ké-zhu-al" },
+        { "word": "use", "pronuncia": "iúz" },
+        { "word": "useful", "pronuncia": "iús-ful" },
+        { "word": "visual", "pronuncia": "ví-zhu-al" }
+      ]
     },
     {
-        "english": "I mean it",
-        "portuguese": "estou falando sério",
-        "pronuncia": "ái mín ít",
-        "tipo": "expression",
-        "example": "Stop doing that! I mean it.",
-        "random_words": [
-            { "word": "mean", "pronuncia": "mín" },
-            { "word": "meaning", "pronuncia": "mí-ning" },
-            { "word": "mine", "pronuncia": "máin" },
-            { "word": "minute", "pronuncia": "mí-nit" },
-            { "word": "main", "pronuncia": "mêin" }
-        ]
+      "english": "I mean it",
+      "portuguese": "estou falando sério",
+      "pronuncia": "ái mín ít",
+      "tipo": "expression",
+      "example": "Stop doing that! I mean it.",
+      "random_words": [
+        { "word": "mean", "pronuncia": "mín" },
+        { "word": "meaning", "pronuncia": "mí-ning" },
+        { "word": "mine", "pronuncia": "máin" },
+        { "word": "minute", "pronuncia": "mí-nit" },
+        { "word": "main", "pronuncia": "mêin" }
+      ]
     },
     {
-        "english": "I wish I knew",
-        "portuguese": "bem que eu queria saber",
-        "pronuncia": "ái uísh ái níu",
-        "tipo": "expression",
-        "example": "Where did they go? I wish I knew.",
-        "random_words": [
-            { "word": "wish", "pronuncia": "uísh" },
-            { "word": "knew", "pronuncia": "níu" },
-            { "word": "new", "pronuncia": "níu" },
-            { "word": "know", "pronuncia": "nôu" },
-            { "word": "wash", "pronuncia": "uósh" }
-        ]
+      "english": "I wish I knew",
+      "portuguese": "bem que eu queria saber",
+      "pronuncia": "ái uísh ái níu",
+      "tipo": "expression",
+      "example": "Where did they go? I wish I knew.",
+      "random_words": [
+        { "word": "wish", "pronuncia": "uísh" },
+        { "word": "knew", "pronuncia": "níu" },
+        { "word": "new", "pronuncia": "níu" },
+        { "word": "know", "pronuncia": "nôu" },
+        { "word": "wash", "pronuncia": "uósh" }
+      ]
     },
     {
-        "english": "I'm just browsing",
-        "portuguese": "estou só dando uma olhada",
-        "pronuncia": "áim djâst bráu-zing",
-        "tipo": "expression",
-        "example": "Can I help you? No thanks, I'm just browsing.",
-        "random_words": [
-            { "word": "browsing", "pronuncia": "bráu-zing" },
-            { "word": "browser", "pronuncia": "bráu-zâr" },
-            { "word": "brown", "pronuncia": "bráun" },
-            { "word": "bridge", "pronuncia": "brídj" },
-            { "word": "drowsy", "pronuncia": "drá-uzi" }
-        ]
+      "english": "I'm just browsing",
+      "portuguese": "estou só dando uma olhada",
+      "pronuncia": "áim djâst bráu-zing",
+      "tipo": "expression",
+      "example": "Can I help you? No thanks, I'm just browsing.",
+      "random_words": [
+        { "word": "browsing", "pronuncia": "bráu-zing" },
+        { "word": "browser", "pronuncia": "bráu-zâr" },
+        { "word": "brown", "pronuncia": "bráun" },
+        { "word": "bridge", "pronuncia": "brídj" },
+        { "word": "drowsy", "pronuncia": "drá-uzi" }
+      ]
     },
     {
-        "english": "let's split it",
-        "portuguese": "vamos dividir",
-        "pronuncia": "léts splít ít",
-        "tipo": "expression",
-        "example": "The bill is $40. Let's split it.",
-        "random_words": [
-            { "word": "split", "pronuncia": "splít" },
-            { "word": "spit", "pronuncia": "spít" },
-            { "word": "spill", "pronuncia": "spíl" },
-            { "word": "slip", "pronuncia": "slíp" },
-            { "word": "splint", "pronuncia": "splínt" }
-        ]
+      "english": "let's split it",
+      "portuguese": "vamos dividir",
+      "pronuncia": "léts splít ít",
+      "tipo": "expression",
+      "example": "The bill is $40. Let's split it.",
+      "random_words": [
+        { "word": "split", "pronuncia": "splít" },
+        { "word": "spit", "pronuncia": "spít" },
+        { "word": "spill", "pronuncia": "spíl" },
+        { "word": "slip", "pronuncia": "slíp" },
+        { "word": "splint", "pronuncia": "splínt" }
+      ]
     },
     {
-        "english": "once in a while",
-        "portuguese": "de vez em quando",
-        "pronuncia": "uâns ín a uáil",
-        "tipo": "expression",
-        "example": "I visit my grandparents once in a while.",
-        "random_words": [
-            { "word": "while", "pronuncia": "uáil" },
-            { "word": "once", "pronuncia": "uâns" },
-            { "word": "one", "pronuncia": "uân" },
-            { "word": "wild", "pronuncia": "uáild" },
-            { "word": "white", "pronuncia": "uáit" }
-        ]
+      "english": "once in a while",
+      "portuguese": "de vez em quando",
+      "pronuncia": "uâns ín a uáil",
+      "tipo": "expression",
+      "example": "I visit my grandparents once in a while.",
+      "random_words": [
+        { "word": "while", "pronuncia": "uáil" },
+        { "word": "once", "pronuncia": "uâns" },
+        { "word": "one", "pronuncia": "uân" },
+        { "word": "wild", "pronuncia": "uáild" },
+        { "word": "white", "pronuncia": "uáit" }
+      ]
     },
     {
-        "english": "by the way",
-        "portuguese": "a propósito",
-        "pronuncia": "bái dã uêi",
-        "tipo": "expression",
-        "example": "By the way, did you call Mom?",
-        "random_words": [
-            { "word": "way", "pronuncia": "uêi" },
-            { "word": "buy", "pronuncia": "bái" },
-            { "word": "bay", "pronuncia": "bêi" },
-            { "word": "bye", "pronuncia": "bái" },
-            { "word": "weigh", "pronuncia": "uêi" }
-        ]
+      "english": "by the way",
+      "portuguese": "a propósito",
+      "pronuncia": "bái dã uêi",
+      "tipo": "expression",
+      "example": "By the way, did you call Mom?",
+      "random_words": [
+        { "word": "way", "pronuncia": "uêi" },
+        { "word": "buy", "pronuncia": "bái" },
+        { "word": "bay", "pronuncia": "bêi" },
+        { "word": "bye", "pronuncia": "bái" },
+        { "word": "weigh", "pronuncia": "uêi" }
+      ]
     },
     {
-        "english": "let me think",
-        "portuguese": "deixa eu pensar",
-        "pronuncia": "lét mí fínk",
-        "tipo": "expression",
-        "example": "Hmm, let me think about that for a second.",
-        "random_words": [
-            { "word": "think", "pronuncia": "fínk" },
-            { "word": "thing", "pronuncia": "fíng" },
-            { "word": "thank", "pronuncia": "fénk" },
-            { "word": "sink", "pronuncia": "sínk" },
-            { "word": "thick", "pronuncia": "fík" }
-        ]
+      "english": "let me think",
+      "portuguese": "deixa eu pensar",
+      "pronuncia": "lét mí fínk",
+      "tipo": "expression",
+      "example": "Hmm, let me think about that for a second.",
+      "random_words": [
+        { "word": "think", "pronuncia": "fínk" },
+        { "word": "thing", "pronuncia": "fíng" },
+        { "word": "thank", "pronuncia": "fénk" },
+        { "word": "sink", "pronuncia": "sínk" },
+        { "word": "thick", "pronuncia": "fík" }
+      ]
     },
     {
-        "english": "it's up to you",
-        "portuguese": "você que sabe",
-        "pronuncia": "íts âp tú iú",
-        "tipo": "expression",
-        "example": "We can eat pizza or burgers, it's up to you.",
-        "random_words": [
-            { "word": "up", "pronuncia": "âp" },
-            { "word": "you", "pronuncia": "iú" },
-            { "word": "to", "pronuncia": "tú" },
-            { "word": "cup", "pronuncia": "câp" },
-            { "word": "top", "pronuncia": "tóp" }
-        ]
+      "english": "it's up to you",
+      "portuguese": "você que sabe",
+      "pronuncia": "íts âp tú iú",
+      "tipo": "expression",
+      "example": "We can eat pizza or burgers, it's up to you.",
+      "random_words": [
+        { "word": "up", "pronuncia": "âp" },
+        { "word": "you", "pronuncia": "iú" },
+        { "word": "to", "pronuncia": "tú" },
+        { "word": "cup", "pronuncia": "câp" },
+        { "word": "top", "pronuncia": "tóp" }
+      ]
     },
     {
-        "english": "I'm on my way",
-        "portuguese": "tô indo",
-        "pronuncia": "áim ón mái uêi",
-        "tipo": "expression",
-        "example": "Wait for me, I'm on my way!",
-        "random_words": [
-            { "word": "way", "pronuncia": "uêi" },
-            { "word": "away", "pronuncia": "a-uêi" },
-            { "word": "weigh", "pronuncia": "uêi" },
-            { "word": "whey", "pronuncia": "uêi" },
-            { "word": "wait", "pronuncia": "uêit" }
-        ]
+      "english": "I'm on my way",
+      "portuguese": "tô indo",
+      "pronuncia": "áim ón mái uêi",
+      "tipo": "expression",
+      "example": "Wait for me, I'm on my way!",
+      "random_words": [
+        { "word": "way", "pronuncia": "uêi" },
+        { "word": "away", "pronuncia": "a-uêi" },
+        { "word": "weigh", "pronuncia": "uêi" },
+        { "word": "whey", "pronuncia": "uêi" },
+        { "word": "wait", "pronuncia": "uêit" }
+      ]
     },
     {
-        "english": "sounds good",
-        "portuguese": "parece bom",
-        "pronuncia": "sáunds gúd",
-        "tipo": "expression",
-        "example": "Dinner at 8? Sounds good.",
-        "random_words": [
-            { "word": "sound", "pronuncia": "sáund" },
-            { "word": "sand", "pronuncia": "sénd" },
-            { "word": "good", "pronuncia": "gúd" },
-            { "word": "gold", "pronuncia": "gôuld" },
-            { "word": "round", "pronuncia": "ráund" }
-        ]
+      "english": "sounds good",
+      "portuguese": "parece bom",
+      "pronuncia": "sáunds gúd",
+      "tipo": "expression",
+      "example": "Dinner at 8? Sounds good.",
+      "random_words": [
+        { "word": "sound", "pronuncia": "sáund" },
+        { "word": "sand", "pronuncia": "sénd" },
+        { "word": "good", "pronuncia": "gúd" },
+        { "word": "gold", "pronuncia": "gôuld" },
+        { "word": "round", "pronuncia": "ráund" }
+      ]
     },
     {
-        "english": "just kidding",
-        "portuguese": "brincadeira",
-        "pronuncia": "djâst kí-ding",
-        "tipo": "expression",
-        "example": "I'm not mad, just kidding!",
-        "random_words": [
-            { "word": "kid", "pronuncia": "kíd" },
-            { "word": "kidding", "pronuncia": "kí-ding" },
-            { "word": "kind", "pronuncia": "káind" },
-            { "word": "king", "pronuncia": "kíng" },
-            { "word": "kiss", "pronuncia": "kís" }
-        ]
+      "english": "just kidding",
+      "portuguese": "brincadeira",
+      "pronuncia": "djâst kí-ding",
+      "tipo": "expression",
+      "example": "I'm not mad, just kidding!",
+      "random_words": [
+        { "word": "kid", "pronuncia": "kíd" },
+        { "word": "kidding", "pronuncia": "kí-ding" },
+        { "word": "kind", "pronuncia": "káind" },
+        { "word": "king", "pronuncia": "kíng" },
+        { "word": "kiss", "pronuncia": "kís" }
+      ]
     },
     {
-        "english": "I can't wait",
-        "portuguese": "mal posso esperar",
-        "pronuncia": "ái ként uêit",
-        "tipo": "expression",
-        "example": "I can't wait for summer vacation.",
-        "random_words": [
-            { "word": "wait", "pronuncia": "uêit" },
-            { "word": "weight", "pronuncia": "uêit" },
-            { "word": "can't", "pronuncia": "ként" },
-            { "word": "want", "pronuncia": "uónt" },
-            { "word": "white", "pronuncia": "uáit" }
-        ]
+      "english": "I can't wait",
+      "portuguese": "mal posso esperar",
+      "pronuncia": "ái ként uêit",
+      "tipo": "expression",
+      "example": "I can't wait for summer vacation.",
+      "random_words": [
+        { "word": "wait", "pronuncia": "uêit" },
+        { "word": "weight", "pronuncia": "uêit" },
+        { "word": "can't", "pronuncia": "ként" },
+        { "word": "want", "pronuncia": "uónt" },
+        { "word": "white", "pronuncia": "uáit" }
+      ]
     },
     {
-        "english": "what do you mean?",
-        "portuguese": "como assim?",
-        "pronuncia": "uót dú iú mín?",
-        "tipo": "question",
-        "example": "What do you mean by that?",
-        "random_words": [
-            { "word": "mean", "pronuncia": "mín" },
-            { "word": "meaning", "pronuncia": "mí-ning" },
-            { "word": "mine", "pronuncia": "máin" },
-            { "word": "men", "pronuncia": "mén" },
-            { "word": "main", "pronuncia": "mêin" }
-        ]
+      "english": "what do you mean?",
+      "portuguese": "como assim?",
+      "pronuncia": "uót dú iú mín?",
+      "tipo": "question",
+      "example": "What do you mean by that?",
+      "random_words": [
+        { "word": "mean", "pronuncia": "mín" },
+        { "word": "meaning", "pronuncia": "mí-ning" },
+        { "word": "mine", "pronuncia": "máin" },
+        { "word": "men", "pronuncia": "mén" },
+        { "word": "main", "pronuncia": "mêin" }
+      ]
     },
     {
-        "english": "don't worry about it",
-        "portuguese": "deixa pra lá, não se preocupe",
-        "pronuncia": "dôunt uô-ri a-báut ít",
-        "tipo": "expression",
-        "example": "You broke the glass? Don't worry about it, it was old.",
-        "random_words": [
-            { "word": "worry", "pronuncia": "uô-ri" },
-            { "word": "sorry", "pronuncia": "só-ri" },
-            { "word": "curry", "pronuncia": "câ-ri" },
-            { "word": "hurry", "pronuncia": "hâ-ri" },
-            { "word": "about", "pronuncia": "a-báut" }
-        ]
+      "english": "don't worry about it",
+      "portuguese": "deixa pra lá, não se preocupe",
+      "pronuncia": "dôunt uô-ri a-báut ít",
+      "tipo": "expression",
+      "example": "You broke the glass? Don't worry about it, it was old.",
+      "random_words": [
+        { "word": "worry", "pronuncia": "uô-ri" },
+        { "word": "sorry", "pronuncia": "só-ri" },
+        { "word": "curry", "pronuncia": "câ-ri" },
+        { "word": "hurry", "pronuncia": "hâ-ri" },
+        { "word": "about", "pronuncia": "a-báut" }
+      ]
     },
     {
-        "english": "take your time",
-        "portuguese": "sem pressa",
-        "pronuncia": "têik iór táim",
-        "tipo": "expression",
-        "example": "No rush, take your time.",
-        "random_words": [
-            { "word": "time", "pronuncia": "táim" },
-            { "word": "take", "pronuncia": "têik" },
-            { "word": "talk", "pronuncia": "tók" },
-            { "word": "team", "pronuncia": "tím" },
-            { "word": "tame", "pronuncia": "têim" }
-        ]
+      "english": "take your time",
+      "portuguese": "sem pressa",
+      "pronuncia": "têik iór táim",
+      "tipo": "expression",
+      "example": "No rush, take your time.",
+      "random_words": [
+        { "word": "time", "pronuncia": "táim" },
+        { "word": "take", "pronuncia": "têik" },
+        { "word": "talk", "pronuncia": "tók" },
+        { "word": "team", "pronuncia": "tím" },
+        { "word": "tame", "pronuncia": "têim" }
+      ]
     },
     {
-        "english": "it's been a while",
-        "portuguese": "já faz um tempo",
-        "pronuncia": "íts bín a uáil",
-        "tipo": "expression",
-        "example": "It's been a while since we last met.",
-        "random_words": [
-            { "word": "while", "pronuncia": "uáil" },
-            { "word": "been", "pronuncia": "bín" },
-            { "word": "bin", "pronuncia": "bín" },
-            { "word": "bean", "pronuncia": "bín" },
-            { "word": "being", "pronuncia": "bí-ing" }
-        ]
+      "english": "it's been a while",
+      "portuguese": "já faz um tempo",
+      "pronuncia": "íts bín a uáil",
+      "tipo": "expression",
+      "example": "It's been a while since we last met.",
+      "random_words": [
+        { "word": "while", "pronuncia": "uáil" },
+        { "word": "been", "pronuncia": "bín" },
+        { "word": "bin", "pronuncia": "bín" },
+        { "word": "bean", "pronuncia": "bín" },
+        { "word": "being", "pronuncia": "bí-ing" }
+      ]
     }
   ],
   "sentences": [
@@ -1475,7 +1475,7 @@
     },
     {
       "english": "As far as I know",
-      "portuguese": "Expressa opinião sem precisar ter certeza total.",
+      "portuguese": "Ate onde eu sei",
       "random_words": "think, guess"
     },
     {

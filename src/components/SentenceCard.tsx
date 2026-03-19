@@ -15,14 +15,6 @@ type Props = {
 export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
   const correctWordsSet = useMemo(() => new Set(card.words), [card.words]);
 
-  const mistakeIndices = useMemo(() => {
-    return card.words
-      .concat(card.random_words || [])
-      .map((w, i) => ({ word: w, index: i }))
-      .filter((w) => !correctWordsSet.has(w.word))
-      .map((w) => w.index);
-  }, [card.words, card.random_words, correctWordsSet]);
-
   const allWords = useMemo(
     () => card.words.concat(card.random_words || []),
     [card.words, card.random_words],
@@ -172,7 +164,7 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
           {scrambled.map((word, index) => {
             const isAvailable = availableIndices.has(index);
             const isCorrectWord = correctWordsSet.has(word);
-            const showAsHidden = showWordHint && mistakeIndices.includes(index);
+            const showAsHidden = showWordHint && !isCorrectWord;
 
             if (showAsHidden) {
               return (
