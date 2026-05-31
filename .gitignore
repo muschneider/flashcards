@@ -22,16 +22,25 @@
 
 # misc
 .DS_Store
+
+# secrets / local env
+.env*
+*.env
+*.env.*
+.openrouter*
+openrouter*.env
 *.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
 
 # vercel
 .vercel
@@ -60,3 +69,13 @@ ai-prompts/
 *.swp
 *.swo
 *~
+
+# Python (flashcards-agent)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.python-version
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
