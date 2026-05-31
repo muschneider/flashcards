@@ -456,10 +456,12 @@ export function CardProvider({ children }: { children: React.ReactNode }) {
 
     // Debounce save by 500ms
     saveTimeoutRef.current = setTimeout(() => {
-      // Note: Theme is handled separately in ThemeContext
+      // Theme is owned by ThemeContext. Preserve the persisted value so we
+      // don't clobber the user's selection on the shared storage key.
+      const saved = loadState();
       saveState({
         version: 2,
-        theme: 'light', // Will be updated by ThemeContext
+        theme: saved?.theme ?? 'light',
         settings: state.settings,
         cardProgress: extractProgress(state.cards),
       });
