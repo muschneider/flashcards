@@ -51,7 +51,7 @@ export function generateWordOptions(
       pronunciacion: rw.pronunciacion,
     }));
     const correctOption = { word: correctCard.english, pronunciacion: correctCard.pronunciacion };
-    options = [...distractors, correctOption];
+    options = shuffle([...distractors, correctOption]);
   } else {
     const others = allWordCards
       .filter((c) => c.id !== correctCard.id)
