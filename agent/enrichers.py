@@ -22,6 +22,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import Runnable
 
 from agent.parser import RawSentence, RawWord
+from agent.pronunciation import coerce_pronuncia, to_portuguese_phonetic
 from agent.schemas import (
     RandomWord,
     SentenceBatchGeneration,
@@ -372,7 +373,7 @@ def _coerce_word_entry(
         distractors.append(
             RandomWord(
                 word=word.strip(),
-                pronuncia=_coerce_non_empty_str(pronuncia, _fallback_pronuncia(word)),
+                pronuncia=coerce_pronuncia(word.strip(), pronuncia),
             )
         )
 
@@ -389,9 +390,7 @@ def _coerce_word_entry(
     return WordEntry(
         english=raw.english,
         portuguese=raw.portuguese,
-        pronuncia=_coerce_non_empty_str(
-            item.get("pronuncia"), _fallback_pronuncia(raw.english)
-        ),
+        pronuncia=coerce_pronuncia(raw.english, item.get("pronuncia")),
         tipo=_coerce_non_empty_str(item.get("tipo"), _fallback_tipo(raw.english)),
         example=_coerce_non_empty_str(item.get("example"), _fallback_example(raw.english)),
         random_words=distractors,
@@ -406,7 +405,7 @@ def _iter_model_random_words(value: object) -> list[dict[str, Any]]:
         if isinstance(entry, dict):
             result.append(entry)
         elif isinstance(entry, str):
-            result.append({"word": entry, "pronuncia": entry})
+            result.append({"word": entry, "pronuncia": ""})
     return result
 
 
@@ -497,4 +496,4 @@ def _fallback_example(english: str) -> str:
 
 
 def _fallback_pronuncia(english: str) -> str:
-    return re.sub(r"\s+", " ", english.strip().lower())
+    return to_portuguese_phonetic(english)

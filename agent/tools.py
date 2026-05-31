@@ -15,6 +15,7 @@ from langchain_core.tools import BaseTool, StructuredTool
 
 from agent.enrichers import SentenceEnricher, WordEnricher
 from agent.parser import parse_markdown_file
+from agent.pronunciation import is_english_spelling_echo
 from agent.schemas import Vocab
 from agent.workspace import Workspace
 
@@ -137,11 +138,22 @@ def build_tools(
                     )
 
         for entry in workspace.enriched_words:
+            if is_english_spelling_echo(entry.english, entry.pronuncia):
+                errors.append(
+                    f"word {entry.english!r} has pronunciation echo {entry.pronuncia!r}"
+                )
             distractor_keys = {rw.word.strip().lower() for rw in entry.random_words}
             if len(distractor_keys) != 5:
                 errors.append(
                     f"word {entry.english!r} has duplicate or missing distractors"
                 )
+            for random_word in entry.random_words:
+                if is_english_spelling_echo(random_word.word, random_word.pronuncia):
+                    errors.append(
+                        f"word {entry.english!r} has distractor "
+                        f"{random_word.word!r} with pronunciation echo "
+                        f"{random_word.pronuncia!r}"
+                    )
 
         try:
             Vocab(words=workspace.enriched_words, sentences=workspace.enriched_sentences)
