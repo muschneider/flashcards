@@ -31,7 +31,7 @@ def build_pipeline(config: AgentConfig) -> tuple[list[BaseTool], Workspace]:
     )
 
     enrichment_llm = build_chat_model(config, max_tokens=12000)
-    word_enricher = WordEnricher(enrichment_llm)
+    word_enricher = WordEnricher(enrichment_llm, chunk_size=config.word_chunk_size)
     sentence_enricher = SentenceEnricher(enrichment_llm)
     tools = build_tools(
         workspace,

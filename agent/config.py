@@ -23,7 +23,9 @@ class AgentConfig:
     model: str = DEFAULT_MODEL
     base_url: str = DEFAULT_BASE_URL
     api_key: str = ""
-    temperature: float = 0.5
+    #temperature: float = 0.5
+    temperature: float = 0.2
+    word_chunk_size: int = 24
     extra_headers: dict[str, str] = field(default_factory=dict)
 
     @classmethod
@@ -36,6 +38,7 @@ class AgentConfig:
             base_url=os.getenv("OPENROUTER_BASE_URL", DEFAULT_BASE_URL),
             api_key=os.getenv("OPENROUTER_API_KEY", ""),
             temperature=float(os.getenv("FLASHCARDS_TEMPERATURE", "0.5")),
+            word_chunk_size=int(os.getenv("FLASHCARDS_WORD_CHUNK_SIZE", "24")),
             extra_headers={
                 "HTTP-Referer": os.getenv(
                     "OPENROUTER_REFERER",

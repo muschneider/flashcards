@@ -21,6 +21,18 @@ class RandomWord(BaseModel):
 class WordGeneration(BaseModel):
     """LLM-generated metadata for a single word entry."""
 
+    index: int = Field(
+        description=(
+            "The 1-based index copied verbatim from the matching input word. "
+            "It identifies which input this object describes."
+        )
+    )
+    english: NonEmptyStr = Field(
+        description=(
+            "The English word copied verbatim from the matching input word. "
+            "Must equal the input term so the object can be matched back to it."
+        )
+    )
     pronuncia: NonEmptyStr = Field(
         description="Phonetic spelling of the English word for Brazilian Portuguese readers"
     )
@@ -60,6 +72,18 @@ class WordBatchGeneration(BaseModel):
 class SentenceGeneration(BaseModel):
     """LLM-generated distractors for a sentence entry."""
 
+    index: int = Field(
+        description=(
+            "The 1-based index copied verbatim from the matching input sentence. "
+            "It identifies which input this object describes."
+        )
+    )
+    english: NonEmptyStr = Field(
+        description=(
+            "The English sentence copied verbatim from the matching input. "
+            "Must equal the input sentence so the object can be matched back to it."
+        )
+    )
     random_words: NonEmptyStr = Field(
         description="Exactly two English words separated by a comma and space, e.g. 'apple, sky'"
     )

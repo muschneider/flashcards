@@ -36,6 +36,11 @@ logger = logging.getLogger(__name__)
 _WORD_BATCH_PARSER = PydanticOutputParser(pydantic_object=WordBatchGeneration)
 _SENTENCE_BATCH_PARSER = PydanticOutputParser(pydantic_object=SentenceBatchGeneration)
 
+# Words are enriched in chunks so each model call stays small enough that the
+# model reliably returns one object per input word. Larger batches make the
+# model more likely to silently drop items.
+DEFAULT_WORD_CHUNK_SIZE = 24
+
 _WORD_FALLBACK_BANK: tuple[str, ...] = (
     "role",
     "rule",
@@ -92,6 +97,12 @@ each input word, preserving the exact input order. If there are 68 input words,
 the top-level items array must contain exactly 68 objects.
 
 Rules you MUST follow for each generated object:
+- "index" MUST be copied verbatim from the matching input word's "index".
+- "english" MUST be copied verbatim from the matching input word's "english".
+  Every other field in the object MUST describe THAT exact english word.
+- Never skip a word, never merge two words into one object, and never reorder
+  or renumber the items. If you cannot fully enrich a word, still emit its
+  object with the copied "index"/"english" and your best effort for the rest.
 - "pronuncia" is the phonetic spelling written so a Brazilian-Portuguese reader
   can pronounce the word correctly out loud. Use hyphens between syllables.
   Examples: "whose" -> "rúz", "at least" -> "át líst", "rather" -> "rá-dâr",
@@ -125,6 +136,11 @@ for each input sentence, preserving the exact input order. If there are 15 input
 sentences, the top-level items array must contain exactly 15 objects.
 
 Rules you MUST follow for each generated object:
+- "index" MUST be copied verbatim from the matching input sentence's "index".
+- "english" MUST be copied verbatim from the matching input sentence's
+  "english". The "random_words" MUST be chosen for THAT exact sentence.
+- Never skip a sentence, never merge two sentences into one object, and never
+  reorder or renumber the items.
 - "random_words" is exactly TWO English words separated by ", " (comma and
   space).
 - Pick common, simple words: nouns, verbs, adjectives or short prepositions.
@@ -204,38 +220,53 @@ class EnrichmentError(RuntimeError):
 
 
 class WordEnricher:
-    """Generates LLM metadata for all word entries in one model call."""
+    """Generates LLM metadata for every parsed word.
 
-    def __init__(self, llm: BaseChatModel) -> None:
+    Words are enriched in chunks to keep each model call small enough that the
+    model reliably returns one object per input. Whatever the model returns is
+    matched back to its source word by identity (echoed ``index``/``english``),
+    never by raw array position, so a dropped or reordered item can only ever
+    degrade its own word to a local fallback -- it can never overwrite a
+    different word with another word's metadata.
+    """
+
+    def __init__(
+        self, llm: BaseChatModel, *, chunk_size: int = DEFAULT_WORD_CHUNK_SIZE
+    ) -> None:
         self._chain: Runnable = _word_batch_prompt() | llm
+        self._chunk_size = max(1, chunk_size)
 
     def enrich_many(self, raws: Sequence[RawWord]) -> list[WordEntry]:
         if not raws:
             return []
 
-        logger.info("enriching %d words with one LLM call", len(raws))
-        payload = _invoke_json_batch(self._chain, _word_inputs_json(raws), "word")
-        items = _extract_items(payload, "word")
-        if len(items) != len(raws):
-            logger.warning(
-                "word batch count mismatch: expected %d, got %d; filling missing locally",
-                len(raws),
-                len(items),
-            )
-
         source_terms = [raw.english for raw in raws]
-        return [
-            _coerce_word_entry(
-                raw=raw,
-                item=items[i] if i < len(items) else {},
-                source_terms=source_terms,
+        chunks = _chunked(raws, self._chunk_size)
+        logger.info(
+            "enriching %d words in %d LLM call(s) of up to %d words each",
+            len(raws),
+            len(chunks),
+            self._chunk_size,
+        )
+
+        entries: list[WordEntry] = []
+        for chunk in chunks:
+            payload = _invoke_json_batch(self._chain, _word_inputs_json(chunk), "word")
+            items = _extract_items(payload, "word")
+            aligned = _align_items(chunk, items, label="word")
+            entries.extend(
+                _coerce_word_entry(raw=raw, item=item, source_terms=source_terms)
+                for raw, item in zip(chunk, aligned)
             )
-            for i, raw in enumerate(raws)
-        ]
+        return entries
 
 
 class SentenceEnricher:
-    """Generates distractors for all sentence entries in one model call."""
+    """Generates distractors for all sentence entries in one model call.
+
+    As with words, the model output is matched back to each source sentence by
+    identity rather than array position.
+    """
 
     def __init__(self, llm: BaseChatModel) -> None:
         self._chain: Runnable = _sentence_batch_prompt() | llm
@@ -249,16 +280,11 @@ class SentenceEnricher:
             self._chain, _sentence_inputs_json(raws), "sentence"
         )
         items = _extract_items(payload, "sentence")
-        if len(items) != len(raws):
-            logger.warning(
-                "sentence batch count mismatch: expected %d, got %d; filling missing locally",
-                len(raws),
-                len(items),
-            )
+        aligned = _align_items(raws, items, label="sentence")
 
         return [
-            _coerce_sentence_entry(raw, items[i] if i < len(items) else {}, i)
-            for i, raw in enumerate(raws)
+            _coerce_sentence_entry(raw, item, i)
+            for i, (raw, item) in enumerate(zip(raws, aligned))
         ]
 
 
@@ -320,6 +346,113 @@ def _extract_items(payload: dict[str, Any], label: str) -> list[dict[str, Any]]:
     return [item if isinstance(item, dict) else {} for item in raw_items]
 
 
+def _chunked(seq: Sequence[Any], size: int) -> list[list[Any]]:
+    """Split a sequence into consecutive lists of at most ``size`` items."""
+    if size < 1:
+        size = 1
+    return [list(seq[i : i + size]) for i in range(0, len(seq), size)]
+
+
+def _coerce_index(value: object) -> int | None:
+    """Read a 1-based index echoed by the model, tolerating strings."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float) and value.is_integer():
+        return int(value)
+    if isinstance(value, str) and value.strip().isdigit():
+        return int(value.strip())
+    return None
+
+
+def _item_english_key(item: dict[str, Any]) -> str:
+    """Return the normalized english term the model echoed for an item, if any."""
+    english = item.get("english")
+    if isinstance(english, str) and english.strip():
+        return _normalize_term(english)
+    return ""
+
+
+def _item_conflicts_with(item: dict[str, Any], expected_key: str) -> bool:
+    """True when the item echoes a DIFFERENT english than the one expected."""
+    key = _item_english_key(item)
+    return bool(key) and key != expected_key
+
+
+def _align_items(
+    raws: Sequence[Any], items: Sequence[dict[str, Any]], *, label: str
+) -> list[dict[str, Any]]:
+    """Match model output objects back to their source entries by identity.
+
+    Each source entry is paired with the model object that describes it, using
+    the echoed ``english`` term first (the strongest signal), then the echoed
+    1-based ``index``, and only falling back to array position when the
+    positional object does not clearly belong to a different entry. Source
+    entries with no trustworthy match receive an empty dict, so downstream
+    coercion rebuilds them deterministically from their own term instead of
+    inheriting a neighbour's metadata.
+    """
+    by_english: dict[str, dict[str, Any]] = {}
+    by_index: dict[int, dict[str, Any]] = {}
+    for position, item in enumerate(items):
+        english_key = _item_english_key(item)
+        if english_key:
+            by_english.setdefault(english_key, item)
+        index = _coerce_index(item.get("index"))
+        if index is not None:
+            by_index.setdefault(index, item)
+
+    aligned: list[dict[str, Any]] = []
+    unmatched = 0
+    for position, raw in enumerate(raws):
+        expected_key = _normalize_term(raw.english)
+        expected_index = position + 1
+
+        chosen = by_english.get(expected_key)
+        if chosen is None:
+            candidate = by_index.get(expected_index)
+            if candidate is not None and not _item_conflicts_with(
+                candidate, expected_key
+            ):
+                chosen = candidate
+        if chosen is None and position < len(items):
+            positional = items[position]
+            if not _item_conflicts_with(positional, expected_key):
+                chosen = positional
+        if chosen is None:
+            unmatched += 1
+            chosen = {}
+        aligned.append(chosen)
+
+    if unmatched:
+        logger.warning(
+            "%s batch: %d of %d entries had no trustworthy model match and will "
+            "use deterministic local fallbacks",
+            label,
+            unmatched,
+            len(raws),
+        )
+    return aligned
+
+
+def _verified_item(item: dict[str, Any], expected_english: str) -> dict[str, Any]:
+    """Drop an item whose echoed english belongs to a different word.
+
+    Final safety net: coercion never trusts metadata that the model tagged with
+    a different english term, so an entry can only ever show its own data or a
+    deterministic fallback derived from its own term.
+    """
+    if _item_conflicts_with(item, _normalize_term(expected_english)):
+        logger.warning(
+            "discarding model item tagged %r while enriching %r",
+            item.get("english"),
+            expected_english,
+        )
+        return {}
+    return item
+
+
 def _word_inputs_json(raws: Sequence[RawWord]) -> str:
     return json.dumps(
         [
@@ -357,6 +490,7 @@ def _coerce_word_entry(
     item: dict[str, Any],
     source_terms: Sequence[str],
 ) -> WordEntry:
+    item = _verified_item(item, raw.english)
     distractors: list[RandomWord] = []
     seen: set[str] = set()
     target = _normalize_term(raw.english)
@@ -433,6 +567,7 @@ def _coerce_sentence_entry(
     item: dict[str, Any],
     index: int,
 ) -> SentenceEntry:
+    item = _verified_item(item, raw.english)
     sentence_bag = _word_token_bag(raw.english)
     parts: list[str] = []
     seen: set[str] = set()
