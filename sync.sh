@@ -1,5 +1,5 @@
 #!/bin/bash
-#flashcards-agent
+flashcards-agent
 git add .
 git commit -m "words and sentences updated"
 git push -u origin main
