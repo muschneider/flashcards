@@ -2,4 +2,4 @@
 #flashcards-agent
 git add .
 git commit -m "words and sentences updated"
-git push origin master
+git push -u origin main
