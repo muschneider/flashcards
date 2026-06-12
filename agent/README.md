@@ -17,9 +17,13 @@ The pipeline is implemented as five deterministic LangChain Tools, exposed in
    `agent/workspace.py`).
 2. `enrich_words` - makes one LLM call for all parsed words to produce a
     `pronuncia`, `tipo`, `example`, and exactly five `random_words` distractors
-    (`agent/enrichers.py`).
+    (`agent/enrichers.py`). Each generated distractor is checked against an
+    English dictionary (`agent/wordcheck.py`); model-invented misspellings such
+    as `hopefuly` for `hopefully` are dropped and replaced with known-good
+    fallback words so the flashcards never teach a non-word.
 3. `enrich_sentences` - makes one LLM call for all parsed sentences to produce
    two distractor `random_words` that do NOT appear in the English sentence.
+   These distractors are dictionary-checked as well.
 4. `validate_vocab` - enforces the contract defined by the Pydantic schemas
    in `agent/schemas.py`: counts match, no duplicate distractors, sentence
    distractors are absent from the sentence, etc.
@@ -28,6 +32,11 @@ The pipeline is implemented as five deterministic LangChain Tools, exposed in
 
 The CLI does not use the LLM to choose tools. This keeps OpenRouter usage to two
 model calls per successful run: one for words and one for sentences.
+
+Dictionary validation runs fully offline using the bundled `pyspellchecker`
+word list, so it adds no network calls. If that package is ever unavailable the
+validator fails open (logs a warning and skips the check) rather than blocking a
+run.
 
 The LLM is reached through OpenRouter using the OpenAI-compatible endpoint.
 The default model is `openai/gpt-oss-120b:free` and can be overridden via

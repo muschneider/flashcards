@@ -30,6 +30,7 @@ from agent.schemas import (
     WordBatchGeneration,
     WordEntry,
 )
+from agent.wordcheck import EnglishWordValidator
 
 logger = logging.getLogger(__name__)
 
@@ -116,6 +117,10 @@ Rules you MUST follow for each generated object:
 - "random_words" must be EXACTLY 5 distractor entries that a learner could
   confuse with the target word: similar spelling, homophones, near-rhymes or
   close meaning.
+- Every distractor MUST be a REAL, correctly spelled English word or a common
+  multi-word English expression. NEVER invent words, misspellings or fake
+  inflections. For "hopefully" do NOT use "hopefuly" or "hopfully"; use real
+  confusable words such as "hopeful", "helpful" or "hopelessly".
 - Never include the target word itself as one of its random_words. For a
   multi-word expression, never repeat the full expression as a distractor.
 - The five distractors MUST all be DIFFERENT English terms.
@@ -215,6 +220,14 @@ def _normalize_term(value: str) -> str:
     return re.sub(r"\s+", " ", value.strip().lower())
 
 
+# Curated fallback words are known-good English by construction. They are
+# trusted (never dictionary-checked) so an aggressive validator can always be
+# topped up to the required five distractors without ever being starved.
+_TRUSTED_FALLBACK_WORDS: frozenset[str] = frozenset(
+    _normalize_term(word) for word in _WORD_FALLBACK_BANK
+)
+
+
 class EnrichmentError(RuntimeError):
     """Raised when an enrichment cannot be produced or validated."""
 
@@ -231,10 +244,15 @@ class WordEnricher:
     """
 
     def __init__(
-        self, llm: BaseChatModel, *, chunk_size: int = DEFAULT_WORD_CHUNK_SIZE
+        self,
+        llm: BaseChatModel,
+        *,
+        chunk_size: int = DEFAULT_WORD_CHUNK_SIZE,
+        validator: EnglishWordValidator | None = None,
     ) -> None:
         self._chain: Runnable = _word_batch_prompt() | llm
         self._chunk_size = max(1, chunk_size)
+        self._validator = validator or EnglishWordValidator()
 
     def enrich_many(self, raws: Sequence[RawWord]) -> list[WordEntry]:
         if not raws:
@@ -255,7 +273,12 @@ class WordEnricher:
             items = _extract_items(payload, "word")
             aligned = _align_items(chunk, items, label="word")
             entries.extend(
-                _coerce_word_entry(raw=raw, item=item, source_terms=source_terms)
+                _coerce_word_entry(
+                    raw=raw,
+                    item=item,
+                    source_terms=source_terms,
+                    validator=self._validator,
+                )
                 for raw, item in zip(chunk, aligned)
             )
         return entries
@@ -268,8 +291,14 @@ class SentenceEnricher:
     identity rather than array position.
     """
 
-    def __init__(self, llm: BaseChatModel) -> None:
+    def __init__(
+        self,
+        llm: BaseChatModel,
+        *,
+        validator: EnglishWordValidator | None = None,
+    ) -> None:
         self._chain: Runnable = _sentence_batch_prompt() | llm
+        self._validator = validator or EnglishWordValidator()
 
     def enrich_many(self, raws: Sequence[RawSentence]) -> list[SentenceEntry]:
         if not raws:
@@ -283,7 +312,7 @@ class SentenceEnricher:
         aligned = _align_items(raws, items, label="sentence")
 
         return [
-            _coerce_sentence_entry(raw, item, i)
+            _coerce_sentence_entry(raw, item, i, validator=self._validator)
             for i, (raw, item) in enumerate(zip(raws, aligned))
         ]
 
@@ -489,19 +518,33 @@ def _coerce_word_entry(
     raw: RawWord,
     item: dict[str, Any],
     source_terms: Sequence[str],
+    validator: EnglishWordValidator | None = None,
 ) -> WordEntry:
     item = _verified_item(item, raw.english)
+    validator = validator or EnglishWordValidator()
     distractors: list[RandomWord] = []
     seen: set[str] = set()
     target = _normalize_term(raw.english)
 
-    def add_random_word(word: object, pronuncia: object = "") -> None:
+    def add_random_word(
+        word: object, pronuncia: object = "", *, trusted: bool = False
+    ) -> None:
         if len(distractors) >= 5:
             return
         if not isinstance(word, str) or not word.strip():
             return
         candidate = _normalize_term(word)
         if candidate == target or candidate in seen:
+            return
+        # Drop model-invented misspellings ("hopefuly", "broughts") so a learner
+        # is never shown a non-word as a plausible answer. Curated fallbacks are
+        # trusted and skip the check so we can always reach five distractors.
+        if not trusted and not validator.is_valid_term(word):
+            logger.debug(
+                "dropping non-dictionary distractor %r for word %r",
+                word,
+                raw.english,
+            )
             return
         seen.add(candidate)
         distractors.append(
@@ -514,7 +557,11 @@ def _coerce_word_entry(
     for candidate in _iter_model_random_words(item.get("random_words")):
         add_random_word(candidate.get("word"), candidate.get("pronuncia"))
     for candidate in _fallback_word_candidates(raw.english, source_terms):
-        add_random_word(candidate, _fallback_pronuncia(candidate))
+        add_random_word(
+            candidate,
+            _fallback_pronuncia(candidate),
+            trusted=_normalize_term(candidate) in _TRUSTED_FALLBACK_WORDS,
+        )
 
     if len(distractors) != 5:
         raise EnrichmentError(
@@ -566,19 +613,31 @@ def _coerce_sentence_entry(
     raw: RawSentence,
     item: dict[str, Any],
     index: int,
+    *,
+    validator: EnglishWordValidator | None = None,
 ) -> SentenceEntry:
     item = _verified_item(item, raw.english)
+    validator = validator or EnglishWordValidator()
     sentence_bag = _word_token_bag(raw.english)
     parts: list[str] = []
     seen: set[str] = set()
 
-    def add_part(value: object) -> None:
+    def add_part(value: object, *, trusted: bool = False) -> None:
         if len(parts) >= 2:
             return
         if not isinstance(value, str) or not value.strip():
             return
         candidate = value.strip().lower()
         if " " in candidate or candidate in seen or candidate in sentence_bag:
+            return
+        # Reject model-invented non-words; curated category fallbacks are
+        # trusted so two distractors are always available.
+        if not trusted and not validator.is_valid_word(value.strip()):
+            logger.debug(
+                "dropping non-dictionary sentence distractor %r for %r",
+                value,
+                raw.english,
+            )
             return
         seen.add(candidate)
         parts.append(value.strip())
@@ -592,7 +651,7 @@ def _coerce_sentence_entry(
             add_part(piece)
 
     for candidate in _sentence_category_words(index):
-        add_part(candidate)
+        add_part(candidate, trusted=True)
 
     if len(parts) != 2:
         raise EnrichmentError(

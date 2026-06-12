@@ -7,7 +7,7 @@ Here are the specific rules you must follow:
 - Generate "pronuncia": The phonetic pronunciation written in a way that makes sense for a Brazilian Portuguese speaker (e.g., "át list").
 - Generate "tipo": The grammatical part of speech (e.g., noun, verb, pronoun, expression).
 - Generate "example": A short, clear English sentence using the word in context.
-- Generate "random_words": Create an array of exactly 5 dictionary objects. Each object must contain a "word" and its "pronuncia". These 5 words MUST be different from the target English word, but they should be easily confused with it (e.g., similar spelling, homophones, or related categories) to serve as tricky distractors in a multiple-choice flashcard.
+- Generate "random_words": Create an array of exactly 5 dictionary objects. Each object must contain a "word" and its "pronuncia". These 5 words MUST be different from the target English word, but they should be easily confused with it (e.g., similar spelling, homophones, or related categories) to serve as tricky distractors in a multiple-choice flashcard. Every distractor MUST be a real, correctly spelled English word or common expression — never invent misspellings or non-words (e.g., for "hopefully" use real words like "hopeful" or "helpful", never "hopefuly").
 
 2. For the "# Sentences" section:
 - Extract the English sentence and its Portuguese translation. Note that they appear on consecutive lines in the input.

@@ -3,11 +3,13 @@ import unittest
 from agent.enrichers import (
     _align_items,
     _chunked,
+    _coerce_sentence_entry,
     _coerce_word_entry,
     _fallback_pronuncia,
 )
-from agent.parser import RawWord
+from agent.parser import RawSentence, RawWord
 from agent.pronunciation import is_english_spelling_echo
+from agent.wordcheck import EnglishWordValidator
 
 
 class PronunciaFallbackTests(unittest.TestCase):
@@ -76,6 +78,77 @@ class PronunciaFallbackTests(unittest.TestCase):
         distractor_words = {rw.word.lower() for rw in entry.random_words}
         self.assertNotIn("brave", distractor_words)
         self.assertEqual(len(entry.random_words), 5)
+
+
+class DistractorDictionaryFilterTests(unittest.TestCase):
+    """Generated distractors must be real English words, not invented spellings."""
+
+    def test_non_dictionary_distractors_are_dropped_and_backfilled(self) -> None:
+        validator = EnglishWordValidator(
+            {"hopeful", "hopelessly", "helpful"}
+        )
+        entry = _coerce_word_entry(
+            raw=RawWord(english="hopefully", portuguese="tomara"),
+            item={
+                "pronuncia": "hôup-fu-li",
+                "tipo": "adverb",
+                "example": "Hopefully it works.",
+                "random_words": [
+                    {"word": "hopeful", "pronuncia": "hôup-ful"},
+                    {"word": "hopelessly", "pronuncia": "hôup-lés-li"},
+                    {"word": "hopefuly", "pronuncia": "hôup-fu-li"},
+                    {"word": "hopfully", "pronuncia": "hôup-fu-li"},
+                    {"word": "helpful", "pronuncia": "hélp-ful"},
+                ],
+            },
+            source_terms=["hopefully"],
+            validator=validator,
+        )
+
+        words = {rw.word.lower() for rw in entry.random_words}
+        self.assertEqual(len(entry.random_words), 5)
+        self.assertNotIn("hopefuly", words)
+        self.assertNotIn("hopfully", words)
+        self.assertIn("hopeful", words)
+        self.assertIn("helpful", words)
+        self.assertIn("hopelessly", words)
+
+    def test_curated_fallbacks_fill_in_when_validator_rejects_everything(self) -> None:
+        """Even a maximally strict validator must still yield five distractors."""
+        validator = EnglishWordValidator(frozenset())
+        entry = _coerce_word_entry(
+            raw=RawWord(english="role", portuguese="papel"),
+            item={
+                "pronuncia": "rôul",
+                "tipo": "noun",
+                "example": "She played a role.",
+                "random_words": [
+                    {"word": "rolle", "pronuncia": "ról"},
+                    {"word": "roul", "pronuncia": "rúl"},
+                ],
+            },
+            source_terms=["role"],
+            validator=validator,
+        )
+
+        words = {rw.word.lower() for rw in entry.random_words}
+        self.assertEqual(len(entry.random_words), 5)
+        self.assertNotIn("rolle", words)
+        self.assertNotIn("roul", words)
+
+    def test_sentence_distractors_drop_non_words(self) -> None:
+        validator = EnglishWordValidator({"apple"})
+        entry = _coerce_sentence_entry(
+            RawSentence(english="The cat sleeps", portuguese="O gato dorme"),
+            {"random_words": "apple, zzzz"},
+            0,
+            validator=validator,
+        )
+
+        parts = [piece.strip().lower() for piece in entry.random_words.split(",")]
+        self.assertEqual(len(parts), 2)
+        self.assertNotIn("zzzz", parts)
+        self.assertIn("apple", parts)
 
 
 class AlignItemsTests(unittest.TestCase):
