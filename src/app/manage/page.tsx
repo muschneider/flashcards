@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Plus, Trash2, Type, MessageSquare } from 'lucide-react';
 import { useCards } from '@/context/CardContext';
 
@@ -9,6 +9,16 @@ type Tab = 'words' | 'sentences';
 export default function ManagePage() {
   const { wordCards, sentenceCards, addWord, addSentence, deleteCard } = useCards();
   const [activeTab, setActiveTab] = useState<Tab>('words');
+
+  // List cards alphabetically by their English text
+  const sortedWordCards = useMemo(
+    () => [...wordCards].sort((a, b) => a.english.localeCompare(b.english, undefined, { sensitivity: 'base' })),
+    [wordCards],
+  );
+  const sortedSentenceCards = useMemo(
+    () => [...sentenceCards].sort((a, b) => a.english.localeCompare(b.english, undefined, { sensitivity: 'base' })),
+    [sentenceCards],
+  );
 
   // Word form
   const [wordEnglish, setWordEnglish] = useState('');
@@ -124,7 +134,7 @@ export default function ManagePage() {
 
           {/* Word list */}
           <div className="space-y-2">
-            {wordCards.map((card) => (
+            {sortedWordCards.map((card) => (
               <div
                 key={card.id}
                 className="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800"
@@ -218,7 +228,7 @@ export default function ManagePage() {
 
           {/* Sentence list */}
           <div className="space-y-2">
-            {sentenceCards.map((card) => (
+            {sortedSentenceCards.map((card) => (
               <div
                 key={card.id}
                 className="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800"

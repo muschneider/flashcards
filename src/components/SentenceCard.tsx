@@ -12,12 +12,18 @@ type Props = {
   onSkip: () => void;
 };
 
-export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
-  const correctWordsSet = useMemo(() => new Set(card.words), [card.words]);
+export default function SentenceCard({ card, onCorrect, onWrong, onSkip }: Props) {
+  // Strip sentence-ending punctuation (. ? !) so users don't have to insert it
+  const cleanWords = useMemo(
+    () => card.words.map((w) => w.replace(/[.?!]/g, '')).filter((w) => w.length > 0),
+    [card.words],
+  );
+
+  const correctSentence = useMemo(() => cleanWords.join(' '), [cleanWords]);
 
   const allWords = useMemo(
-    () => card.words.concat(card.random_words || []),
-    [card.words, card.random_words],
+    () => cleanWords.concat(card.random_words || []),
+    [cleanWords, card.random_words],
   );
 
   const scrambled = useMemo(() => shuffle(allWords), [allWords]);
@@ -26,29 +32,35 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
   const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
   const [availableIndices, setAvailableIndices] = useState<Set<number>>(() => new Set(scrambled.map((_, i) => i)));
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
-  const [showWordHint, setShowWordHint] = useState(false);
+  // Index in `scrambled` of the next word to place, highlighted by the hint
+  const [hintIndex, setHintIndex] = useState<number | null>(null);
 
   // Reset state when card changes
   useEffect(() => {
     setSelectedIndices([]);
     setAvailableIndices(new Set(scrambled.map((_, i) => i)));
     setFeedback(null);
-    setShowWordHint(false);
+    setHintIndex(null);
   }, [card.id, scrambled]);
 
   const handleHintClick = useCallback(() => {
-    setShowWordHint(true);
-  }, []);
+    if (feedback) return;
+    const nextPosition = selectedIndices.length;
+    if (nextPosition >= cleanWords.length) return;
+    const nextWord = cleanWords[nextPosition];
+    const tileIndex = scrambled.findIndex((word, i) => word === nextWord && availableIndices.has(i));
+    if (tileIndex !== -1) setHintIndex(tileIndex);
+  }, [feedback, selectedIndices.length, cleanWords, scrambled, availableIndices]);
 
-  // Auto-hide hint after 3 seconds
+  // Auto-clear hint highlight after 2 seconds
   useEffect(() => {
-    if (showWordHint) {
+    if (hintIndex !== null) {
       const timeout = setTimeout(() => {
-        setShowWordHint(false);
-      }, 3000);
+        setHintIndex(null);
+      }, 2000);
       return () => clearTimeout(timeout);
     }
-  }, [showWordHint]);
+  }, [hintIndex]);
 
   const handleWordClick = useCallback(
     (index: number) => {
@@ -66,14 +78,13 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
 
   const handleDeselectWord = useCallback(
     (index: number) => {
-      if (feedback === 'correct') return;
+      if (feedback) return;
       setSelectedIndices((prev) => prev.filter((i) => i !== index));
       setAvailableIndices((prev) => {
         const next = new Set(prev);
         next.add(index);
         return next;
       });
-      if (feedback === 'wrong') setFeedback(null);
     },
     [feedback]
   );
@@ -91,9 +102,8 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
 
   // Check answer when all words selected
   useEffect(() => {
-    if (selectedIndices.length === card.words.length && !feedback) {
+    if (selectedIndices.length === cleanWords.length && !feedback) {
       const userSentence = selectedIndices.map((i) => scrambled[i]).join(' ');
-      const correctSentence = card.english;
 
       if (userSentence === correctSentence) {
         setFeedback('correct');
@@ -101,7 +111,7 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
         setFeedback('wrong');
       }
     }
-  }, [selectedIndices, feedback, card.words.length, card.english, scrambled]);
+  }, [selectedIndices, feedback, cleanWords.length, correctSentence, scrambled]);
 
   // Trigger onCorrect after showing correct feedback
   useEffect(() => {
@@ -113,6 +123,16 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
     }
   }, [feedback, onCorrect]);
 
+  // Trigger onWrong after showing the correct sentence, leaving it for review
+  useEffect(() => {
+    if (feedback === 'wrong') {
+      const timeout = setTimeout(() => {
+        onWrong();
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [feedback, onWrong]);
+
   return (
     <div className="mx-auto w-full max-w-lg">
       <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg transition-all dark:border-gray-700 dark:bg-gray-800">
@@ -123,7 +143,7 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
           <button
             onClick={handleHintClick}
             className={`flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-              showWordHint
+              hintIndex !== null
                 ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300'
                 : 'text-amber-600 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-900/20'
             }`}
@@ -146,7 +166,7 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
                 <button
                   key={`${scrambled[index]}-${index}`}
                   onClick={() => handleDeselectWord(index)}
-                  disabled={feedback === 'correct'}
+                  disabled={!!feedback}
                   className="cursor-pointer rounded-lg bg-indigo-100 px-3 py-1.5 text-sm font-medium text-indigo-700 transition-colors hover:bg-indigo-200 disabled:cursor-default disabled:hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-300 dark:hover:bg-indigo-900 dark:disabled:hover:bg-indigo-900/50"
                 >
                   {scrambled[index]}
@@ -163,23 +183,10 @@ export default function SentenceCard({ card, onCorrect, onSkip }: Props) {
         <div className="mb-4 flex flex-wrap justify-center gap-2">
           {scrambled.map((word, index) => {
             const isAvailable = availableIndices.has(index);
-            const isCorrectWord = correctWordsSet.has(word);
-            const showAsHidden = showWordHint && !isCorrectWord;
-
-            if (showAsHidden) {
-              return (
-                <span
-                  key={`${word}-${index}`}
-                  className="pointer-events-none opacity-0"
-                  aria-hidden="true"
-                >
-                  {word}
-                </span>
-              );
-            }
+            const isHinted = hintIndex === index;
 
             const buttonClass = isAvailable
-              ? showWordHint && isCorrectWord
+              ? isHinted
                 ? 'border-amber-400 bg-amber-50 ring-2 ring-amber-400/50 dark:border-amber-400 dark:bg-amber-900/30 dark:ring-amber-400/30'
                 : 'border-gray-200 bg-white text-gray-700 hover:border-indigo-400 hover:bg-indigo-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:border-indigo-400 dark:hover:bg-indigo-900/30'
               : 'border-transparent bg-gray-100 text-gray-300 dark:bg-gray-800 dark:text-gray-600';
