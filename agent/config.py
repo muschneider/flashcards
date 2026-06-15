@@ -10,7 +10,8 @@ DEFAULT_MARKDOWN_PATH = Path(
     "/home/mauro/ws/obsidian/mauro/english/words_and_sentences/flashcard.md"
 )
 DEFAULT_OUTPUT_PATH = Path(__file__).resolve().parent.parent / "src" / "data" / "vocab.json"
-DEFAULT_MODEL = "openai/gpt-oss-120b:free"
+#DEFAULT_MODEL = "openai/gpt-oss-120b:free"
+DEFAULT_MODEL = "deepseek/deepseek-v4-flash"
 DEFAULT_BASE_URL = "https://openrouter.ai/api/v1"
 
 
