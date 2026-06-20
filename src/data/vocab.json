@@ -3,29 +3,29 @@
     {
       "english": "pleased",
       "portuguese": "satisfeito / contente",
-      "pronuncia": "plíz-d",
+      "pronuncia": "plízd",
       "tipo": "adjective",
-      "example": "I am pleased with the result.",
+      "example": "I am pleased to meet you.",
       "random_words": [
         {
           "word": "please",
           "pronuncia": "plíz"
         },
         {
-          "word": "peace",
-          "pronuncia": "pís"
+          "word": "pled",
+          "pronuncia": "pléd"
         },
         {
           "word": "plead",
           "pronuncia": "plíd"
         },
         {
-          "word": "lease",
-          "pronuncia": "lís"
+          "word": "peas",
+          "pronuncia": "píz"
         },
         {
-          "word": "pledge",
-          "pronuncia": "plédj"
+          "word": "leased",
+          "pronuncia": "líst"
         }
       ]
     },
@@ -34,27 +34,27 @@
       "portuguese": "cuidar de",
       "pronuncia": "lú-king áf-târ",
       "tipo": "phrasal verb",
-      "example": "She is looking after her niece.",
+      "example": "She is looking after her little brother.",
       "random_words": [
-        {
-          "word": "looking for",
-          "pronuncia": "lú-king fór"
-        },
         {
           "word": "look after",
           "pronuncia": "lúk áf-târ"
         },
         {
-          "word": "looks after",
-          "pronuncia": "lúks áf-târ"
+          "word": "caring for",
+          "pronuncia": "ké-ring fór"
         },
         {
-          "word": "looking at",
-          "pronuncia": "lú-king át"
+          "word": "watching over",
+          "pronuncia": "uó-ching ó-vâr"
         },
         {
-          "word": "look out",
-          "pronuncia": "lúk áut"
+          "word": "taking care",
+          "pronuncia": "téi-king ké-r"
+        },
+        {
+          "word": "looking for",
+          "pronuncia": "lú-king fór"
         }
       ]
     },
@@ -70,87 +70,87 @@
           "pronuncia": "uâ-ri"
         },
         {
-          "word": "weary",
-          "pronuncia": "uí-ri"
-        },
-        {
           "word": "hurried",
           "pronuncia": "hâ-rid"
         },
         {
-          "word": "worriedly",
-          "pronuncia": "uâ-rid-li"
+          "word": "weary",
+          "pronuncia": "uí-ri"
         },
         {
-          "word": "worrisome",
-          "pronuncia": "uâ-ri-sâm"
+          "word": "carried",
+          "pronuncia": "ké-rid"
+        },
+        {
+          "word": "married",
+          "pronuncia": "mé-rid"
         }
       ]
     },
     {
       "english": "care",
       "portuguese": "cuidado / se importar",
-      "pronuncia": "kér",
+      "pronuncia": "ké-r",
       "tipo": "noun/verb",
       "example": "Take care of yourself.",
       "random_words": [
         {
           "word": "cure",
-          "pronuncia": "kiúr"
+          "pronuncia": "kiú-r"
+        },
+        {
+          "word": "car",
+          "pronuncia": "kár"
         },
         {
           "word": "core",
           "pronuncia": "kór"
         },
         {
-          "word": "are",
-          "pronuncia": "âr"
+          "word": "dare",
+          "pronuncia": "dé-r"
         },
         {
-          "word": "carefree",
-          "pronuncia": "kér-frí"
-        },
-        {
-          "word": "careful",
-          "pronuncia": "kér-ful"
+          "word": "share",
+          "pronuncia": "ché-r"
         }
       ]
     },
     {
       "english": "worked it out",
       "portuguese": "resolver / descobrir / entender",
-      "pronuncia": "uârkt it áut",
-      "tipo": "phrasal verb",
-      "example": "He worked it out in the end.",
+      "pronuncia": "uôrkt it áut",
+      "tipo": "expression",
+      "example": "We worked it out together.",
       "random_words": [
         {
           "word": "work out",
-          "pronuncia": "uârk áut"
+          "pronuncia": "uôrk áut"
         },
         {
-          "word": "worked out",
-          "pronuncia": "uârkt áut"
+          "word": "figure out",
+          "pronuncia": "fí-guâr áut"
         },
         {
-          "word": "work it",
-          "pronuncia": "uârk it"
+          "word": "sort out",
+          "pronuncia": "sórt áut"
         },
         {
-          "word": "worded it out",
-          "pronuncia": "uâr-ded it áut"
+          "word": "find out",
+          "pronuncia": "fáind áut"
         },
         {
-          "word": "worked on it",
-          "pronuncia": "uârkt ón it"
+          "word": "point out",
+          "pronuncia": "póint áut"
         }
       ]
     },
     {
       "english": "scare",
       "portuguese": "assustar / medo",
-      "pronuncia": "skér",
+      "pronuncia": "ské-r",
       "tipo": "verb/noun",
-      "example": "The movie scared me.",
+      "example": "That loud noise made me scare.",
       "random_words": [
         {
           "word": "scar",
@@ -161,16 +161,16 @@
           "pronuncia": "skór"
         },
         {
-          "word": "scarecrow",
-          "pronuncia": "skér-króu"
+          "word": "stare",
+          "pronuncia": "sté-r"
         },
         {
-          "word": "scared",
-          "pronuncia": "skérd"
+          "word": "square",
+          "pronuncia": "skué-r"
         },
         {
-          "word": "scary",
-          "pronuncia": "ské-ri"
+          "word": "spare",
+          "pronuncia": "spé-r"
         }
       ]
     },
@@ -179,63 +179,63 @@
       "portuguese": "fingir",
       "pronuncia": "pri-ténd",
       "tipo": "verb",
-      "example": "Children love to pretend.",
+      "example": "Don't pretend you didn't see me.",
       "random_words": [
         {
+          "word": "prevent",
+          "pronuncia": "pri-vént"
+        },
+        {
+          "word": "portend",
+          "pronuncia": "pór-ténd"
+        },
+        {
           "word": "attend",
-          "pronuncia": "â-ténd"
+          "pronuncia": "a-ténd"
+        },
+        {
+          "word": "extend",
+          "pronuncia": "éks-ténd"
         },
         {
           "word": "intend",
           "pronuncia": "in-ténd"
-        },
-        {
-          "word": "extend",
-          "pronuncia": "ek-sténd"
-        },
-        {
-          "word": "pretense",
-          "pronuncia": "pri-téns"
-        },
-        {
-          "word": "prevented",
-          "pronuncia": "pri-vén-ted"
         }
       ]
     },
     {
       "english": "complained",
       "portuguese": "reclamou",
-      "pronuncia": "com-plén-d",
+      "pronuncia": "kâm-plênd",
       "tipo": "verb",
       "example": "She complained about the noise.",
       "random_words": [
         {
-          "word": "complain",
-          "pronuncia": "com-plén"
-        },
-        {
           "word": "complaint",
-          "pronuncia": "com-plént"
+          "pronuncia": "kâm-plênt"
         },
         {
-          "word": "compliance",
-          "pronuncia": "com-plái-ans"
+          "word": "explained",
+          "pronuncia": "éks-plênd"
         },
         {
-          "word": "complainant",
-          "pronuncia": "com-plén-ant"
+          "word": "complain",
+          "pronuncia": "kâm-plên"
         },
         {
-          "word": "complement",
-          "pronuncia": "komplement"
+          "word": "combined",
+          "pronuncia": "kâm-báind"
+        },
+        {
+          "word": "constrained",
+          "pronuncia": "kân-strênd"
         }
       ]
     },
     {
       "english": "seemed",
       "portuguese": "pareceu / parecia",
-      "pronuncia": "sím-d",
+      "pronuncia": "símd",
       "tipo": "verb",
       "example": "It seemed like a good idea.",
       "random_words": [
@@ -244,49 +244,49 @@
           "pronuncia": "sím"
         },
         {
-          "word": "seam",
-          "pronuncia": "sím"
+          "word": "seamed",
+          "pronuncia": "símd"
         },
         {
-          "word": "sees",
-          "pronuncia": "síz"
+          "word": "steamed",
+          "pronuncia": "stímd"
         },
         {
-          "word": "seen",
-          "pronuncia": "sín"
+          "word": "dreamed",
+          "pronuncia": "drímd"
         },
         {
-          "word": "seems",
-          "pronuncia": "símz"
+          "word": "mend",
+          "pronuncia": "ménd"
         }
       ]
     },
     {
       "english": "come over",
       "portuguese": "vir para cá / vir visitar / vir aqui",
-      "pronuncia": "câm óu-vâr",
+      "pronuncia": "câm ó-vâr",
       "tipo": "phrasal verb",
-      "example": "Come over to my house.",
+      "example": "Can you come over later?",
       "random_words": [
         {
+          "word": "come across",
+          "pronuncia": "câm a-crós"
+        },
+        {
+          "word": "come around",
+          "pronuncia": "câm a-ráund"
+        },
+        {
+          "word": "come by",
+          "pronuncia": "câm bái"
+        },
+        {
           "word": "come in",
-          "pronuncia": "câm in"
+          "pronuncia": "câm ín"
         },
         {
           "word": "come out",
           "pronuncia": "câm áut"
-        },
-        {
-          "word": "come across",
-          "pronuncia": "câm â-cróss"
-        },
-        {
-          "word": "come on",
-          "pronuncia": "câm ón"
-        },
-        {
-          "word": "come up",
-          "pronuncia": "câm âp"
         }
       ]
     },
@@ -295,27 +295,27 @@
       "portuguese": "vir para",
       "pronuncia": "câm tú",
       "tipo": "phrasal verb",
-      "example": "He will come to regret it.",
+      "example": "He came to after fainting.",
       "random_words": [
         {
-          "word": "come at",
-          "pronuncia": "câm át"
+          "word": "come up",
+          "pronuncia": "câm áp"
+        },
+        {
+          "word": "come on",
+          "pronuncia": "câm ón"
+        },
+        {
+          "word": "come in",
+          "pronuncia": "câm ín"
         },
         {
           "word": "come by",
           "pronuncia": "câm bái"
         },
         {
-          "word": "come for",
-          "pronuncia": "câm fór"
-        },
-        {
-          "word": "come from",
-          "pronuncia": "câm fróm"
-        },
-        {
-          "word": "come upon",
-          "pronuncia": "câm â-pón"
+          "word": "come across",
+          "pronuncia": "câm a-crós"
         }
       ]
     },
@@ -324,19 +324,15 @@
       "portuguese": "de quem",
       "pronuncia": "rúz",
       "tipo": "pronoun",
-      "example": "Whoose turn is it?",
+      "example": "Whose book is this?",
       "random_words": [
-        {
-          "word": "whose",
-          "pronuncia": "rúz"
-        },
         {
           "word": "who's",
           "pronuncia": "rúz"
         },
         {
-          "word": "whole",
-          "pronuncia": "hóul"
+          "word": "whose",
+          "pronuncia": "rúz"
         },
         {
           "word": "whom",
@@ -345,6 +341,10 @@
         {
           "word": "who",
           "pronuncia": "rú"
+        },
+        {
+          "word": "whole",
+          "pronuncia": "ról"
         }
       ]
     },
@@ -352,9 +352,13 @@
       "english": "at least",
       "portuguese": "pelo menos",
       "pronuncia": "át líst",
-      "tipo": "expression",
-      "example": "You should at least try.",
+      "tipo": "adverb",
+      "example": "At least we tried our best.",
       "random_words": [
+        {
+          "word": "at last",
+          "pronuncia": "át lást"
+        },
         {
           "word": "least",
           "pronuncia": "líst"
@@ -364,16 +368,12 @@
           "pronuncia": "lást"
         },
         {
-          "word": "at last",
-          "pronuncia": "át lást"
+          "word": "less",
+          "pronuncia": "lés"
         },
         {
-          "word": "at most",
-          "pronuncia": "át móust"
-        },
-        {
-          "word": "at best",
-          "pronuncia": "át bést"
+          "word": "list",
+          "pronuncia": "líst"
         }
       ]
     },
@@ -389,20 +389,20 @@
           "pronuncia": "fá-dâr"
         },
         {
+          "word": "bother",
+          "pronuncia": "bó-dâr"
+        },
+        {
           "word": "gather",
           "pronuncia": "gá-dâr"
         },
         {
-          "word": "further",
-          "pronuncia": "fâr-dâr"
+          "word": "lather",
+          "pronuncia": "lá-dâr"
         },
         {
           "word": "weather",
           "pronuncia": "ué-dâr"
-        },
-        {
-          "word": "other",
-          "pronuncia": "â-dâr"
         }
       ]
     },
@@ -411,7 +411,7 @@
       "portuguese": "apesar de",
       "pronuncia": "dis-páit",
       "tipo": "preposition",
-      "example": "He came despite the rain.",
+      "example": "Despite the rain, we went out.",
       "random_words": [
         {
           "word": "in spite of",
@@ -426,29 +426,25 @@
           "pronuncia": "spáit"
         },
         {
-          "word": "decide",
-          "pronuncia": "di-sáid"
+          "word": "dispute",
+          "pronuncia": "dis-piút"
         },
         {
-          "word": "desperate",
-          "pronuncia": "dés-pe-ret"
+          "word": "dirt",
+          "pronuncia": "dírt"
         }
       ]
     },
     {
       "english": "fairly",
       "portuguese": "justamente / razoalvelmente / bastante / de maneira justa",
-      "pronuncia": "fér-li",
+      "pronuncia": "fé-rli",
       "tipo": "adverb",
-      "example": "She treated him fairly.",
+      "example": "She treated everyone fairly.",
       "random_words": [
         {
           "word": "fair",
-          "pronuncia": "fér"
-        },
-        {
-          "word": "unfair",
-          "pronuncia": "ân-fér"
+          "pronuncia": "fé-r"
         },
         {
           "word": "fairy",
@@ -456,11 +452,15 @@
         },
         {
           "word": "barely",
-          "pronuncia": "bér-li"
+          "pronuncia": "bé-rli"
         },
         {
-          "word": "nearly",
-          "pronuncia": "nír-li"
+          "word": "rarely",
+          "pronuncia": "ré-rli"
+        },
+        {
+          "word": "fearfully",
+          "pronuncia": "fí-rful-li"
         }
       ]
     },
@@ -468,28 +468,28 @@
       "english": "gotcha",
       "portuguese": "entendi",
       "pronuncia": "gót-cha",
-      "tipo": "slang/interjection",
-      "example": "Gotcha! I understand.",
+      "tipo": "interjection",
+      "example": "Gotcha! I understand now.",
       "random_words": [
+        {
+          "word": "got you",
+          "pronuncia": "gót iú"
+        },
         {
           "word": "gotta",
           "pronuncia": "gó-ta"
         },
         {
-          "word": "got",
-          "pronuncia": "gót"
+          "word": "got it",
+          "pronuncia": "gót ít"
         },
         {
           "word": "catch",
           "pronuncia": "kétch"
         },
         {
-          "word": "got you",
-          "pronuncia": "gót iú"
-        },
-        {
-          "word": "got him",
-          "pronuncia": "gót rim"
+          "word": "gotchas",
+          "pronuncia": "gát-chas"
         }
       ]
     },
@@ -498,27 +498,27 @@
       "portuguese": "meio que / tipo que",
       "pronuncia": "sórt óv",
       "tipo": "expression",
-      "example": "I sort of like it.",
+      "example": "I sort of like that movie.",
       "random_words": [
+        {
+          "word": "kind of",
+          "pronuncia": "káind óv"
+        },
         {
           "word": "sort",
           "pronuncia": "sórt"
-        },
-        {
-          "word": "sorta",
-          "pronuncia": "sór-ta"
-        },
-        {
-          "word": "kinda",
-          "pronuncia": "kín-da"
         },
         {
           "word": "type of",
           "pronuncia": "táip óv"
         },
         {
-          "word": "kind of",
-          "pronuncia": "kínd óv"
+          "word": "a sort of",
+          "pronuncia": "a sórt óv"
+        },
+        {
+          "word": "somewhat",
+          "pronuncia": "sâm-uát"
         }
       ]
     },
@@ -526,57 +526,57 @@
       "english": "goofing off",
       "portuguese": "bricando / zoando / bobear /desperdiçar tempo / não fazer nada produtivo",
       "pronuncia": "gú-fing óf",
-      "tipo": "phrasal verb",
+      "tipo": "expression",
       "example": "Stop goofing off and work.",
       "random_words": [
         {
-          "word": "goof off",
-          "pronuncia": "gúf óf"
+          "word": "goof around",
+          "pronuncia": "gúf a-ráund"
         },
         {
-          "word": "goofing",
-          "pronuncia": "gú-fing"
+          "word": "fooling around",
+          "pronuncia": "fú-ling a-ráund"
+        },
+        {
+          "word": "messing around",
+          "pronuncia": "mé-sing a-ráund"
+        },
+        {
+          "word": "slacking off",
+          "pronuncia": "slá-king óf"
         },
         {
           "word": "goofy",
           "pronuncia": "gú-fi"
-        },
-        {
-          "word": "goof around",
-          "pronuncia": "gúf â-ráund"
-        },
-        {
-          "word": "fooling around",
-          "pronuncia": "fú-ling â-ráund"
         }
       ]
     },
     {
       "english": "get a glimpse",
       "portuguese": "dê uma olhada / ter um vislumbre",
-      "pronuncia": "gét â glímps",
+      "pronuncia": "gét a glímps",
       "tipo": "expression",
-      "example": "I got a glimpse of the celebrity.",
+      "example": "I got a glimpse of the sunset.",
       "random_words": [
         {
-          "word": "get a look",
-          "pronuncia": "gét â lúk"
-        },
-        {
-          "word": "get a peak",
-          "pronuncia": "gét â pík"
+          "word": "glimpse",
+          "pronuncia": "glímps"
         },
         {
           "word": "catch a glimpse",
-          "pronuncia": "kétch â glímps"
+          "pronuncia": "kétch a glímps"
         },
         {
-          "word": "get a glance",
-          "pronuncia": "gét â gláns"
+          "word": "glance",
+          "pronuncia": "gláns"
         },
         {
-          "word": "get a view",
-          "pronuncia": "gét â viú"
+          "word": "peek",
+          "pronuncia": "pík"
+        },
+        {
+          "word": "see",
+          "pronuncia": "sí"
         }
       ]
     },
@@ -585,27 +585,27 @@
       "portuguese": "Até agora tudo bem",
       "pronuncia": "sóu fár sóu gúd",
       "tipo": "expression",
-      "example": "So far so good, no problems.",
+      "example": "The project is so far so good.",
       "random_words": [
         {
           "word": "so far",
           "pronuncia": "sóu fár"
         },
         {
-          "word": "far so good",
-          "pronuncia": "fár sóu gúd"
-        },
-        {
-          "word": "so good",
-          "pronuncia": "sóu gúd"
-        },
-        {
-          "word": "so far so",
-          "pronuncia": "sóu fár sóu"
-        },
-        {
           "word": "good so far",
           "pronuncia": "gúd sóu fár"
+        },
+        {
+          "word": "all good",
+          "pronuncia": "ól gúd"
+        },
+        {
+          "word": "going well",
+          "pronuncia": "gó-ing uél"
+        },
+        {
+          "word": "okay so far",
+          "pronuncia": "óu-kêi sóu fár"
         }
       ]
     },
@@ -613,45 +613,41 @@
       "english": "look out",
       "portuguese": "Tenha cuidado",
       "pronuncia": "lúk áut",
-      "tipo": "phrasal verb/interjection",
-      "example": "Look out for cars.",
+      "tipo": "expression",
+      "example": "Look out! There's a car coming.",
       "random_words": [
         {
           "word": "watch out",
           "pronuncia": "uótch áut"
         },
         {
-          "word": "look after",
-          "pronuncia": "lúk áf-târ"
+          "word": "be careful",
+          "pronuncia": "bí ké-rful"
         },
         {
-          "word": "look up",
-          "pronuncia": "lúk âp"
+          "word": "look out for",
+          "pronuncia": "lúk áut fór"
         },
         {
           "word": "look over",
-          "pronuncia": "lúk óu-vâr"
+          "pronuncia": "lúk ó-vâr"
         },
         {
-          "word": "look in",
-          "pronuncia": "lúk in"
+          "word": "look up",
+          "pronuncia": "lúk áp"
         }
       ]
     },
     {
       "english": "O'clock",
       "portuguese": "Usado para indicar as horas inteiras no relógio (abreviação de \"of the clock\")",
-      "pronuncia": "ó-clók",
+      "pronuncia": "a-clók",
       "tipo": "adverb",
-      "example": "It is two o'clock.",
+      "example": "It is three o'clock now.",
       "random_words": [
         {
           "word": "clock",
           "pronuncia": "clók"
-        },
-        {
-          "word": "at",
-          "pronuncia": "át"
         },
         {
           "word": "of the clock",
@@ -662,8 +658,12 @@
           "pronuncia": "áur"
         },
         {
-          "word": "watch",
-          "pronuncia": "uótch"
+          "word": "time",
+          "pronuncia": "táim"
+        },
+        {
+          "word": "look out",
+          "pronuncia": "lúk áut"
         }
       ]
     },
@@ -671,219 +671,20 @@
       "english": "further",
       "portuguese": "Mais distante, mais adiante ou mais",
       "pronuncia": "fâr-dâr",
-      "tipo": "adjective/adverb",
-      "example": "Further evidence is needed.",
+      "tipo": "adverb/adjective",
+      "example": "We need to discuss this further.",
       "random_words": [
         {
           "word": "farther",
           "pronuncia": "fár-dâr"
         },
         {
-          "word": "furthest",
-          "pronuncia": "fâr-dést"
+          "word": "furthermore",
+          "pronuncia": "fâr-dâr-mór"
         },
-        {
-          "word": "father",
-          "pronuncia": "fá-dâr"
-        },
-        {
-          "word": "feather",
-          "pronuncia": "fé-dâr"
-        },
-        {
-          "word": "future",
-          "pronuncia": "fiú-chur"
-        }
-      ]
-    },
-    {
-      "english": "weird",
-      "portuguese": "estranho / esquisito",
-      "pronuncia": "uírd",
-      "tipo": "word",
-      "example": "I learned weird today.",
-      "random_words": [
-        {
-          "word": "wild",
-          "pronuncia": "uáild"
-        },
-        {
-          "word": "wear",
-          "pronuncia": "uér"
-        },
-        {
-          "word": "where",
-          "pronuncia": "uér"
-        },
-        {
-          "word": "their",
-          "pronuncia": "dér"
-        },
-        {
-          "word": "worried",
-          "pronuncia": "wórried"
-        }
-      ]
-    },
-    {
-      "english": "quiet",
-      "portuguese": "silencioso / tranquilo",
-      "pronuncia": "kuái-et",
-      "tipo": "word",
-      "example": "I learned quiet today.",
-      "random_words": [
-        {
-          "word": "quit",
-          "pronuncia": "kuít"
-        },
-        {
-          "word": "quite",
-          "pronuncia": "kuáit"
-        },
-        {
-          "word": "quote",
-          "pronuncia": "kuote"
-        },
-        {
-          "word": "due to",
-          "pronuncia": "dú tu"
-        },
-        {
-          "word": "you bet",
-          "pronuncia": "iú bét"
-        }
-      ]
-    },
-    {
-      "english": "quite",
-      "portuguese": "bastante / muito",
-      "pronuncia": "kuáit",
-      "tipo": "word",
-      "example": "I learned quite today.",
-      "random_words": [
-        {
-          "word": "quit",
-          "pronuncia": "kuít"
-        },
-        {
-          "word": "quiet",
-          "pronuncia": "kuái-et"
-        },
-        {
-          "word": "quote",
-          "pronuncia": "kuote"
-        },
-        {
-          "word": "despite",
-          "pronuncia": "dis-páit"
-        },
-        {
-          "word": "further",
-          "pronuncia": "fâr-dâr"
-        }
-      ]
-    },
-    {
-      "english": "quit",
-      "portuguese": "parar / desistir",
-      "pronuncia": "kuít",
-      "tipo": "word",
-      "example": "I learned quit today.",
-      "random_words": [
-        {
-          "word": "quiet",
-          "pronuncia": "kuái-et"
-        },
-        {
-          "word": "quite",
-          "pronuncia": "kuáit"
-        },
-        {
-          "word": "quote",
-          "pronuncia": "kuote"
-        },
-        {
-          "word": "bit",
-          "pronuncia": "bít"
-        },
-        {
-          "word": "dirt",
-          "pronuncia": "dírt"
-        }
-      ]
-    },
-    {
-      "english": "achieve",
-      "portuguese": "alcançar / atingir",
-      "pronuncia": "atkhieve",
-      "tipo": "word",
-      "example": "I learned achieve today.",
-      "random_words": [
-        {
-          "word": "come over",
-          "pronuncia": "kâm ôu-vâr"
-        },
-        {
-          "word": "beach",
-          "pronuncia": "bítch"
-        },
-        {
-          "word": "brave",
-          "pronuncia": "bráve"
-        },
-        {
-          "word": "raise",
-          "pronuncia": "rêise"
-        },
-        {
-          "word": "reach",
-          "pronuncia": "rítkh"
-        }
-      ]
-    },
-    {
-      "english": "gotchas",
-      "portuguese": "pegadinhas / truques / surpresas",
-      "pronuncia": "gát-chas",
-      "tipo": "word",
-      "example": "I learned gotchas today.",
-      "random_words": [
-        {
-          "word": "gotcha",
-          "pronuncia": "gát-cha"
-        },
-        {
-          "word": "both",
-          "pronuncia": "bôuf"
-        },
-        {
-          "word": "bitch",
-          "pronuncia": "bittkh"
-        },
-        {
-          "word": "worth",
-          "pronuncia": "uârf"
-        },
-        {
-          "word": "batch",
-          "pronuncia": "bétch"
-        }
-      ]
-    },
-    {
-      "english": "another",
-      "portuguese": "outro / mais um",
-      "pronuncia": "â-nâ-dâr",
-      "tipo": "word",
-      "example": "I learned another today.",
-      "random_words": [
         {
           "word": "rather",
           "pronuncia": "rá-dâr"
-        },
-        {
-          "word": "weather",
-          "pronuncia": "ué-dâr"
         },
         {
           "word": "there",
@@ -892,97 +693,296 @@
         {
           "word": "their",
           "pronuncia": "dér"
+        }
+      ]
+    },
+    {
+      "english": "weird",
+      "portuguese": "estranho / esquisito",
+      "pronuncia": "wírd",
+      "tipo": "adjective",
+      "example": "That was a weird noise.",
+      "random_words": [
+        {
+          "word": "wired",
+          "pronuncia": "wáird"
         },
         {
-          "word": "further",
-          "pronuncia": "fâr-dâr"
+          "word": "ward",
+          "pronuncia": "wórd"
+        },
+        {
+          "word": "weirdo",
+          "pronuncia": "wír-dou"
+        },
+        {
+          "word": "weir",
+          "pronuncia": "wír"
+        },
+        {
+          "word": "wild",
+          "pronuncia": "uáild"
+        }
+      ]
+    },
+    {
+      "english": "quiet",
+      "portuguese": "silencioso / tranquilo",
+      "pronuncia": "kwái-êt",
+      "tipo": "adjective/noun",
+      "example": "Please be quiet during the movie.",
+      "random_words": [
+        {
+          "word": "quite",
+          "pronuncia": "kwáit"
+        },
+        {
+          "word": "quit",
+          "pronuncia": "kwít"
+        },
+        {
+          "word": "quote",
+          "pronuncia": "kwóut"
+        },
+        {
+          "word": "quilt",
+          "pronuncia": "kwílt"
+        },
+        {
+          "word": "quaint",
+          "pronuncia": "kwêint"
+        }
+      ]
+    },
+    {
+      "english": "quite",
+      "portuguese": "bastante / muito",
+      "pronuncia": "kwáit",
+      "tipo": "adverb",
+      "example": "It is quite cold today.",
+      "random_words": [
+        {
+          "word": "quiet",
+          "pronuncia": "kwái-êt"
+        },
+        {
+          "word": "quit",
+          "pronuncia": "kwít"
+        },
+        {
+          "word": "quote",
+          "pronuncia": "kwóut"
+        },
+        {
+          "word": "quilt",
+          "pronuncia": "kwílt"
+        },
+        {
+          "word": "quaint",
+          "pronuncia": "kwêint"
+        }
+      ]
+    },
+    {
+      "english": "quit",
+      "portuguese": "parar / desistir",
+      "pronuncia": "kwít",
+      "tipo": "verb",
+      "example": "She decided to quit her job.",
+      "random_words": [
+        {
+          "word": "quite",
+          "pronuncia": "kwáit"
+        },
+        {
+          "word": "quiet",
+          "pronuncia": "kwái-êt"
+        },
+        {
+          "word": "quote",
+          "pronuncia": "kwóut"
+        },
+        {
+          "word": "quilt",
+          "pronuncia": "kwílt"
+        },
+        {
+          "word": "quint",
+          "pronuncia": "kwínt"
+        }
+      ]
+    },
+    {
+      "english": "achieve",
+      "portuguese": "alcançar / atingir",
+      "pronuncia": "â-tchív",
+      "tipo": "verb",
+      "example": "He worked hard to achieve his goal.",
+      "random_words": [
+        {
+          "word": "believe",
+          "pronuncia": "bî-lív"
+        },
+        {
+          "word": "relieve",
+          "pronuncia": "rî-lív"
+        },
+        {
+          "word": "retrieve",
+          "pronuncia": "rî-trív"
+        },
+        {
+          "word": "perceive",
+          "pronuncia": "pâr-sív"
+        },
+        {
+          "word": "conceive",
+          "pronuncia": "cân-sív"
+        }
+      ]
+    },
+    {
+      "english": "gotchas",
+      "portuguese": "pegadinhas / truques / surpresas",
+      "pronuncia": "gótch-âz",
+      "tipo": "noun",
+      "example": "Watch out for the gotchas in this test.",
+      "random_words": [
+        {
+          "word": "gotcha",
+          "pronuncia": "gótch-â"
+        },
+        {
+          "word": "goulash",
+          "pronuncia": "gú-lash"
+        },
+        {
+          "word": "goth",
+          "pronuncia": "gót"
+        },
+        {
+          "word": "gotten",
+          "pronuncia": "gót-ên"
+        },
+        {
+          "word": "both",
+          "pronuncia": "bôuf"
+        }
+      ]
+    },
+    {
+      "english": "another",
+      "portuguese": "outro / mais um",
+      "pronuncia": "â-nâ-dâr",
+      "tipo": "adjective/pronoun",
+      "example": "Can I have another cookie?",
+      "random_words": [
+        {
+          "word": "other",
+          "pronuncia": "â-dâr"
+        },
+        {
+          "word": "mother",
+          "pronuncia": "mâ-dâr"
+        },
+        {
+          "word": "brother",
+          "pronuncia": "brâ-dâr"
+        },
+        {
+          "word": "bother",
+          "pronuncia": "bótch-âr"
+        },
+        {
+          "word": "anode",
+          "pronuncia": "ân-ôud"
         }
       ]
     },
     {
       "english": "aware",
       "portuguese": "consciente / ciente",
-      "pronuncia": "â-uér",
-      "tipo": "word",
-      "example": "I learned aware today.",
+      "pronuncia": "â-wér",
+      "tipo": "adjective",
+      "example": "Are you aware of the rules?",
       "random_words": [
         {
-          "word": "care",
-          "pronuncia": "kér"
+          "word": "awake",
+          "pronuncia": "â-wêik"
         },
         {
-          "word": "wear",
-          "pronuncia": "uér"
+          "word": "away",
+          "pronuncia": "â-wêi"
         },
         {
-          "word": "scare",
-          "pronuncia": "skér"
+          "word": "award",
+          "pronuncia": "â-wórd"
         },
         {
-          "word": "where",
-          "pronuncia": "uér"
+          "word": "beware",
+          "pronuncia": "bî-wér"
         },
         {
-          "word": "worried",
-          "pronuncia": "wórried"
+          "word": "ware",
+          "pronuncia": "wér"
         }
       ]
     },
     {
       "english": "breakthrough",
       "portuguese": "avanço / descoberta importante",
-      "pronuncia": "brêik-frú",
-      "tipo": "word",
-      "example": "I learned breakthrough today.",
+      "pronuncia": "brêik-thrú",
+      "tipo": "noun",
+      "example": "The scientist made a major breakthrough.",
       "random_words": [
         {
+          "word": "break",
+          "pronuncia": "brêik"
+        },
+        {
           "word": "through",
-          "pronuncia": "frú"
+          "pronuncia": "thrú"
         },
         {
-          "word": "thorough",
-          "pronuncia": "fâ-rou"
+          "word": "breakdown",
+          "pronuncia": "brêik-dáun"
         },
         {
-          "word": "though",
-          "pronuncia": "dôu"
+          "word": "breakup",
+          "pronuncia": "brêik-âp"
         },
         {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
-        },
-        {
-          "word": "thought",
-          "pronuncia": "fót"
+          "word": "breakout",
+          "pronuncia": "brêik-áut"
         }
       ]
     },
     {
       "english": "brush up",
       "portuguese": "revisar / melhorar algo que já se sabe",
-      "pronuncia": "brâsh áp",
-      "tipo": "expression",
-      "example": "I learned brush up today.",
+      "pronuncia": "brâsh âp",
+      "tipo": "phrasal verb",
+      "example": "I need to brush up my Spanish.",
       "random_words": [
         {
-          "word": "brought",
-          "pronuncia": "brót"
+          "word": "brush",
+          "pronuncia": "brâsh"
         },
         {
-          "word": "stirs the pot",
-          "pronuncia": "stírs dâ pót"
+          "word": "rush",
+          "pronuncia": "râsh"
         },
         {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
+          "word": "crush",
+          "pronuncia": "crâsh"
         },
         {
-          "word": "bought",
-          "pronuncia": "bót"
+          "word": "flush",
+          "pronuncia": "flâsh"
         },
         {
-          "word": "through",
-          "pronuncia": "frú"
+          "word": "blush",
+          "pronuncia": "blâsh"
         }
       ]
     },
@@ -990,57 +990,57 @@
       "english": "beach",
       "portuguese": "praia",
       "pronuncia": "bítch",
-      "tipo": "word",
-      "example": "I learned beach today.",
+      "tipo": "noun",
+      "example": "We spent the day at the beach.",
       "random_words": [
         {
-          "word": "reach",
-          "pronuncia": "rítkh"
-        },
-        {
-          "word": "bench",
-          "pronuncia": "bentkh"
-        },
-        {
-          "word": "batch",
-          "pronuncia": "bétch"
-        },
-        {
           "word": "bitch",
-          "pronuncia": "bittkh"
+          "pronuncia": "bítch"
         },
         {
-          "word": "become",
-          "pronuncia": "bi-kâm"
+          "word": "peach",
+          "pronuncia": "pítch"
+        },
+        {
+          "word": "reach",
+          "pronuncia": "rítch"
+        },
+        {
+          "word": "teach",
+          "pronuncia": "títch"
+        },
+        {
+          "word": "leech",
+          "pronuncia": "lítch"
         }
       ]
     },
     {
       "english": "bitch",
       "portuguese": "cadela (literal) / usado também como um insulto (gíria)",
-      "pronuncia": "bittkh",
-      "tipo": "word",
-      "example": "I learned bitch today.",
+      "pronuncia": "bítch",
+      "tipo": "noun/slang",
+      "example": "That's a mean thing to call someone a bitch.",
       "random_words": [
-        {
-          "word": "batch",
-          "pronuncia": "bétch"
-        },
-        {
-          "word": "bit",
-          "pronuncia": "bít"
-        },
-        {
-          "word": "both",
-          "pronuncia": "bôuf"
-        },
         {
           "word": "beach",
           "pronuncia": "bítch"
         },
         {
-          "word": "bench",
-          "pronuncia": "bentkh"
+          "word": "batch",
+          "pronuncia": "bátch"
+        },
+        {
+          "word": "ditch",
+          "pronuncia": "dítch"
+        },
+        {
+          "word": "pitch",
+          "pronuncia": "pítch"
+        },
+        {
+          "word": "switch",
+          "pronuncia": "swítch"
         }
       ]
     },
@@ -1048,28 +1048,28 @@
       "english": "tough",
       "portuguese": "difícil / resistente",
       "pronuncia": "tâf",
-      "tipo": "word",
-      "example": "I learned tough today.",
+      "tipo": "adjective",
+      "example": "This exam is really tough.",
       "random_words": [
         {
           "word": "though",
           "pronuncia": "dôu"
         },
         {
-          "word": "thought",
-          "pronuncia": "fót"
-        },
-        {
           "word": "through",
-          "pronuncia": "frú"
+          "pronuncia": "thrú"
         },
         {
-          "word": "thorough",
-          "pronuncia": "fâ-rou"
+          "word": "thought",
+          "pronuncia": "thót"
         },
         {
-          "word": "bought",
-          "pronuncia": "bót"
+          "word": "rough",
+          "pronuncia": "râf"
+        },
+        {
+          "word": "cough",
+          "pronuncia": "cóf"
         }
       ]
     },
@@ -1077,37 +1077,37 @@
       "english": "though",
       "portuguese": "embora / porém (no final da frase, dá ideia de mas)",
       "pronuncia": "dôu",
-      "tipo": "word",
-      "example": "I learned though today.",
+      "tipo": "conjunction/adverb",
+      "example": "I like it, though it's expensive.",
       "random_words": [
-        {
-          "word": "thought",
-          "pronuncia": "fót"
-        },
-        {
-          "word": "through",
-          "pronuncia": "frú"
-        },
         {
           "word": "tough",
           "pronuncia": "tâf"
+        },
+        {
+          "word": "through",
+          "pronuncia": "thrú"
+        },
+        {
+          "word": "thought",
+          "pronuncia": "thót"
         },
         {
           "word": "thorough",
           "pronuncia": "fâ-rou"
         },
         {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
+          "word": "throw",
+          "pronuncia": "thrôu"
         }
       ]
     },
     {
       "english": "thought",
       "portuguese": "pensamento / pensou",
-      "pronuncia": "fót",
-      "tipo": "word",
-      "example": "I learned thought today.",
+      "pronuncia": "thót",
+      "tipo": "noun/verb",
+      "example": "I thought about your idea.",
       "random_words": [
         {
           "word": "though",
@@ -1115,48 +1115,48 @@
         },
         {
           "word": "through",
-          "pronuncia": "frú"
+          "pronuncia": "thrú"
         },
         {
           "word": "tough",
           "pronuncia": "tâf"
         },
         {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
-        },
-        {
           "word": "thorough",
           "pronuncia": "fâ-rou"
+        },
+        {
+          "word": "taught",
+          "pronuncia": "tót"
         }
       ]
     },
     {
       "english": "through",
       "portuguese": "através / por",
-      "pronuncia": "frú",
-      "tipo": "word",
-      "example": "I learned through today.",
+      "pronuncia": "thrú",
+      "tipo": "preposition/adjective",
+      "example": "Walk through the park.",
       "random_words": [
-        {
-          "word": "thorough",
-          "pronuncia": "fâ-rou"
-        },
         {
           "word": "though",
           "pronuncia": "dôu"
         },
         {
           "word": "thought",
-          "pronuncia": "fót"
+          "pronuncia": "thót"
         },
         {
           "word": "tough",
           "pronuncia": "tâf"
         },
         {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
+          "word": "thorough",
+          "pronuncia": "fâ-rou"
+        },
+        {
+          "word": "threw",
+          "pronuncia": "thrú"
         }
       ]
     },
@@ -1164,12 +1164,12 @@
       "english": "thorough",
       "portuguese": "minucioso / completo",
       "pronuncia": "fâ-rou",
-      "tipo": "word",
-      "example": "I learned thorough today.",
+      "tipo": "adjective",
+      "example": "She did a thorough cleaning.",
       "random_words": [
         {
           "word": "through",
-          "pronuncia": "frú"
+          "pronuncia": "thrú"
         },
         {
           "word": "though",
@@ -1177,44 +1177,44 @@
         },
         {
           "word": "thought",
-          "pronuncia": "fót"
-        },
-        {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
+          "pronuncia": "thót"
         },
         {
           "word": "tough",
           "pronuncia": "tâf"
+        },
+        {
+          "word": "borough",
+          "pronuncia": "bâ-rou"
         }
       ]
     },
     {
       "english": "throughout",
       "portuguese": "por todo / ao longo de",
-      "pronuncia": "fru-áut",
-      "tipo": "word",
-      "example": "I learned throughout today.",
+      "pronuncia": "thrú-áut",
+      "tipo": "preposition/adverb",
+      "example": "It rained throughout the day.",
       "random_words": [
         {
-          "word": "thought",
-          "pronuncia": "fót"
-        },
-        {
           "word": "through",
-          "pronuncia": "frú"
+          "pronuncia": "thrú"
         },
         {
-          "word": "thorough",
-          "pronuncia": "fâ-rou"
+          "word": "throughput",
+          "pronuncia": "thrú-put"
         },
         {
-          "word": "though",
-          "pronuncia": "dôu"
+          "word": "out",
+          "pronuncia": "áut"
         },
         {
-          "word": "brought",
-          "pronuncia": "brót"
+          "word": "about",
+          "pronuncia": "â-báut"
+        },
+        {
+          "word": "without",
+          "pronuncia": "wíth-áut"
         }
       ]
     },
@@ -1222,8 +1222,8 @@
       "english": "brought",
       "portuguese": "trouxe",
       "pronuncia": "brót",
-      "tipo": "word",
-      "example": "I learned brought today.",
+      "tipo": "verb",
+      "example": "She brought her friend to the party.",
       "random_words": [
         {
           "word": "bought",
@@ -1231,19 +1231,19 @@
         },
         {
           "word": "thought",
+          "pronuncia": "thót"
+        },
+        {
+          "word": "fought",
           "pronuncia": "fót"
         },
         {
-          "word": "through",
-          "pronuncia": "frú"
+          "word": "sought",
+          "pronuncia": "sót"
         },
         {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
-        },
-        {
-          "word": "thorough",
-          "pronuncia": "fâ-rou"
+          "word": "wrought",
+          "pronuncia": "rót"
         }
       ]
     },
@@ -1251,8 +1251,8 @@
       "english": "bought",
       "portuguese": "comprou",
       "pronuncia": "bót",
-      "tipo": "word",
-      "example": "I learned bought today.",
+      "tipo": "verb",
+      "example": "He bought a new car yesterday.",
       "random_words": [
         {
           "word": "brought",
@@ -1260,19 +1260,19 @@
         },
         {
           "word": "thought",
+          "pronuncia": "thót"
+        },
+        {
+          "word": "fought",
           "pronuncia": "fót"
         },
         {
-          "word": "tough",
-          "pronuncia": "tâf"
+          "word": "sought",
+          "pronuncia": "sót"
         },
         {
-          "word": "though",
-          "pronuncia": "dôu"
-        },
-        {
-          "word": "throughout",
-          "pronuncia": "fru-áut"
+          "word": "wrought",
+          "pronuncia": "rót"
         }
       ]
     },
@@ -1280,28 +1280,28 @@
       "english": "rule",
       "portuguese": "regra / norma ou princípio que deve ser seguido",
       "pronuncia": "rúl",
-      "tipo": "word",
-      "example": "I learned rule today.",
+      "tipo": "noun/verb",
+      "example": "You must follow the rule.",
       "random_words": [
         {
           "word": "role",
           "pronuncia": "rôul"
         },
         {
-          "word": "relies",
-          "pronuncia": "ri-láiz"
-        },
-        {
-          "word": "care",
-          "pronuncia": "kér"
-        },
-        {
           "word": "roll",
           "pronuncia": "rôul"
         },
         {
-          "word": "real",
-          "pronuncia": "rí-al"
+          "word": "ruler",
+          "pronuncia": "rú-lâr"
+        },
+        {
+          "word": "rude",
+          "pronuncia": "rúd"
+        },
+        {
+          "word": "reel",
+          "pronuncia": "ríl"
         }
       ]
     },
@@ -1309,8 +1309,8 @@
       "english": "role",
       "portuguese": "função ou posição que alguém desempenha em um contexto específico",
       "pronuncia": "rôul",
-      "tipo": "word",
-      "example": "I learned role today.",
+      "tipo": "noun",
+      "example": "She played the lead role in the play.",
       "random_words": [
         {
           "word": "rule",
@@ -1321,464 +1321,472 @@
           "pronuncia": "rôul"
         },
         {
-          "word": "relies",
-          "pronuncia": "ri-láiz"
+          "word": "roil",
+          "pronuncia": "róil"
         },
         {
-          "word": "care",
-          "pronuncia": "kér"
+          "word": "row",
+          "pronuncia": "rôu"
         },
         {
-          "word": "real",
-          "pronuncia": "rí-al"
+          "word": "roam",
+          "pronuncia": "rôum"
         }
       ]
     },
     {
       "english": "worth",
       "portuguese": "valor ou importância de algo ou alguém",
-      "pronuncia": "uârf",
-      "tipo": "word",
-      "example": "I learned worth today.",
+      "pronuncia": "wôrth",
+      "tipo": "adjective/noun",
+      "example": "This book is worth reading.",
       "random_words": [
         {
-          "word": "both",
-          "pronuncia": "bôuf"
+          "word": "worse",
+          "pronuncia": "wôrs"
         },
         {
-          "word": "rather",
-          "pronuncia": "rá-dâr"
+          "word": "worst",
+          "pronuncia": "wôrst"
         },
         {
-          "word": "gotcha",
-          "pronuncia": "gát-cha"
+          "word": "worthy",
+          "pronuncia": "wôr-dhi"
         },
         {
-          "word": "worried",
-          "pronuncia": "wórried"
+          "word": "worthless",
+          "pronuncia": "wôrth-lês"
         },
         {
-          "word": "sort of",
-          "pronuncia": "sórt âv"
+          "word": "north",
+          "pronuncia": "nórth"
         }
       ]
     },
     {
       "english": "claiming",
       "portuguese": "reivindicar / reivindicando / afirmando",
-      "pronuncia": "klêi-ming",
-      "tipo": "word",
-      "example": "I learned claiming today.",
+      "pronuncia": "clêi-ming",
+      "tipo": "verb",
+      "example": "She is claiming the prize money.",
       "random_words": [
+        {
+          "word": "claim",
+          "pronuncia": "clêim"
+        },
+        {
+          "word": "climbing",
+          "pronuncia": "clái-ming"
+        },
+        {
+          "word": "cleaning",
+          "pronuncia": "clí-ning"
+        },
+        {
+          "word": "clapping",
+          "pronuncia": "cláp-ping"
+        },
         {
           "word": "coming",
           "pronuncia": "kâ-ming"
-        },
-        {
-          "word": "complained",
-          "pronuncia": "kôm-pleind"
-        },
-        {
-          "word": "annoying",
-          "pronuncia": "annóiing"
-        },
-        {
-          "word": "came",
-          "pronuncia": "kêim"
-        },
-        {
-          "word": "mind",
-          "pronuncia": "máind"
         }
       ]
     },
     {
       "english": "actually",
       "portuguese": "na verdade",
-      "pronuncia": "ék-chu-á-li",
+      "pronuncia": "ák-chu-â-li",
       "tipo": "adverb",
-      "example": "Actually, I don't know the answer.",
+      "example": "I actually like broccoli.",
       "random_words": [
         {
-          "word": "currently",
-          "pronuncia": "câ-rent-li"
+          "word": "actual",
+          "pronuncia": "ák-chu-âl"
+        },
+        {
+          "word": "exactly",
+          "pronuncia": "eg-zék-tli"
         },
         {
           "word": "eventually",
-          "pronuncia": "i-ven-chu-á-li"
+          "pronuncia": "i-vén-chu-â-li"
         },
         {
-          "word": "absolutely",
-          "pronuncia": "ab-so-lut-li"
+          "word": "factual",
+          "pronuncia": "fák-chu-âl"
         },
         {
-          "word": "especially",
-          "pronuncia": "es-pé-cha-li"
-        },
-        {
-          "word": "usually",
-          "pronuncia": "iú-ju-á-li"
+          "word": "act",
+          "pronuncia": "ákt"
         }
       ]
     },
     {
       "english": "in fact",
       "portuguese": "de fato",
-      "pronuncia": "in fakt",
-      "tipo": "expression",
-      "example": "In fact, it is true.",
+      "pronuncia": "in fák-t",
+      "tipo": "expression/idiom",
+      "example": "In fact, I know the answer.",
       "random_words": [
         {
-          "word": "effect",
-          "pronuncia": "i-fekt"
+          "word": "in effect",
+          "pronuncia": "in i-fékt"
         },
         {
-          "word": "impact",
-          "pronuncia": "im-pakt"
+          "word": "in truth",
+          "pronuncia": "in trúut"
         },
         {
-          "word": "affect",
-          "pronuncia": "á-fekt"
+          "word": "fact",
+          "pronuncia": "fákt"
         },
         {
-          "word": "actual",
-          "pronuncia": "ék-chu-al"
+          "word": "in reality",
+          "pronuncia": "in ri-á-li-ti"
         },
         {
-          "word": "exact",
-          "pronuncia": "ig-zakt"
+          "word": "in principle",
+          "pronuncia": "in prín-si-pâl"
         }
       ]
     },
     {
       "english": "instead of",
       "portuguese": "em vez de",
-      "pronuncia": "in-sted of",
+      "pronuncia": "in-stéd óv",
       "tipo": "preposition/expression",
       "example": "I chose tea instead of coffee.",
       "random_words": [
         {
-          "word": "steady",
-          "pronuncia": "sté-di"
-        },
-        {
-          "word": "in spite of",
-          "pronuncia": "in spait of"
+          "word": "instead",
+          "pronuncia": "in-stéd"
         },
         {
           "word": "in place of",
-          "pronuncia": "in pleis of"
+          "pronuncia": "in pléiss óv"
         },
         {
           "word": "rather than",
-          "pronuncia": "rá-dâr dan"
+          "pronuncia": "rá-dâr dán"
         },
         {
-          "word": "in front of",
-          "pronuncia": "ín frónt âv"
+          "word": "in lieu of",
+          "pronuncia": "in lú óv"
+        },
+        {
+          "word": "in contrast to",
+          "pronuncia": "in kón-trast tú"
         }
       ]
     },
     {
       "english": "since",
       "portuguese": "já que / desde que",
-      "pronuncia": "sins",
-      "tipo": "preposition/conjunction",
-      "example": "Since it rained, we stayed home.",
+      "pronuncia": "sínss",
+      "tipo": "conjunction/preposition",
+      "example": "I have known her since 2010.",
       "random_words": [
         {
           "word": "sense",
-          "pronuncia": "sensis"
+          "pronuncia": "sénss"
         },
         {
-          "word": "cense",
-          "pronuncia": "sensis"
+          "word": "sincere",
+          "pronuncia": "sin-sí-ir"
         },
         {
-          "word": "dense",
-          "pronuncia": "densis"
+          "word": "hence",
+          "pronuncia": "hénss"
         },
         {
-          "word": "once",
-          "pronuncia": "uans"
+          "word": "science",
+          "pronuncia": "sái-ênss"
         },
         {
-          "word": "spence",
-          "pronuncia": "spensis"
+          "word": "sine",
+          "pronuncia": "sáin"
         }
       ]
     },
     {
       "english": "due to",
       "portuguese": "devido a",
-      "pronuncia": "du tu",
-      "tipo": "preposition/expression",
+      "pronuncia": "dúu tú",
+      "tipo": "preposition",
       "example": "The delay was due to traffic.",
       "random_words": [
         {
-          "word": "do to",
-          "pronuncia": "du tu"
-        },
-        {
-          "word": "dew",
-          "pronuncia": "diu"
-        },
-        {
-          "word": "through",
-          "pronuncia": "fru"
-        },
-        {
-          "word": "during",
-          "pronuncia": "dú-ring"
+          "word": "due",
+          "pronuncia": "dúu"
         },
         {
           "word": "owing to",
-          "pronuncia": "ou-ing tu"
+          "pronuncia": "óu-ing tú"
+        },
+        {
+          "word": "because of",
+          "pronuncia": "bi-cóz óv"
+        },
+        {
+          "word": "thanks to",
+          "pronuncia": "tánks tú"
+        },
+        {
+          "word": "caused by",
+          "pronuncia": "cózd bái"
         }
       ]
     },
     {
       "english": "therefore",
       "portuguese": "portanto",
-      "pronuncia": "dér-for",
+      "pronuncia": "dér-fór",
       "tipo": "adverb",
-      "example": "He was late; therefore, he apologized.",
+      "example": "It rained, therefore the game was canceled.",
       "random_words": [
         {
           "word": "therefor",
-          "pronuncia": "dér-for"
+          "pronuncia": "dér-fór"
+        },
+        {
+          "word": "thereof",
+          "pronuncia": "dér-óf"
         },
         {
           "word": "wherefore",
-          "pronuncia": "uér-for"
+          "pronuncia": "uér-fór"
         },
         {
-          "word": "thereafter",
-          "pronuncia": "dér-áf-târ"
+          "word": "therein",
+          "pronuncia": "dér-ín"
         },
         {
-          "word": "forever",
-          "pronuncia": "fo-ré-vâr"
-        },
-        {
-          "word": "thereby",
-          "pronuncia": "dér-bai"
+          "word": "thus",
+          "pronuncia": "dáss"
         }
       ]
     },
     {
       "english": "in the meantime",
       "portuguese": "enquanto isso",
-      "pronuncia": "in de min-taim",
-      "tipo": "expression",
-      "example": "In the meantime, call me.",
+      "pronuncia": "in dâ méen-taim",
+      "tipo": "expression/adverb",
+      "example": "I'll wait; in the meantime, you can start.",
       "random_words": [
         {
           "word": "meanwhile",
-          "pronuncia": "mín-uail"
+          "pronuncia": "míin-uáil"
         },
         {
-          "word": "meantime",
-          "pronuncia": "mín-taim"
+          "word": "in the interim",
+          "pronuncia": "in di ín-ter-im"
         },
         {
-          "word": "at times",
-          "pronuncia": "at taims"
+          "word": "at the same time",
+          "pronuncia": "át dâ séim taim"
         },
         {
-          "word": "in time",
-          "pronuncia": "in taim"
+          "word": "simultaneously",
+          "pronuncia": "sái-mâl-têi-ni-us-li"
         },
         {
-          "word": "stirs the pot",
-          "pronuncia": "stírs dâ pót"
+          "word": "for now",
+          "pronuncia": "fór náu"
         }
       ]
     },
     {
       "english": "never mind",
       "portuguese": "Deixe pra lá",
-      "pronuncia": "né-vâr maind",
-      "tipo": "expression",
-      "example": "Never mind that mistake.",
+      "pronuncia": "né-vâr máind",
+      "tipo": "expression/interjection",
+      "example": "Never mind, I'll do it myself.",
       "random_words": [
-        {
-          "word": "mind",
-          "pronuncia": "maind"
-        },
         {
           "word": "never",
           "pronuncia": "né-vâr"
         },
         {
-          "word": "neither",
-          "pronuncia": "ní-dâr"
+          "word": "mind",
+          "pronuncia": "máind"
         },
         {
-          "word": "never the less",
-          "pronuncia": "né-vâr de less"
+          "word": "nevertheless",
+          "pronuncia": "né-vâr-dâ-léss"
         },
         {
-          "word": "no matter",
-          "pronuncia": "no má-târ"
+          "word": "not at all",
+          "pronuncia": "nót át ól"
+        },
+        {
+          "word": "ignore it",
+          "pronuncia": "ig-nór it"
         }
       ]
     },
     {
       "english": "what a pitty",
       "portuguese": "que pena",
-      "pronuncia": "uót á pí-ti",
+      "pronuncia": "uát â pí-ti",
       "tipo": "expression",
-      "example": "What a pity you missed the show.",
+      "example": "I learned what a pitty today.",
       "random_words": [
         {
-          "word": "pity",
-          "pronuncia": "pí-ti"
+          "word": "as far as it",
+          "pronuncia": "éz fár éz ít"
         },
         {
-          "word": "pretty",
-          "pronuncia": "prí-ti"
+          "word": "at least",
+          "pronuncia": "át líst"
         },
         {
-          "word": "pity me",
-          "pronuncia": "pí-ti mi"
+          "word": "wake up",
+          "pronuncia": "uêik áp"
         },
         {
-          "word": "what a shame",
-          "pronuncia": "uót á sheim"
+          "word": "get a glimpse",
+          "pronuncia": "gét â glímps"
         },
         {
-          "word": "too bad",
-          "pronuncia": "tu bad"
+          "word": "actually",
+          "pronuncia": "ék-shu-a-li"
         }
       ]
     },
     {
       "english": "pretty soon",
       "portuguese": "em breve",
-      "pronuncia": "prí-ti sun",
-      "tipo": "expression",
-      "example": "She will arrive pretty soon.",
+      "pronuncia": "prí-ti súun",
+      "tipo": "adverb/expression",
+      "example": "The show will start pretty soon.",
       "random_words": [
         {
           "word": "soon",
-          "pronuncia": "sun"
-        },
-        {
-          "word": "prettily",
-          "pronuncia": "prí-ti-li"
-        },
-        {
-          "word": "presumably",
-          "pronuncia": "pri-zium-á-bli"
+          "pronuncia": "súun"
         },
         {
           "word": "shortly",
-          "pronuncia": "short-li"
+          "pronuncia": "shórt-li"
         },
         {
-          "word": "promptly",
-          "pronuncia": "promp-li"
+          "word": "before long",
+          "pronuncia": "bi-fór lóng"
+        },
+        {
+          "word": "quickly",
+          "pronuncia": "kuík-li"
+        },
+        {
+          "word": "presently",
+          "pronuncia": "pré-zent-li"
         }
       ]
     },
     {
       "english": "hopefully",
       "portuguese": "tomara",
-      "pronuncia": "houp-fu-li",
+      "pronuncia": "hóup-fu-li",
       "tipo": "adverb",
-      "example": "Hopefully the weather improves tomorrow.",
+      "example": "Hopefully, it won't rain tomorrow.",
       "random_words": [
         {
-          "word": "hopelessly",
-          "pronuncia": "houp-less-li"
+          "word": "hopeful",
+          "pronuncia": "hóup-ful"
         },
         {
-          "word": "hopeful",
-          "pronuncia": "houp-ful"
+          "word": "hopeless",
+          "pronuncia": "hóup-less"
+        },
+        {
+          "word": "hopelessly",
+          "pronuncia": "hóup-less-li"
         },
         {
           "word": "helpful",
           "pronuncia": "hélp-ful"
         },
         {
-          "word": "carefully",
-          "pronuncia": "kér-fu-li"
-        },
-        {
-          "word": "peacefully",
-          "pronuncia": "pís-fu-li"
+          "word": "hoping",
+          "pronuncia": "hóu-ping"
         }
       ]
     },
     {
       "english": "you bet",
       "portuguese": "pode apostar",
-      "pronuncia": "iu bet",
-      "tipo": "expression",
-      "example": "You bet I'll finish on time.",
+      "pronuncia": "iúu bét",
+      "tipo": "expression/interjection",
+      "example": "You bet I'll be there!",
       "random_words": [
         {
           "word": "bet",
           "pronuncia": "bét"
         },
         {
-          "word": "better",
-          "pronuncia": "bé-târ"
+          "word": "you betcha",
+          "pronuncia": "iúu bét-châ"
         },
         {
-          "word": "beat",
-          "pronuncia": "bít"
+          "word": "certainly",
+          "pronuncia": "sír-ten-li"
         },
         {
-          "word": "battle",
-          "pronuncia": "bá-tul"
+          "word": "absolutely",
+          "pronuncia": "áb-sâ-lú-tli"
         },
         {
-          "word": "you'd bet",
-          "pronuncia": "iud bet"
+          "word": "sure thing",
+          "pronuncia": "chúr thing"
         }
       ]
     },
     {
       "english": "I got it",
       "portuguese": "entendi",
-      "pronuncia": "ai gót it",
+      "pronuncia": "ái gát it",
       "tipo": "expression",
       "example": "I got it, thanks for explaining.",
       "random_words": [
         {
-          "word": "got",
-          "pronuncia": "gót"
+          "word": "I have it",
+          "pronuncia": "ái háv it"
         },
         {
-          "word": "gotten",
-          "pronuncia": "gó-ten"
+          "word": "got it",
+          "pronuncia": "gát it"
         },
         {
           "word": "I get it",
-          "pronuncia": "ai get it"
+          "pronuncia": "ái gét it"
         },
         {
-          "word": "I have it",
-          "pronuncia": "ai hav it"
+          "word": "I see",
+          "pronuncia": "ái sí"
         },
         {
-          "word": "I do it",
-          "pronuncia": "ai du it"
+          "word": "understood",
+          "pronuncia": "ân-dâr-stúd"
         }
       ]
     },
     {
       "english": "as if",
       "portuguese": "até parece",
-      "pronuncia": "éz íf",
+      "pronuncia": "áz if",
       "tipo": "conjunction/expression",
       "example": "He acted as if nothing happened.",
       "random_words": [
         {
           "word": "as though",
-          "pronuncia": "as do"
+          "pronuncia": "áz dó"
+        },
+        {
+          "word": "like",
+          "pronuncia": "láik"
+        },
+        {
+          "word": "as",
+          "pronuncia": "áz"
         },
         {
           "word": "if",
@@ -1786,276 +1794,268 @@
         },
         {
           "word": "even if",
-          "pronuncia": "í-vun if"
-        },
-        {
-          "word": "as long as",
-          "pronuncia": "éz lóng éz"
-        },
-        {
-          "word": "like",
-          "pronuncia": "laik"
+          "pronuncia": "í-vên if"
         }
       ]
     },
     {
       "english": "wake up",
       "portuguese": "acorda",
-      "pronuncia": "uék up",
+      "pronuncia": "uéik áp",
       "tipo": "phrasal verb",
-      "example": "Please wake up early tomorrow.",
+      "example": "Wake up, it's morning!",
       "random_words": [
         {
           "word": "wake",
-          "pronuncia": "uék"
-        },
-        {
-          "word": "walk up",
-          "pronuncia": "uók up"
-        },
-        {
-          "word": "make up",
-          "pronuncia": "mék up"
-        },
-        {
-          "word": "waken",
-          "pronuncia": "ué-ken"
+          "pronuncia": "uéik"
         },
         {
           "word": "awake",
-          "pronuncia": "á-uék"
+          "pronuncia": "â-uéik"
+        },
+        {
+          "word": "waken",
+          "pronuncia": "uéi-kên"
+        },
+        {
+          "word": "get up",
+          "pronuncia": "gét áp"
+        },
+        {
+          "word": "rise",
+          "pronuncia": "ráiz"
         }
       ]
     },
     {
       "english": "how come",
       "portuguese": "como assim",
-      "pronuncia": "hau came",
-      "tipo": "expression",
-      "example": "How come you arrived so late?",
+      "pronuncia": "háu cám",
+      "tipo": "expression/adverb",
+      "example": "How come you're late?",
       "random_words": [
         {
-          "word": "come",
-          "pronuncia": "came"
+          "word": "why",
+          "pronuncia": "uái"
         },
         {
           "word": "how",
-          "pronuncia": "hau"
+          "pronuncia": "háu"
         },
         {
-          "word": "why",
-          "pronuncia": "uai"
+          "word": "come",
+          "pronuncia": "cám"
         },
         {
-          "word": "how many",
-          "pronuncia": "hau mé-ni"
+          "word": "how so",
+          "pronuncia": "háu só"
         },
         {
-          "word": "come how",
-          "pronuncia": "came hau"
+          "word": "what for",
+          "pronuncia": "uát fór"
         }
       ]
     },
     {
       "english": "my bad",
       "portuguese": "foi mal",
-      "pronuncia": "mai bad",
+      "pronuncia": "mái bád",
       "tipo": "expression/slang",
-      "example": "My bad, I forgot to send the file.",
+      "example": "My bad, I forgot the keys.",
       "random_words": [
         {
-          "word": "bad",
-          "pronuncia": "béd"
-        },
-        {
           "word": "my fault",
-          "pronuncia": "mai fault"
+          "pronuncia": "mái fólt"
         },
         {
-          "word": "mine",
-          "pronuncia": "main"
+          "word": "bad",
+          "pronuncia": "bád"
         },
         {
-          "word": "badly",
-          "pronuncia": "bad-li"
+          "word": "my mistake",
+          "pronuncia": "mái mis-téik"
         },
         {
-          "word": "my bag",
-          "pronuncia": "mai bag"
+          "word": "my apologies",
+          "pronuncia": "mái â-pó-lâ-jiz"
+        },
+        {
+          "word": "sorry",
+          "pronuncia": "só-ri"
         }
       ]
     },
     {
       "english": "besides",
       "portuguese": "alem do mais / alem disso",
-      "pronuncia": "bi-sáids",
+      "pronuncia": "bi-sáidz",
       "tipo": "preposition/adverb",
-      "example": "Besides, it's raining outside.",
+      "example": "Besides, I don't have time.",
       "random_words": [
-        {
-          "word": "side",
-          "pronuncia": "said"
-        },
         {
           "word": "beside",
           "pronuncia": "bi-sáid"
         },
         {
-          "word": "beneath",
-          "pronuncia": "bi-níf"
+          "word": "side",
+          "pronuncia": "sáid"
         },
         {
-          "word": "apart from",
-          "pronuncia": "á-part from"
+          "word": "in addition",
+          "pronuncia": "in â-dí-shân"
         },
         {
-          "word": "except",
-          "pronuncia": "ek-sept"
+          "word": "furthermore",
+          "pronuncia": "fâr-dâr-mór"
+        },
+        {
+          "word": "moreover",
+          "pronuncia": "mór-ó-vâr"
         }
       ]
     },
     {
       "english": "throw away",
       "portuguese": "jogar fora",
-      "pronuncia": "frou a-uéi",
+      "pronuncia": "thrôu á-uêi",
       "tipo": "phrasal verb",
-      "example": "Don't throw away that old book.",
+      "example": "Don't throw away that paper.",
       "random_words": [
         {
           "word": "throw out",
-          "pronuncia": "fróu aut"
+          "pronuncia": "thrôu áut"
         },
         {
-          "word": "throw up",
-          "pronuncia": "frou ap"
+          "word": "discard",
+          "pronuncia": "dis-kárd"
         },
         {
-          "word": "threw away",
-          "pronuncia": "fru a-uéi"
+          "word": "dispose",
+          "pronuncia": "dis-póz"
         },
         {
-          "word": "through",
-          "pronuncia": "fru"
+          "word": "toss",
+          "pronuncia": "tóss"
         },
         {
-          "word": "trowel",
-          "pronuncia": "trá-uél"
+          "word": "dump",
+          "pronuncia": "dâmp"
         }
       ]
     },
     {
       "english": "strict",
       "portuguese": "rigoroso",
-      "pronuncia": "strikt",
+      "pronuncia": "stríkt",
       "tipo": "adjective",
-      "example": "The teacher was very strict.",
+      "example": "My teacher is very strict.",
       "random_words": [
         {
-          "word": "struck",
-          "pronuncia": "strak"
+          "word": "strictly",
+          "pronuncia": "stríkt-li"
         },
         {
-          "word": "street",
-          "pronuncia": "strit"
+          "word": "straight",
+          "pronuncia": "stréit"
         },
         {
-          "word": "stripe",
-          "pronuncia": "straip"
+          "word": "strictness",
+          "pronuncia": "stríkt-ness"
         },
         {
           "word": "structure",
           "pronuncia": "strák-chur"
         },
         {
-          "word": "restrict",
-          "pronuncia": "ri-strikt"
+          "word": "strike",
+          "pronuncia": "stráik"
         }
       ]
     },
     {
       "english": "no way",
       "portuguese": "de jeito nenhum",
-      "pronuncia": "no uéi",
-      "tipo": "expression/interjection",
-      "example": "No way! That's amazing!",
+      "pronuncia": "nóu uéi",
+      "tipo": "expression/idiom",
+      "example": "No way! I can't believe it.",
       "random_words": [
+        {
+          "word": "no",
+          "pronuncia": "nóu"
+        },
         {
           "word": "way",
           "pronuncia": "uéi"
         },
         {
-          "word": "noway",
-          "pronuncia": "no-uéi"
+          "word": "no chance",
+          "pronuncia": "nóu chánss"
         },
         {
-          "word": "know way",
-          "pronuncia": "no uéi"
+          "word": "impossible",
+          "pronuncia": "im-pó-sá-bâl"
         },
         {
-          "word": "anyway",
-          "pronuncia": "é-ni-uéi"
-        },
-        {
-          "word": "no wonder",
-          "pronuncia": "no uón-dâr"
+          "word": "not a chance",
+          "pronuncia": "nót á chánss"
         }
       ]
     },
     {
       "english": "wild",
       "portuguese": "selvagem",
-      "pronuncia": "uaild",
-      "tipo": "adjective",
-      "example": "The forest is full of wild animals.",
+      "pronuncia": "uáild",
+      "tipo": "adjective/noun",
+      "example": "The forest is wild.",
       "random_words": [
         {
-          "word": "wiled",
-          "pronuncia": "uaild"
-        },
-        {
-          "word": "wield",
-          "pronuncia": "uíld"
-        },
-        {
-          "word": "mild",
-          "pronuncia": "maild"
+          "word": "wildly",
+          "pronuncia": "uáild-li"
         },
         {
           "word": "wilderness",
-          "pronuncia": "uíld-âr-nes"
+          "pronuncia": "uíl-dâr-ness"
         },
         {
-          "word": "child",
-          "pronuncia": "tchaild"
+          "word": "wildlife",
+          "pronuncia": "uáild-laif"
+        },
+        {
+          "word": "mild",
+          "pronuncia": "máild"
+        },
+        {
+          "word": "weird",
+          "pronuncia": "uírd"
         }
       ]
     },
     {
       "english": "playful",
       "portuguese": "brincalhão",
-      "pronuncia": "pléi-ful",
+      "pronuncia": "plêi-ful",
       "tipo": "adjective",
-      "example": "The playful kitten chased a ball.",
+      "example": "The playful puppy chased its tail.",
       "random_words": [
         {
           "word": "play",
-          "pronuncia": "pléi"
+          "pronuncia": "plêi"
         },
         {
           "word": "player",
-          "pronuncia": "pléi-âr"
+          "pronuncia": "plêi-âr"
         },
         {
-          "word": "useful",
-          "pronuncia": "iús-ful"
+          "word": "playfully",
+          "pronuncia": "plêi-fu-li"
         },
         {
-          "word": "graceful",
-          "pronuncia": "gréis-ful"
+          "word": "playing",
+          "pronuncia": "plêi-ing"
         },
         {
-          "word": "painful",
-          "pronuncia": "péin-ful"
+          "word": "playmate",
+          "pronuncia": "plêi-méit"
         }
       ]
     },
@@ -2064,7 +2064,7 @@
       "portuguese": "em relação a / a respeito de / sobre",
       "pronuncia": "ri-gár-ding",
       "tipo": "preposition",
-      "example": "Regarding your question, yes I agree.",
+      "example": "Regarding your question, I have an answer.",
       "random_words": [
         {
           "word": "regard",
@@ -2072,48 +2072,48 @@
         },
         {
           "word": "regardless",
-          "pronuncia": "ri-gárd-less"
+          "pronuncia": "ri-gárd-léss"
         },
         {
-          "word": "disregarding",
-          "pronuncia": "dis-ri-gár-ding"
+          "word": "respecting",
+          "pronuncia": "ri-spék-ting"
         },
         {
           "word": "concerning",
-          "pronuncia": "con-cér-ning"
+          "pronuncia": "kân-sér-ning"
         },
         {
-          "word": "garden",
-          "pronuncia": "gár-den"
+          "word": "about",
+          "pronuncia": "â-báut"
         }
       ]
     },
     {
       "english": "relies",
       "portuguese": "depende de / conta com",
-      "pronuncia": "ri-láiz",
+      "pronuncia": "ri-láis",
       "tipo": "verb",
-      "example": "He relies on his friends.",
+      "example": "She relies on her friends for support.",
       "random_words": [
-        {
-          "word": "relays",
-          "pronuncia": "ri-léis"
-        },
-        {
-          "word": "reply",
-          "pronuncia": "ri-plái"
-        },
         {
           "word": "relief",
           "pronuncia": "ri-líf"
         },
         {
-          "word": "relic",
-          "pronuncia": "ré-lic"
+          "word": "relive",
+          "pronuncia": "ri-lív"
+        },
+        {
+          "word": "rely",
+          "pronuncia": "ri-lái"
         },
         {
           "word": "relates",
           "pronuncia": "ri-léits"
+        },
+        {
+          "word": "relics",
+          "pronuncia": "ré-liks"
         }
       ]
     },
@@ -2122,7 +2122,7 @@
       "portuguese": "compensa / vale a pena",
       "pronuncia": "péiz óf",
       "tipo": "phrasal verb",
-      "example": "Hard work pays off.",
+      "example": "Hard work always pays off.",
       "random_words": [
         {
           "word": "pay off",
@@ -2137,120 +2137,120 @@
           "pronuncia": "péi-ófs"
         },
         {
-          "word": "pay day",
-          "pronuncia": "péi déi"
+          "word": "pays out",
+          "pronuncia": "péiz áut"
         },
         {
-          "word": "paid off",
-          "pronuncia": "péid óf"
+          "word": "pay up",
+          "pronuncia": "péi áp"
         }
       ]
     },
     {
       "english": "weakness",
       "portuguese": "fraqueza",
-      "pronuncia": "uík-nês",
+      "pronuncia": "uík-nis",
       "tipo": "noun",
-      "example": "Everyone has a weakness.",
+      "example": "His weakness is chocolate.",
       "random_words": [
         {
-          "word": "witness",
-          "pronuncia": "uít-nês"
+          "word": "weak",
+          "pronuncia": "uík"
         },
         {
-          "word": "wellness",
-          "pronuncia": "uél-nês"
+          "word": "witness",
+          "pronuncia": "uít-nis"
+        },
+        {
+          "word": "weaken",
+          "pronuncia": "uí-ken"
         },
         {
           "word": "wideness",
-          "pronuncia": "uái-dnês"
+          "pronuncia": "uái-denis"
         },
         {
-          "word": "weakly",
-          "pronuncia": "uík-li"
-        },
-        {
-          "word": "wackiness",
-          "pronuncia": "uá-ki-nês"
+          "word": "wellness",
+          "pronuncia": "wéllness"
         }
       ]
     },
     {
       "english": "wellness",
       "portuguese": "bem-estar",
-      "pronuncia": "uél-nês",
+      "pronuncia": "uél-nis",
       "tipo": "noun",
-      "example": "She promotes wellness.",
+      "example": "She practices wellness every day.",
       "random_words": [
         {
-          "word": "witness",
-          "pronuncia": "uít-nês"
+          "word": "well",
+          "pronuncia": "uél"
         },
         {
-          "word": "weakness",
-          "pronuncia": "uík-nês"
+          "word": "welfare",
+          "pronuncia": "uél-fér"
         },
         {
-          "word": "wideness",
-          "pronuncia": "uái-dnês"
+          "word": "wholeness",
+          "pronuncia": "hóul-nis"
         },
         {
-          "word": "wetness",
-          "pronuncia": "uét-nês"
+          "word": "sickness",
+          "pronuncia": "sík-nis"
         },
         {
-          "word": "whiteness",
-          "pronuncia": "uái-tnês"
+          "word": "fitness",
+          "pronuncia": "fít-nis"
         }
       ]
     },
     {
       "english": "accomplish",
       "portuguese": "realizar / alcançar / cumprir / concluir",
-      "pronuncia": "a-cám-plish",
+      "pronuncia": "a-kám-plish",
       "tipo": "verb",
-      "example": "She will accomplish her goal.",
+      "example": "We can accomplish anything together.",
       "random_words": [
         {
-          "word": "accomplice",
-          "pronuncia": "a-cám-plis"
+          "word": "accompany",
+          "pronuncia": "a-kám-pa-ni"
         },
         {
           "word": "accomplished",
-          "pronuncia": "a-cám-plisht"
+          "pronuncia": "a-kám-plisht"
+        },
+        {
+          "word": "accomplishment",
+          "pronuncia": "a-kám-plish-ment"
         },
         {
           "word": "complete",
-          "pronuncia": "com-plít"
+          "pronuncia": "kom-plít"
         },
         {
           "word": "comply",
-          "pronuncia": "com-plái"
-        },
-        {
-          "word": "acclaim",
-          "pronuncia": "a-cléim"
+          "pronuncia": "kom-plái"
         }
       ]
     },
     {
       "english": "as far as I know",
       "portuguese": "pelo que eu sei",
-      "pronuncia": "ás fár áz ái nôu",
+      "pronuncia": "áz fár áz ái nôu",
       "tipo": "expression",
       "example": "As far as I know, she is fine.",
       "random_words": [
         {
+          "word": "as far as",
+          "pronuncia": "áz fár áz"
+        },
+        {
+          "word": "as long as",
+          "pronuncia": "áz lóng áz"
+        },
+        {
           "word": "as far as I can tell",
-          "pronuncia": "ás fár áz ái kán tél"
-        },
-        {
-          "word": "as far as it goes",
-          "pronuncia": "ás fár áz ít gôz"
-        },
-        {
-          "word": "as long as I know",
-          "pronuncia": "ás lóng áz ái nôu"
+          "pronuncia": "áz fár áz ái kán tél"
         },
         {
           "word": "for all I know",
@@ -2258,65 +2258,65 @@
         },
         {
           "word": "to my knowledge",
-          "pronuncia": "tú mái nó-leidj"
+          "pronuncia": "tú mái nó-lij"
         }
       ]
     },
     {
       "english": "as far as it",
       "portuguese": "até onde isso",
-      "pronuncia": "ás fár áz ít",
+      "pronuncia": "áz fár áz ít",
       "tipo": "expression",
-      "example": "As far as it goes, it's good.",
+      "example": "As far as it goes, it is good.",
       "random_words": [
         {
+          "word": "as far as",
+          "pronuncia": "áz fár áz"
+        },
+        {
           "word": "as far as I know",
-          "pronuncia": "ás fár áz ái nôu"
+          "pronuncia": "áz fár áz ái nôu"
+        },
+        {
+          "word": "as far as that",
+          "pronuncia": "áz fár áz dát"
         },
         {
           "word": "as far as possible",
-          "pronuncia": "ás fár áz pó-si-bâl"
+          "pronuncia": "áz fár áz pó-si-bol"
         },
         {
-          "word": "as far as it goes",
-          "pronuncia": "ás fár áz ít gôz"
-        },
-        {
-          "word": "as far as I can tell",
-          "pronuncia": "ás fár áz ái kán tél"
-        },
-        {
-          "word": "as far as that goes",
-          "pronuncia": "ás fár áz dát gôz"
+          "word": "as far as he",
+          "pronuncia": "áz fár áz hí"
         }
       ]
     },
     {
       "english": "narrow down",
       "portuguese": "restringir / reduzir / limitar",
-      "pronuncia": "ná-rou dáun",
+      "pronuncia": "né-rou dáun",
       "tipo": "phrasal verb",
       "example": "We need to narrow down the list.",
       "random_words": [
         {
           "word": "narrow",
-          "pronuncia": "ná-rou"
+          "pronuncia": "né-rou"
         },
         {
-          "word": "narrowed down",
-          "pronuncia": "ná-roud dáun"
+          "word": "narrowed",
+          "pronuncia": "né-roud"
         },
         {
           "word": "narrowing",
-          "pronuncia": "ná-rou-ing"
+          "pronuncia": "né-rou-ing"
         },
         {
-          "word": "narrow-minded",
-          "pronuncia": "ná-rou máin-ded"
+          "word": "boil down",
+          "pronuncia": "bóil dáun"
         },
         {
-          "word": "narrowly",
-          "pronuncia": "ná-rou-li"
+          "word": "whittle down",
+          "pronuncia": "uí-tol dáun"
         }
       ]
     },
@@ -2325,27 +2325,27 @@
       "portuguese": "irritante / chato",
       "pronuncia": "a-nói-ing",
       "tipo": "adjective",
-      "example": "That noise is annoying.",
+      "example": "That noise is very annoying.",
       "random_words": [
-        {
-          "word": "annoyed",
-          "pronuncia": "a-nóid"
-        },
         {
           "word": "annoy",
           "pronuncia": "a-nói"
         },
         {
-          "word": "anointing",
-          "pronuncia": "a-nóin-ting"
+          "word": "annoyed",
+          "pronuncia": "a-nóid"
         },
         {
-          "word": "annual",
-          "pronuncia": "á-nu-âl"
+          "word": "noisy",
+          "pronuncia": "nói-zi"
         },
         {
-          "word": "anomaly",
-          "pronuncia": "a-nó-ma-li"
+          "word": "boring",
+          "pronuncia": "bó-ring"
+        },
+        {
+          "word": "irritating",
+          "pronuncia": "í-ri-téi-ting"
         }
       ]
     },
@@ -2357,33 +2357,33 @@
       "example": "The downside is the cost.",
       "random_words": [
         {
+          "word": "down",
+          "pronuncia": "dáun"
+        },
+        {
+          "word": "side",
+          "pronuncia": "sáid"
+        },
+        {
           "word": "upside",
           "pronuncia": "áp-sáid"
         },
         {
-          "word": "downstairs",
-          "pronuncia": "dáun-stérs"
+          "word": "downward",
+          "pronuncia": "dáun-uórd"
         },
         {
           "word": "downsize",
           "pronuncia": "dáun-sáiz"
-        },
-        {
-          "word": "downward",
-          "pronuncia": "dáun-uérd"
-        },
-        {
-          "word": "downstream",
-          "pronuncia": "dáun-strím"
         }
       ]
     },
     {
       "english": "can be naive",
       "portuguese": "pode ser ingênuo",
-      "pronuncia": "kán bi na-ív",
+      "pronuncia": "kán bí na-ív",
       "tipo": "expression",
-      "example": "He can be naive sometimes.",
+      "example": "He can be naive about people.",
       "random_words": [
         {
           "word": "naive",
@@ -2391,77 +2391,77 @@
         },
         {
           "word": "naively",
-          "pronuncia": "ná-iv-li"
+          "pronuncia": "na-ív-li"
+        },
+        {
+          "word": "naivety",
+          "pronuncia": "na-ív-ti"
         },
         {
           "word": "native",
           "pronuncia": "néi-tiv"
         },
         {
-          "word": "navel",
-          "pronuncia": "néi-vâl"
-        },
-        {
-          "word": "reasoning engine",
-          "pronuncia": "rísoning enjine"
+          "word": "nave",
+          "pronuncia": "néiv"
         }
       ]
     },
     {
       "english": "reliable",
       "portuguese": "confiável",
-      "pronuncia": "ri-lái-â-bâl",
+      "pronuncia": "ri-lái-a-bol",
       "tipo": "adjective",
       "example": "She is a reliable friend.",
       "random_words": [
         {
+          "word": "rely",
+          "pronuncia": "ri-lái"
+        },
+        {
           "word": "reliably",
-          "pronuncia": "ri-lái-â-bli"
+          "pronuncia": "ri-lái-a-bli"
         },
         {
           "word": "reliance",
           "pronuncia": "ri-lái-ans"
         },
         {
-          "word": "rely",
-          "pronuncia": "ri-lái"
-        },
-        {
           "word": "liable",
-          "pronuncia": "lái-â-bâl"
+          "pronuncia": "lái-a-bol"
         },
         {
           "word": "unreliable",
-          "pronuncia": "an-ri-lái-â-bâl"
+          "pronuncia": "an-ri-lái-a-bol"
         }
       ]
     },
     {
       "english": "reasoning engine",
       "portuguese": "motor de raciocínio",
-      "pronuncia": "rí-zâ-ning én-djin",
+      "pronuncia": "rí-zo-ning én-jin",
       "tipo": "noun",
-      "example": "The reasoning engine solved the problem.",
+      "example": "The reasoning engine solved the puzzle.",
       "random_words": [
         {
+          "word": "reason",
+          "pronuncia": "rí-zon"
+        },
+        {
           "word": "reasoning",
-          "pronuncia": "rí-zâ-ning"
+          "pronuncia": "rí-zo-ning"
         },
         {
           "word": "engine",
-          "pronuncia": "én-djin"
+          "pronuncia": "én-jin"
         },
         {
-          "word": "reason",
-          "pronuncia": "rí-zân"
+          "word": "search engine",
+          "pronuncia": "sérch én-jin"
         },
         {
-          "word": "engagement",
-          "pronuncia": "en-guéidj-ment"
-        },
-        {
-          "word": "engineering",
-          "pronuncia": "en-dji-ní-ring"
+          "word": "inference engine",
+          "pronuncia": "ín-fe-rens én-jin"
         }
       ]
     },
@@ -2470,27 +2470,27 @@
       "portuguese": "inimigo",
       "pronuncia": "é-ne-mi",
       "tipo": "noun",
-      "example": "He faced his enemy.",
+      "example": "The enemy attacked at dawn.",
       "random_words": [
-        {
-          "word": "energy",
-          "pronuncia": "é-nér-dji"
-        },
-        {
-          "word": "envy",
-          "pronuncia": "én-vi"
-        },
         {
           "word": "enmity",
           "pronuncia": "én-mi-ti"
         },
         {
-          "word": "entry",
-          "pronuncia": "én-tri"
+          "word": "energy",
+          "pronuncia": "é-ner-ji"
         },
         {
-          "word": "anemia",
-          "pronuncia": "a-ní-mi-a"
+          "word": "any",
+          "pronuncia": "é-ni"
+        },
+        {
+          "word": "ally",
+          "pronuncia": "á-lai"
+        },
+        {
+          "word": "foe",
+          "pronuncia": "fôu"
         }
       ]
     },
@@ -2499,8 +2499,16 @@
       "portuguese": "noiva",
       "pronuncia": "bráid",
       "tipo": "noun",
-      "example": "The bride wore white.",
+      "example": "The bride wore a white dress.",
       "random_words": [
+        {
+          "word": "bridal",
+          "pronuncia": "brái-dal"
+        },
+        {
+          "word": "bridesmaid",
+          "pronuncia": "bráidz-méid"
+        },
         {
           "word": "bribe",
           "pronuncia": "bráib"
@@ -2510,16 +2518,8 @@
           "pronuncia": "práid"
         },
         {
-          "word": "bridge",
-          "pronuncia": "bridj"
-        },
-        {
           "word": "ride",
           "pronuncia": "ráid"
-        },
-        {
-          "word": "breeze",
-          "pronuncia": "bríz"
         }
       ]
     },
@@ -2528,27 +2528,27 @@
       "portuguese": "noivo",
       "pronuncia": "grúm",
       "tipo": "noun",
-      "example": "The groom is nervous.",
+      "example": "The groom smiled at the bride.",
       "random_words": [
         {
-          "word": "gloom",
-          "pronuncia": "glúm"
+          "word": "grooming",
+          "pronuncia": "grú-ming"
+        },
+        {
+          "word": "groomed",
+          "pronuncia": "grúmd"
+        },
+        {
+          "word": "bridegroom",
+          "pronuncia": "bráid-grúm"
         },
         {
           "word": "room",
           "pronuncia": "rúm"
         },
         {
-          "word": "broom",
-          "pronuncia": "brúm"
-        },
-        {
-          "word": "bloom",
-          "pronuncia": "blúm"
-        },
-        {
-          "word": "ground",
-          "pronuncia": "gráund"
+          "word": "gloom",
+          "pronuncia": "glúm"
         }
       ]
     },
@@ -2557,27 +2557,27 @@
       "portuguese": "corajoso / valente",
       "pronuncia": "bréiv",
       "tipo": "adjective",
-      "example": "Be brave and try.",
+      "example": "The brave soldier saved the child.",
       "random_words": [
         {
+          "word": "bravery",
+          "pronuncia": "bréi-ve-ri"
+        },
+        {
           "word": "bravo",
-          "pronuncia": "brá-vo"
+          "pronuncia": "brá-vou"
         },
         {
-          "word": "bravely",
-          "pronuncia": "bréiv-li"
+          "word": "grave",
+          "pronuncia": "gréiv"
         },
         {
-          "word": "bravado",
-          "pronuncia": "bra-vá-do"
+          "word": "cave",
+          "pronuncia": "kéiv"
         },
         {
-          "word": "braver",
-          "pronuncia": "bréi-vâr"
-        },
-        {
-          "word": "bride",
-          "pronuncia": "bríde"
+          "word": "wave",
+          "pronuncia": "uéiv"
         }
       ]
     },
@@ -2586,85 +2586,85 @@
       "portuguese": "com medo / assustado",
       "pronuncia": "a-fréid",
       "tipo": "adjective",
-      "example": "I am afraid of spiders.",
+      "example": "She is afraid of spiders.",
       "random_words": [
         {
-          "word": "afford",
-          "pronuncia": "a-fórd"
+          "word": "frightened",
+          "pronuncia": "frái-tend"
         },
         {
-          "word": "afloat",
-          "pronuncia": "a-flóut"
+          "word": "scared",
+          "pronuncia": "skérd"
         },
         {
-          "word": "afield",
-          "pronuncia": "a-fíld"
+          "word": "aided",
+          "pronuncia": "éi-ded"
         },
         {
-          "word": "afore",
-          "pronuncia": "a-fór"
+          "word": "rail",
+          "pronuncia": "rêil"
         },
         {
-          "word": "afoot",
-          "pronuncia": "a-fút"
+          "word": "as far as it",
+          "pronuncia": "éz fár éz ít"
         }
       ]
     },
     {
       "english": "stirs the pot",
       "portuguese": "mexe no pote",
-      "pronuncia": "stérz dâ pót",
+      "pronuncia": "stêrz dâ pót",
       "tipo": "idiom",
-      "example": "She loves to stir the pot.",
+      "example": "He always stirs the pot at meetings.",
       "random_words": [
         {
-          "word": "stir the pot",
-          "pronuncia": "stér dâ pót"
+          "word": "stir",
+          "pronuncia": "stêr"
         },
         {
-          "word": "stir",
-          "pronuncia": "stér"
+          "word": "stir up",
+          "pronuncia": "stêr áp"
         },
         {
           "word": "pot",
           "pronuncia": "pót"
         },
         {
-          "word": "stirring",
-          "pronuncia": "sté-ring"
+          "word": "stir the pot",
+          "pronuncia": "stêr dâ pót"
         },
         {
-          "word": "stirred",
-          "pronuncia": "stérd"
+          "word": "rock the boat",
+          "pronuncia": "rók dâ bôut"
         }
       ]
     },
     {
       "english": "beret",
       "portuguese": "boina",
-      "pronuncia": "bâ-réi",
+      "pronuncia": "be-réi",
       "tipo": "noun",
-      "example": "She wore a beret.",
+      "example": "She wore a red beret.",
       "random_words": [
         {
-          "word": "beet",
-          "pronuncia": "bít"
-        },
-        {
-          "word": "berate",
-          "pronuncia": "bi-réit"
+          "word": "bare",
+          "pronuncia": "bér"
         },
         {
           "word": "berry",
           "pronuncia": "bé-ri"
         },
         {
-          "word": "bare",
-          "pronuncia": "bér"
+          "word": "berate",
+          "pronuncia": "bi-réit"
         },
         {
-          "word": "bear",
-          "pronuncia": "bér"
+          "word": "bet",
+          "pronuncia": "bét"
+        },
+        {
+          "word": "where",
+          "pronuncia": "uér"
         }
       ]
     },
@@ -2673,19 +2673,15 @@
       "portuguese": "imposto / aplicado / forçado",
       "pronuncia": "en-fórst",
       "tipo": "verb",
-      "example": "The law is enforced.",
+      "example": "The law was strictly enforced.",
       "random_words": [
         {
           "word": "enforce",
           "pronuncia": "en-fórs"
         },
         {
-          "word": "enforcement",
-          "pronuncia": "en-fórs-ment"
-        },
-        {
-          "word": "enforcing",
-          "pronuncia": "en-fór-sing"
+          "word": "reinforced",
+          "pronuncia": "ri-in-fórst"
         },
         {
           "word": "forced",
@@ -2694,6 +2690,10 @@
         {
           "word": "unforced",
           "pronuncia": "an-fórst"
+        },
+        {
+          "word": "enforcement",
+          "pronuncia": "en-fórs-ment"
         }
       ]
     },
@@ -2702,114 +2702,114 @@
       "portuguese": "desvantagens / inconvenientes",
       "pronuncia": "dró-baks",
       "tipo": "noun",
-      "example": "There are some drawbacks.",
+      "example": "The plan has several drawbacks.",
       "random_words": [
         {
           "word": "drawback",
           "pronuncia": "dró-bak"
         },
         {
-          "word": "drawbridge",
-          "pronuncia": "dró-bridj"
+          "word": "draw",
+          "pronuncia": "dró"
         },
         {
-          "word": "drawings",
-          "pronuncia": "dró-ings"
+          "word": "back",
+          "pronuncia": "bak"
         },
         {
-          "word": "backdrop",
-          "pronuncia": "bák-drop"
+          "word": "downside",
+          "pronuncia": "dáun-sáid"
         },
         {
-          "word": "backstroke",
-          "pronuncia": "bák-strôuk"
+          "word": "setbacks",
+          "pronuncia": "sét-baks"
         }
       ]
     },
     {
       "english": "electricity",
       "portuguese": "eletricidade",
-      "pronuncia": "e-lek-tri-si-ti",
+      "pronuncia": "i-lék-tri-si-ti",
       "tipo": "noun",
-      "example": "Electricity powers everything.",
+      "example": "Electricity powers our homes.",
       "random_words": [
         {
           "word": "electric",
-          "pronuncia": "e-lek-trik"
+          "pronuncia": "i-lék-trik"
         },
         {
           "word": "electrical",
-          "pronuncia": "e-lek-tri-cal"
+          "pronuncia": "i-lék-tri-kal"
         },
         {
           "word": "electron",
-          "pronuncia": "e-lek-tron"
+          "pronuncia": "i-lék-tron"
         },
         {
           "word": "electronic",
-          "pronuncia": "e-lek-tró-nic"
+          "pronuncia": "i-lek-tró-nik"
         },
         {
-          "word": "election",
-          "pronuncia": "e-lek-shon"
+          "word": "electrician",
+          "pronuncia": "i-lek-trí-shan"
         }
       ]
     },
     {
       "english": "ai slop",
       "portuguese": "algo de baixa qualidade ou mal feito relacionado à inteligência artificial",
-      "pronuncia": "ei-ai slóp",
-      "tipo": "slang/noun",
-      "example": "Avoid reading AI slop.",
+      "pronuncia": "éi-ái slóp",
+      "tipo": "noun",
+      "example": "That article is just AI slop.",
       "random_words": [
-        {
-          "word": "AI",
-          "pronuncia": "ei-ai"
-        },
         {
           "word": "slop",
           "pronuncia": "slóp"
         },
         {
-          "word": "AI flop",
-          "pronuncia": "ei-ai flóp"
+          "word": "AI",
+          "pronuncia": "éi-ái"
         },
         {
-          "word": "AI junk",
-          "pronuncia": "ei-ai djânk"
+          "word": "slope",
+          "pronuncia": "slôup"
         },
         {
-          "word": "AI waste",
-          "pronuncia": "ei-ai uéist"
+          "word": "slap",
+          "pronuncia": "sláp"
+        },
+        {
+          "word": "slip",
+          "pronuncia": "slíp"
         }
       ]
     },
     {
       "english": "craft",
       "portuguese": "arte / habilidade / ofício",
-      "pronuncia": "krâft",
+      "pronuncia": "kráft",
       "tipo": "noun/verb",
       "example": "She learned the craft of pottery.",
       "random_words": [
         {
           "word": "crafty",
-          "pronuncia": "krâf-ti"
+          "pronuncia": "kráf-ti"
         },
         {
           "word": "draft",
-          "pronuncia": "drâft"
+          "pronuncia": "dráft"
         },
         {
-          "word": "graft",
-          "pronuncia": "grâft"
-        },
-        {
-          "word": "shaft",
-          "pronuncia": "xâft"
+          "word": "crate",
+          "pronuncia": "krêit"
         },
         {
           "word": "kraft",
-          "pronuncia": "krâft"
+          "pronuncia": "kráft"
+        },
+        {
+          "word": "graft",
+          "pronuncia": "gráft"
         }
       ]
     },
@@ -2817,16 +2817,12 @@
       "english": "steady",
       "portuguese": "constante / firme / estável",
       "pronuncia": "sté-di",
-      "tipo": "adjective",
-      "example": "His hand remained steady.",
+      "tipo": "adjective/verb",
+      "example": "Keep a steady pace while running.",
       "random_words": [
         {
           "word": "ready",
           "pronuncia": "ré-di"
-        },
-        {
-          "word": "study",
-          "pronuncia": "stâ-di"
         },
         {
           "word": "steed",
@@ -2837,8 +2833,12 @@
           "pronuncia": "stâr-di"
         },
         {
-          "word": "instead of",
-          "pronuncia": "in-stéd âv"
+          "word": "steadying",
+          "pronuncia": "sté-di-ing"
+        },
+        {
+          "word": "study",
+          "pronuncia": "stâ-di"
         }
       ]
     },
@@ -2846,8 +2846,8 @@
       "english": "raise",
       "portuguese": "criar / levantar / aumentar",
       "pronuncia": "rêiz",
-      "tipo": "verb",
-      "example": "Please raise your hand.",
+      "tipo": "verb/noun",
+      "example": "Please raise your hand to speak.",
       "random_words": [
         {
           "word": "rise",
@@ -2862,12 +2862,12 @@
           "pronuncia": "rêiz"
         },
         {
-          "word": "rail",
-          "pronuncia": "rêil"
+          "word": "reel",
+          "pronuncia": "ríl"
         },
         {
-          "word": "bride",
-          "pronuncia": "bríde"
+          "word": "race",
+          "pronuncia": "rêis"
         }
       ]
     },
@@ -2876,8 +2876,12 @@
       "portuguese": "terra / sujeira",
       "pronuncia": "dârt",
       "tipo": "noun",
-      "example": "The dirt covered his shoes.",
+      "example": "The dog rolled in the dirt.",
       "random_words": [
+        {
+          "word": "dart",
+          "pronuncia": "dárt"
+        },
         {
           "word": "dirty",
           "pronuncia": "dâr-ti"
@@ -2887,25 +2891,21 @@
           "pronuncia": "hârt"
         },
         {
-          "word": "shirt",
-          "pronuncia": "xârt"
-        },
-        {
           "word": "skirt",
-          "pronuncia": "scârt"
+          "pronuncia": "skârt"
         },
         {
-          "word": "belt",
-          "pronuncia": "bélt"
+          "word": "bit",
+          "pronuncia": "bít"
         }
       ]
     },
     {
       "english": "yikes",
       "portuguese": "expressão de surpresa ou medo, algo como \"caramba\" ou \"nossa\"",
-      "pronuncia": "iáiks",
+      "pronuncia": "yáiks",
       "tipo": "interjection",
-      "example": "Yikes, that was close!",
+      "example": "Yikes, that was a close call!",
       "random_words": [
         {
           "word": "relies",
@@ -2934,209 +2934,214 @@
       "portuguese": "passar tempo com amigos ou em um lugar específico",
       "pronuncia": "háng áut",
       "tipo": "phrasal verb",
-      "example": "We hang out after school.",
+      "example": "We like to hang out at the park.",
       "random_words": [
         {
           "word": "hang",
           "pronuncia": "háng"
         },
         {
-          "word": "hangups",
-          "pronuncia": "háng-âps"
+          "word": "hangover",
+          "pronuncia": "háng-ôu-vâr"
         },
         {
           "word": "out",
           "pronuncia": "áut"
         },
         {
-          "word": "hangover",
-          "pronuncia": "háng-ôu-vâr"
+          "word": "hand out",
+          "pronuncia": "hánd áut"
         },
         {
-          "word": "hanging",
-          "pronuncia": "háng-ing"
+          "word": "hang up",
+          "pronuncia": "háng áp"
         }
       ]
     },
     {
       "english": "hopeless",
       "portuguese": "inútil / sem esperança",
-      "pronuncia": "rôu-plês",
+      "pronuncia": "hôup-lês",
       "tipo": "adjective",
-      "example": "The situation seems hopeless.",
+      "example": "The situation seemed hopeless.",
       "random_words": [
         {
           "word": "hopeful",
-          "pronuncia": "rôu-pful"
+          "pronuncia": "hôup-ful"
         },
         {
           "word": "helpless",
-          "pronuncia": "rél-plês"
+          "pronuncia": "hélp-lês"
         },
         {
-          "word": "houseless",
-          "pronuncia": "ráu-sles"
+          "word": "hopelessly",
+          "pronuncia": "hôup-lês-li"
+        },
+        {
+          "word": "homeless",
+          "pronuncia": "hôum-lês"
         },
         {
           "word": "hope",
           "pronuncia": "hôup"
-        },
-        {
-          "word": "wellness",
-          "pronuncia": "wéllness"
         }
       ]
     },
     {
       "english": "reach",
       "portuguese": "alcançar / chegar a",
-      "pronuncia": "rích",
-      "tipo": "verb",
-      "example": "I cannot reach the shelf.",
+      "pronuncia": "rítch",
+      "tipo": "verb/noun",
+      "example": "Can you reach the top shelf?",
       "random_words": [
         {
           "word": "rich",
-          "pronuncia": "rích"
+          "pronuncia": "rítch"
         },
         {
-          "word": "breach",
-          "pronuncia": "brích"
-        },
-        {
-          "word": "preach",
-          "pronuncia": "prích"
+          "word": "wreak",
+          "pronuncia": "rík"
         },
         {
           "word": "teach",
-          "pronuncia": "tích"
+          "pronuncia": "títch"
         },
         {
-          "word": "beach",
-          "pronuncia": "bítch"
+          "word": "breach",
+          "pronuncia": "brítch"
+        },
+        {
+          "word": "reef",
+          "pronuncia": "ríf"
         }
       ]
     }
   ],
   "sentences": [
     {
+      "english": "Dust the furniture",
+      "portuguese": "Tire o pó dos móveis",
+      "random_words": "fox, whale"
+    },
+    {
       "english": "Please walk ahead to the presentation about helping the environment.",
       "portuguese": "Por favor, siga para a apresentação sobre como ajudar o meio ambiente.",
-      "random_words": "fox, whale"
+      "random_words": "bread, soup"
     },
     {
       "english": "I don't think that the picnic is over yet.",
       "portuguese": "Eu não acho que o piquenique acabou ainda.",
-      "random_words": "bread, mango"
+      "random_words": "lamp, sponge"
     },
     {
       "english": "Let's face it.",
       "portuguese": "Vamos ser sinceros.",
-      "random_words": "lamp, sponge"
+      "random_words": "forest, river"
     },
     {
       "english": "Won't you please decide soon if you're coming ?",
       "portuguese": "Por favor, você não vai decidir logo se vai vir?",
-      "random_words": "forest, river"
+      "random_words": "bike, train"
     },
     {
       "english": "Why can't the students walk on the dirt ?",
       "portuguese": "Por que os alunos não podem andar na terra?",
-      "random_words": "bike, sailboat"
+      "random_words": "storm, breeze"
     },
     {
       "english": "Everyone's on equal footing here.",
       "portuguese": "Todos estão em pé de igualdade aqui.",
-      "random_words": "storm, breeze"
+      "random_words": "hammer, ruler"
     },
     {
       "english": "Where can't visitors stand ?",
       "portuguese": "Onde os visitantes não podem ficar ?",
-      "random_words": "hammer, wrench"
+      "random_words": "scarf, hoodie"
     },
     {
       "english": "That person said the newspaper was theirs",
       "portuguese": "Aquela pessoa disse que o jornal era deles",
-      "random_words": "scarf, sneaker"
+      "random_words": "elbow, ankle"
     },
     {
       "english": "Sometimes being friendly with everyone pays off.",
       "portuguese": "Às vezes ser amigável com todos compensa.",
-      "random_words": "elbow, ankle"
+      "random_words": "drum, flute"
     },
     {
       "english": "Have you guys ever gone camping ?",
       "portuguese": "Vocês já foram acampar ?",
-      "random_words": "drum, flute"
+      "random_words": "eraser, marker"
     },
     {
       "english": "He gave her a kiss on the cheek",
       "portuguese": "Ele deu um beijo na bochecha dela",
-      "random_words": "eraser, ribbon"
+      "random_words": "crimson, indigo"
     },
     {
       "english": "Which bowl would you like your ice cream in ?",
       "portuguese": "Em qual tigela gostaria do seu sorvete ?",
-      "random_words": "indigo, mustard"
+      "random_words": "island, desert"
     },
     {
       "english": "Am I coming through ok ?",
       "portuguese": "Está me escutando ?",
-      "random_words": "island, desert"
+      "random_words": "joy, calm"
     },
     {
       "english": "People are making fun of me for hugging my friends. They said it's too much.",
       "portuguese": "As pessoas estão tirando sarro de mim por abraçar meus amigos. Dizem que é demais.",
-      "random_words": "joy, hope"
+      "random_words": "pot, kettle"
     },
     {
       "english": "Do you want to know something even cooler?",
       "portuguese": "Você quer saber de algo ainda mais legal?",
-      "random_words": "pot, spatula"
+      "random_words": "rose, ivy"
     },
     {
       "english": "Have all the students finished reviewing the lesson yet ?",
       "portuguese": "Todos os alunos já terminaram de rever a lição?",
-      "random_words": "rose, oak"
+      "random_words": "racket, helmet"
     },
     {
       "english": "Have the kids fallen asleep yet ?",
       "portuguese": "As crianças já caíram no sono?",
-      "random_words": "racket, baton"
+      "random_words": "circle, square"
     },
     {
       "english": "Have you ever fallen asleep in class ?",
       "portuguese": "Você caiu no sono na aula alguma vez?",
-      "random_words": "circle, square"
+      "random_words": "stapler, folder"
     },
     {
       "english": "Only six weeks' worth of research data",
       "portuguese": "Apenas seis semanas de dados de pesquisa",
-      "random_words": "stapler, folder"
+      "random_words": "comet, nebula"
     },
     {
       "english": "Don't be a jerk",
       "portuguese": "Não seja um idiota",
-      "random_words": "comet, asteroid"
+      "random_words": "whale, sparrow"
     },
     {
       "english": "In Ireland, it's nice to bring flowers when you go to someone's house.",
       "portuguese": "Na Irlanda, é simpático levar flores quando você vai a casa de alguém.",
-      "random_words": "sparrow, panda"
+      "random_words": "mango, pasta"
     },
     {
       "english": "it's nice to meet you",
       "portuguese": "É um prazer conhecê-lo",
-      "random_words": "soup, pasta"
+      "random_words": "mirror, blanket"
     },
     {
       "english": "Does anyone know what monkeys use stones for ?",
       "portuguese": "Alguém sabe para que os macacos usam pedras?",
-      "random_words": "mirror, blanket"
+      "random_words": "canyon, meadow"
     },
     {
       "english": "Quit shouting the teacher is mad at us.",
       "portuguese": "Pare de gritar, o professor está bravo com a gente.",
-      "random_words": "canyon, meadow"
+      "random_words": "sailboat, kite"
     }
   ]
 }
