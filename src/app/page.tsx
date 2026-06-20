@@ -13,6 +13,8 @@ import {
   AlertCircle,
   Info,
   EyeOff,
+  Volume2,
+  ArrowRight,
 } from 'lucide-react';
 import { useCards } from '@/context/CardContext';
 
@@ -223,6 +225,27 @@ export default function Dashboard() {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div>
+        <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Learning Modules</h2>
+        <Link
+          href="/modules/ough-words"
+          className="group flex items-center gap-4 rounded-xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 transition-all hover:shadow-md dark:border-indigo-800/50 dark:from-indigo-900/20 dark:to-purple-900/20"
+        >
+          <div className="inline-flex shrink-0 rounded-lg bg-indigo-600 p-3 text-white">
+            <Volume2 className="h-7 w-7" />
+          </div>
+          <div className="flex-1">
+            <h3 className="font-semibold text-gray-900 dark:text-white">
+              Palavras &quot;ough&quot; confusas
+            </h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+              tough, though, through, thought, thorough, throughout — pronúncia, tradução e exemplos com áudio.
+            </p>
+          </div>
+          <ArrowRight className="h-5 w-5 shrink-0 text-indigo-500 transition-transform group-hover:translate-x-0.5" />
+        </Link>
       </div>
 
       <div>

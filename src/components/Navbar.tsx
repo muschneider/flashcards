@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Sun, Moon, BookOpen, Home, Settings, SlidersHorizontal, RotateCcw, GraduationCap } from 'lucide-react';
+import { Sun, Moon, BookOpen, Home, Settings, SlidersHorizontal, RotateCcw, GraduationCap, Library } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
 export default function Navbar() {
@@ -22,6 +22,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2">
           <NavLink href="/" icon={<Home className="h-4 w-4" />} label="Home" />
           <NavLink href="/study" icon={<BookOpen className="h-4 w-4" />} label="Study" />
+          <NavLink href="/modules" icon={<Library className="h-4 w-4" />} label="Modules" />
           <NavLink href="/manage" icon={<Settings className="h-4 w-4" />} label="Manage" />
           <NavLink href="/settings" icon={<SlidersHorizontal className="h-4 w-4" />} label="Settings" />
           <NavLink href="/reset" icon={<RotateCcw className="h-4 w-4" />} label="Reset" />
