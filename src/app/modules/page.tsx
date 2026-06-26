@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, Layers, Volume2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Layers, Puzzle, Volume2 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { oughWords } from '@/data/confusingWords';
 
 type ModuleEntry = {
@@ -8,6 +9,7 @@ type ModuleEntry = {
   description: string;
   badge: string;
   tags: string[];
+  icon: LucideIcon;
 };
 
 const MODULES: ModuleEntry[] = [
@@ -18,6 +20,16 @@ const MODULES: ModuleEntry[] = [
       'tough, though, through, thought, thorough e throughout. Palavras quase iguais na escrita, mas com som e sentido diferentes.',
     badge: `${oughWords.length} palavras`,
     tags: ['Pronúncia', 'Tradução', 'Exemplos', 'Áudio'],
+    icon: Volume2,
+  },
+  {
+    href: '/modules/match-pairs',
+    title: 'Combine os pares',
+    description:
+      'Relacione cada palavra em inglês ao seu significado em português. 5 pares aleatórios a cada rodada.',
+    badge: 'Jogo',
+    tags: ['Vocabulário', 'Tradução', 'Memória'],
+    icon: Puzzle,
   },
 ];
 
@@ -50,7 +62,7 @@ export default function ModulesPage() {
           >
             <div className="mb-3 flex items-center justify-between">
               <div className="inline-flex rounded-lg bg-indigo-100 p-2 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-300">
-                <Volume2 className="h-6 w-6" />
+                <m.icon className="h-6 w-6" />
               </div>
               <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">
                 {m.badge}
