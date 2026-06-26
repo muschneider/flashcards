@@ -26,7 +26,7 @@ const MODULES: ModuleEntry[] = [
     href: '/modules/match-pairs',
     title: 'Combine os pares',
     description:
-      'Relacione cada palavra em inglês ao seu significado em português. 5 pares aleatórios a cada rodada.',
+      'Relacione cada palavra em inglês ao seu significado em português, com a pronúncia para aprender. Escolha quantos desafios fazer em seguida.',
     badge: 'Jogo',
     tags: ['Vocabulário', 'Tradução', 'Memória'],
     icon: Puzzle,

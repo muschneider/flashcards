@@ -18,9 +18,9 @@ export default function MatchPairsModulePage() {
           Combine os pares
         </h1>
         <p className="mx-auto mt-2 max-w-xl text-gray-500 dark:text-gray-400">
-          Relacione cada palavra em inglês ao seu significado em português. A cada rodada são
-          sorteadas 5 palavras aleatórias, sem repetir as que você já praticou — quando todas forem
-          vistas, o ciclo recomeça.
+          Relacione cada palavra em inglês (com a pronúncia) ao seu significado em português.
+          Escolha quantos desafios fazer em seguida — as palavras não se repetem até você ver todas,
+          e o ciclo recomeça ao terminar.
         </p>
       </div>
 

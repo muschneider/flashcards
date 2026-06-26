@@ -259,7 +259,7 @@ export default function Dashboard() {
             <div className="flex-1">
               <h3 className="font-semibold text-gray-900 dark:text-white">Combine os pares</h3>
               <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                Relacione cada palavra em inglês ao seu significado — 5 pares aleatórios a cada rodada.
+                Relacione cada palavra em inglês ao significado, com pronúncia — escolha quantos desafios fazer em seguida.
               </p>
             </div>
             <ArrowRight className="h-5 w-5 shrink-0 text-emerald-500 transition-transform group-hover:translate-x-0.5" />
